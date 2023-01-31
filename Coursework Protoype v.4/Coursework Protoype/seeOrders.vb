@@ -4,7 +4,7 @@
         Me.Close()
     End Sub
     Public Sub initialiseAllOrders()
-        'initialising listview
+        'initialising listview and Im testing here
         ListView1.Items.Clear()
         Dim l As New List(Of ListViewItem)
         ListView1.Columns.Add("ID", 20, HorizontalAlignment.Left)
