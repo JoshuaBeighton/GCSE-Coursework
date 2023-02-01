@@ -8,19 +8,24 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\bil0079230\\.nuget\\packages\\": {}
+    "C:\\Users\\jlbtu\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "\\\\bil-file2\\studentdocuments$\\2021 Intake\\bil0079230\\Documents\\CS Coursework\\CS3_28228_CN_LI_FI\\CS3.6_Software_Development\\Coursework Protoype v.4\\Coursework Protoype\\Coursework Protoype.vbproj",
+      "projectUniqueName": "C:\\Users\\jlbtu\\Source\\Repos\\Coursework\\Coursework Protoype v.4\\Coursework Protoype\\Coursework Protoype.vbproj",
       "projectName": "Coursework Protoype",
-      "projectPath": "\\\\bil-file2\\studentdocuments$\\2021 Intake\\bil0079230\\Documents\\CS Coursework\\CS3_28228_CN_LI_FI\\CS3.6_Software_Development\\Coursework Protoype v.4\\Coursework Protoype\\Coursework Protoype.vbproj",
-      "packagesPath": "C:\\Users\\bil0079230\\.nuget\\packages\\",
-      "outputPath": "\\\\bil-file2\\studentdocuments$\\2021 Intake\\bil0079230\\Documents\\CS Coursework\\CS3_28228_CN_LI_FI\\CS3.6_Software_Development\\Coursework Protoype v.4\\Coursework Protoype\\obj\\",
+      "projectPath": "C:\\Users\\jlbtu\\Source\\Repos\\Coursework\\Coursework Protoype v.4\\Coursework Protoype\\Coursework Protoype.vbproj",
+      "packagesPath": "C:\\Users\\jlbtu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jlbtu\\Source\\Repos\\Coursework\\Coursework Protoype v.4\\Coursework Protoype\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\bil0079230\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jlbtu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

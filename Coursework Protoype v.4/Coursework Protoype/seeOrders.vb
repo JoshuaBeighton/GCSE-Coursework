@@ -614,7 +614,7 @@
     Private Sub seeOrders_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         writeOrder()
     End Sub
-
+    'saving when closed
     Private Sub seeOrders_Leave(sender As Object, e As EventArgs) Handles MyBase.Leave
         writeOrder()
     End Sub
@@ -622,20 +622,22 @@
 
     'opening editorder
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        'if an item has been selected
         If ListView1.SelectedItems.Count = 1 Then
+            'show the edit order page and configure it based on the order that has been selected
             EditOrder.Show()
             EditOrder.editOrderSetup(ListView1.SelectedItems(0).SubItems(0).Text)
             Me.Hide()
+            'if the user has selected multiple items to edit, ask them to only select one
         ElseIf ListView1.SelectedItems.Count > 1 Then
-            MsgBox("Please only select one item to edit")
+            MsgBox("Please only select one item to it")
         Else
+            'if they've not selected anything then ask them to
             MsgBox("Please select an item to edit")
         End If
 
     End Sub
 
-    Private Sub seeOrders_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 End Class
 
