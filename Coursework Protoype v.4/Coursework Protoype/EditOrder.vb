@@ -1,13 +1,21 @@
 ﻿Public Class EditOrder
+    'store the ID of the order to be edited
     Dim oID As Integer
 
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_AddOrder.Click
+        'order structure to store the edited data
         Dim o As New Order
+        'set the ID of O equal to the ID of the order that's being edited
         o.id = AllOrders(oID).id
+        'set the value of the customer equal to the value in txt cust
         o.customer = txt_cust.Text
+        'set the due date equal to whats in date_due
         o.due = date_due.Value
+        'set the order at position oID to O
         AllOrders(oID) = o
+
+        'this will be changed in final
         Dim os As New orderStock
         Dim s As New Stock
         s.ID = AllStock.Count
@@ -107,19 +115,28 @@
         txt_sto.Select()
     End Sub
 
+    'go back to see orders
     Private Sub btn_navi_Click(sender As Object, e As EventArgs) Handles btn_navi.Click
         Me.Hide()
         seeOrders.Show()
     End Sub
+    'setup the edit order form 
     Public Sub editOrderSetup(id As Integer)
+        'store the ID of the order
         Dim orderID As Integer = -1
+        'loop through all the order
         For i = 0 To AllOrders.Count - 1
+            'if theID of the order at position i is equal to the ID we're after
             If AllOrders(i).id = id Then
+                'set the order id to where we are in the list
                 orderID = i
             End If
         Next
+        'if we have found the order
         If orderID <> -1 Then
+            'set the customer text box equal to the customer in the order
             txt_cust.Text = AllOrders(orderID).customer
+            'set the due date box equal to the date stored in the order
             date_due.Value = AllOrders(orderID).due
             Dim startIndex As Integer = -1
             Dim index As Integer
@@ -158,7 +175,4 @@
         oID = orderID
     End Sub
 
-    Private Sub EditOrder_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class
