@@ -1,1 +1,3 @@
-0,"test1","test2","M"
+0,"testM","test1","M"
+1,"testA","test1","A"
+1,"testS","test1","S"

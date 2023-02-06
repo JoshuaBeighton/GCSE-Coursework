@@ -7,12 +7,17 @@
     End Sub
 
     Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
+        Dim found As Boolean = False
         For i = 0 To AllUsers.Count - 1
             If txt_username.Text = AllUsers(i).username And txt_pass.Text = AllUsers(i).password Then
-                MessageBox.Show("Success")
-            Else
-                MessageBox.Show("Failure")
+                found = True
+                Navigation.Show()
+                Navigation.setup(AllUsers(i).permission)
+                Me.Hide()
             End If
         Next
+        If Not found Then
+            MsgBox("Please enter valid credentials")
+        End If
     End Sub
 End Class
