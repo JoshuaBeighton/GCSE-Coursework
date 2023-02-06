@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jlbtu\\Source\\Repos\\Coursework\\Coursework Protoype v.4\\Coursework Protoype\\Coursework Protoype.vbproj",
+      "projectUniqueName": "C:\\Users\\jlbtu\\Source\\Repos\\Coursework1\\Coursework Protoype v.4\\Coursework Protoype\\Coursework Protoype.vbproj",
       "projectName": "Coursework Protoype",
-      "projectPath": "C:\\Users\\jlbtu\\Source\\Repos\\Coursework\\Coursework Protoype v.4\\Coursework Protoype\\Coursework Protoype.vbproj",
+      "projectPath": "C:\\Users\\jlbtu\\Source\\Repos\\Coursework1\\Coursework Protoype v.4\\Coursework Protoype\\Coursework Protoype.vbproj",
       "packagesPath": "C:\\Users\\jlbtu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jlbtu\\Source\\Repos\\Coursework\\Coursework Protoype v.4\\Coursework Protoype\\obj\\",
+      "outputPath": "C:\\Users\\jlbtu\\Source\\Repos\\Coursework1\\Coursework Protoype v.4\\Coursework Protoype\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
