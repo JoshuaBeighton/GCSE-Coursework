@@ -28,7 +28,7 @@
         Dim components() As String
         'temporary string to store all of the Storage devices in the current project
         Dim s As String = ""
-        'temporary list item to store all the info about an order
+        'store a temporary list view item
         Dim tempL As New ListViewItem
         'loop through all the orders
         For i = 0 To AllOrders.Count - 1
