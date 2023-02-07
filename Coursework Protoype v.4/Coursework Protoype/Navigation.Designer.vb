@@ -29,6 +29,7 @@ Partial Class Navigation
         Me.btn_stock = New System.Windows.Forms.Button()
         Me.btn_parts = New System.Windows.Forms.Button()
         Me.btn_staff = New System.Windows.Forms.Button()
+        Me.btn_logout = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btn_sales
@@ -101,6 +102,16 @@ Partial Class Navigation
         Me.btn_staff.Text = "Staff"
         Me.btn_staff.UseVisualStyleBackColor = True
         '
+        'btn_logout
+        '
+        Me.btn_logout.Location = New System.Drawing.Point(801, 660)
+        Me.btn_logout.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btn_logout.Name = "btn_logout"
+        Me.btn_logout.Size = New System.Drawing.Size(325, 76)
+        Me.btn_logout.TabIndex = 0
+        Me.btn_logout.Text = "Sign Out"
+        Me.btn_logout.UseVisualStyleBackColor = True
+        '
         'Navigation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
@@ -111,6 +122,7 @@ Partial Class Navigation
         Me.Controls.Add(Me.btn_stock)
         Me.Controls.Add(Me.btn_orders)
         Me.Controls.Add(Me.btn_cust)
+        Me.Controls.Add(Me.btn_logout)
         Me.Controls.Add(Me.btn_logs)
         Me.Controls.Add(Me.btn_sales)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -127,4 +139,5 @@ Partial Class Navigation
     Friend WithEvents btn_stock As Button
     Friend WithEvents btn_parts As Button
     Friend WithEvents btn_staff As Button
+    Friend WithEvents btn_logout As Button
 End Class

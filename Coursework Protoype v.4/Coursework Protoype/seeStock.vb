@@ -7,7 +7,7 @@
 
     'go back to the menu
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Form1.Show()
+        Navigation.Show()
         Me.Close()
     End Sub
 
