@@ -28,84 +28,92 @@ Partial Class Navigation
         Me.btn_orders = New System.Windows.Forms.Button()
         Me.btn_stock = New System.Windows.Forms.Button()
         Me.btn_parts = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
+        Me.btn_staff = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btn_sales
         '
-        Me.btn_sales.Location = New System.Drawing.Point(713, 12)
+        Me.btn_sales.Location = New System.Drawing.Point(1019, 20)
+        Me.btn_sales.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_sales.Name = "btn_sales"
-        Me.btn_sales.Size = New System.Drawing.Size(75, 56)
+        Me.btn_sales.Size = New System.Drawing.Size(107, 93)
         Me.btn_sales.TabIndex = 0
         Me.btn_sales.Text = "sales"
         Me.btn_sales.UseVisualStyleBackColor = True
         '
         'btn_logs
         '
-        Me.btn_logs.Location = New System.Drawing.Point(358, 12)
+        Me.btn_logs.Location = New System.Drawing.Point(511, 20)
+        Me.btn_logs.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_logs.Name = "btn_logs"
-        Me.btn_logs.Size = New System.Drawing.Size(75, 56)
+        Me.btn_logs.Size = New System.Drawing.Size(107, 93)
         Me.btn_logs.TabIndex = 0
         Me.btn_logs.Text = "Logs"
         Me.btn_logs.UseVisualStyleBackColor = True
         '
         'btn_cust
         '
-        Me.btn_cust.Location = New System.Drawing.Point(12, 12)
+        Me.btn_cust.Location = New System.Drawing.Point(17, 20)
+        Me.btn_cust.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_cust.Name = "btn_cust"
-        Me.btn_cust.Size = New System.Drawing.Size(75, 56)
+        Me.btn_cust.Size = New System.Drawing.Size(107, 93)
         Me.btn_cust.TabIndex = 0
         Me.btn_cust.Text = "Customers"
         Me.btn_cust.UseVisualStyleBackColor = True
         '
         'btn_orders
         '
-        Me.btn_orders.Location = New System.Drawing.Point(12, 74)
+        Me.btn_orders.Location = New System.Drawing.Point(17, 123)
+        Me.btn_orders.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_orders.Name = "btn_orders"
-        Me.btn_orders.Size = New System.Drawing.Size(75, 56)
+        Me.btn_orders.Size = New System.Drawing.Size(107, 93)
         Me.btn_orders.TabIndex = 0
         Me.btn_orders.Text = "Orders"
         Me.btn_orders.UseVisualStyleBackColor = True
         '
         'btn_stock
         '
-        Me.btn_stock.Location = New System.Drawing.Point(12, 136)
+        Me.btn_stock.Location = New System.Drawing.Point(17, 227)
+        Me.btn_stock.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_stock.Name = "btn_stock"
-        Me.btn_stock.Size = New System.Drawing.Size(75, 56)
+        Me.btn_stock.Size = New System.Drawing.Size(107, 93)
         Me.btn_stock.TabIndex = 0
         Me.btn_stock.Text = "Stock"
         Me.btn_stock.UseVisualStyleBackColor = True
         '
         'btn_parts
         '
-        Me.btn_parts.Location = New System.Drawing.Point(12, 198)
+        Me.btn_parts.Location = New System.Drawing.Point(17, 330)
+        Me.btn_parts.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_parts.Name = "btn_parts"
-        Me.btn_parts.Size = New System.Drawing.Size(75, 56)
+        Me.btn_parts.Size = New System.Drawing.Size(107, 93)
         Me.btn_parts.TabIndex = 0
         Me.btn_parts.Text = "Parts"
         Me.btn_parts.UseVisualStyleBackColor = True
         '
-        'Button7
+        'btn_staff
         '
-        Me.Button7.Location = New System.Drawing.Point(12, 260)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(75, 56)
-        Me.Button7.TabIndex = 0
-        Me.Button7.Text = "Staff"
-        Me.Button7.UseVisualStyleBackColor = True
+        Me.btn_staff.Location = New System.Drawing.Point(17, 433)
+        Me.btn_staff.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btn_staff.Name = "btn_staff"
+        Me.btn_staff.Size = New System.Drawing.Size(107, 93)
+        Me.btn_staff.TabIndex = 0
+        Me.btn_staff.Text = "Staff"
+        Me.btn_staff.UseVisualStyleBackColor = True
         '
         'Navigation
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Button7)
+        Me.ClientSize = New System.Drawing.Size(1143, 750)
+        Me.Controls.Add(Me.btn_staff)
         Me.Controls.Add(Me.btn_parts)
         Me.Controls.Add(Me.btn_stock)
         Me.Controls.Add(Me.btn_orders)
         Me.Controls.Add(Me.btn_cust)
         Me.Controls.Add(Me.btn_logs)
         Me.Controls.Add(Me.btn_sales)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "Navigation"
         Me.Text = "Navigation"
         Me.ResumeLayout(False)
@@ -118,5 +126,5 @@ Partial Class Navigation
     Friend WithEvents btn_orders As Button
     Friend WithEvents btn_stock As Button
     Friend WithEvents btn_parts As Button
-    Friend WithEvents Button7 As Button
+    Friend WithEvents btn_staff As Button
 End Class
