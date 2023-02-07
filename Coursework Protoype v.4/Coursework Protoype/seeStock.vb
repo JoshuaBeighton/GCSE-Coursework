@@ -446,14 +446,14 @@
                 edited = True
             End If
         Next
-
+        Dim newRemoved As New List(Of ListViewItem)
         'if we will add some items back in to the listview
-        if added.count > 0 then
+        If added.count > 0 then
             'add all of the items that have newly been found to the list of items to add back to the list view after its been cleared
             newList.AddRange(added.ToArray)
 
             'store all of the values that we haven't added back in from the removed list
-            Dim newRemoved As New List(Of ListViewItem)
+
             'store whether a item has been added back in or not
             Dim found As Boolean
             'for every item in the removed list
@@ -476,9 +476,9 @@
         'if something has changed
         If edited Then
             'if we have added something back, ensure that we remove the items we have added back from the removed list
-            if added.count > 0 then
+            if added.count > 0 Then
                 removed = newRemoved
-            end if
+            End if
             'visually update the listview
             ListView1.BeginUpdate()
             ListView1.Items.Clear()

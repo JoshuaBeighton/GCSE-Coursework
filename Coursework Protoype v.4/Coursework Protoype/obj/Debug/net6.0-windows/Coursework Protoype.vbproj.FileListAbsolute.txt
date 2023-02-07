@@ -107,3 +107,27 @@ C:\Users\jlbtu\Downloads\Coursework Protoype v.4\Coursework Protoype\obj\Debug\n
 \\bil-file2\studentdocuments$\2021 Intake\bil0079230\Documents\CS Coursework\CS3_28228_CN_LI_FI\CS3.6_Software_Development\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.pdb
 \\bil-file2\studentdocuments$\2021 Intake\bil0079230\Documents\CS Coursework\CS3_28228_CN_LI_FI\CS3.6_Software_Development\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.genruntimeconfig.cache
 \\bil-file2\studentdocuments$\2021 Intake\bil0079230\Documents\CS Coursework\CS3_28228_CN_LI_FI\CS3.6_Software_Development\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\ref\Coursework Protoype.dll
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.vbproj.AssemblyReference.cache
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.EditOrder.resources
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.EditStock.resources
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.Form1.resources
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.Navigation.resources
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.seeOrders.resources
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.seeStock.resources
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.Write.resources
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.WriteStock.resources
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.vbproj.GenerateResource.cache
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.AssemblyInfoInputs.cache
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.AssemblyInfo.vb
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.vbproj.CoreCompileInputs.cache
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.dll
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\refint\Coursework Protoype.dll
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.pdb
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\bin\Debug\net6.0-windows\Coursework Protoype.exe
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\bin\Debug\net6.0-windows\Coursework Protoype.deps.json
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\bin\Debug\net6.0-windows\Coursework Protoype.runtimeconfig.json
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\bin\Debug\net6.0-windows\Coursework Protoype.dll
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\bin\Debug\net6.0-windows\Coursework Protoype.pdb
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.genruntimeconfig.cache
+C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\ref\Coursework Protoype.dll

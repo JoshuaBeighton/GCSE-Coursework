@@ -19,7 +19,7 @@
         ElseIf type = "S" Then
             btn_logs.Hide()
             btn_staff.Hide()
-
+            btn_sales.Hide()
         End If
     End Sub
 End Class

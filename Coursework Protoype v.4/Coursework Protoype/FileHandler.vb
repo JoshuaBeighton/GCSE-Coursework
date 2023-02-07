@@ -103,10 +103,10 @@
         'loop through all of the stock
         For i = 0 To AllStock.Count - 1
             'if it has not been marked for deletion
-            if all(i).id >= 0 then
+            If AllStock(i).ID >= 0 Then
                 'write that data to the file
                 WriteLine(1, AllStock(i).ID, AllStock(i).type, AllStock(i).part, AllStock(i).ordered, AllStock(i).Due, AllStock(i).arrived, AllStock(i).cost)
-            end if
+            End If
         Next
         'close the file
         FileClose(1)
