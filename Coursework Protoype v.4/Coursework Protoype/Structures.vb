@@ -7,6 +7,15 @@
     Public AllOrderStock As New List(Of orderStock)
     'store all of the user data
     Public AllUsers As New List(Of user)
+    Public AllCPUs As New List(Of CPU)
+    Public AllGPUs As New List(Of GPU)
+    Public AllRAMs As New List(Of RAM)
+    Public AllCases As New List(Of cases)
+    Public AllMoba As New List(Of motherboard)
+    Public AllStorage As New List(Of store)
+    Public AllPSU As New List(Of PSU)
+
+
 End Module
 
 'structure for storing data about an order
@@ -60,4 +69,78 @@ Public Structure user
     Dim password As String
     'store the permission level of the user as a char
     Dim permission As Char
+End Structure
+
+Public Structure CPU
+    Dim ID As Integer
+    Dim name As String
+    Dim manufacturer As String
+    Dim socket As String
+    Dim cores As String
+    Dim baseSpeed As Decimal
+    Dim boostSpeed As Decimal
+    Dim TPD As Integer
+    Dim price As Decimal
+End Structure
+
+Public Structure RAM
+    Dim ID As Integer
+    Dim name As String
+    Dim manufacturer As String
+    Dim latency As Integer
+    Dim speed As Integer
+    Dim ddr As Integer
+    Dim tpd As Integer
+    Dim dims As Integer
+    Dim price As Decimal
+End Structure
+
+Public Structure GPU
+    Dim ID As Integer
+    Dim name As String
+    Dim manufacturer As String
+    Dim baseClock As Integer
+    Dim VRAM As Decimal
+    Dim price As Decimal
+End Structure
+
+Public Structure PSU
+    Dim ID As Integer
+    Dim name As String
+    Dim manufacturer As String
+    Dim efficiency As String
+    Dim modular As String
+    Dim power As Integer
+    Dim price As Decimal
+End Structure
+
+Public Structure motherboard
+    Dim id As Integer
+    Dim name As String
+    Dim manufacturer As String
+    Dim ramSlots As Integer
+    Dim socket As String
+    Dim SATAs As Integer
+    Dim m2s As Integer
+    Dim price As Decimal
+End Structure
+
+Public Structure store
+    Dim ID As Integer
+    Dim name As String
+    Dim manufacturer As String
+    Dim type As String
+    Dim speed As Integer
+    Dim capacity As Decimal
+    Dim connection As Decimal
+    Dim price As Decimal
+End Structure
+
+Public Structure cases
+    Dim id As Integer
+    Dim name As Integer
+    Dim manufacturer As String
+    Dim HDDs As Integer
+    Dim SSDs As Integer
+    Dim price As Decimal
 End Structure
