@@ -29,15 +29,21 @@ Public Class parts
             ListView1.Columns.Add("Chip Manufacturer", 175)
             ListView1.Columns.Add("Base Clock", 100)
             ListView1.Columns.Add("VRAM", 100)
-            dim g as gpu
-            g.id = 0
-            g.model = "3060"
-            g.series = "ROG STRIX"
-            g.manufacturer = "ASUS"
-            g.chipManufacturer = "Nvidia"
-            g.baseclock = 3600
-            g.VRAM = 12
-            AllGPUs.add(g)
+            ListView1.Columns.Add("TPD", 100)
+            For i = 0 To AllGPUs.Count - 1
+                Dim l As New ListViewItem
+                l.SubItems(0).Text = AllGPUs(i).ID
+                l.SubItems.Add(AllGPUs(i).Series)
+                l.SubItems.Add(AllGPUs(i).Model)
+                l.SubItems.Add(AllGPUs(i).manufacturer)
+                l.SubItems.Add(AllGPUs(i).chipManufacturer)
+                l.SubItems.Add(AllGPUs(i).baseClock)
+                l.SubItems.Add(AllGPUs(i).VRAM)
+                l.SubItems.Add(AllGPUs(i).TPD)
+                l.SubItems.Add(AllGPUs(i).price)
+                ListView1.Items.Add(l)
+            Next
+
         ElseIf type = "RAM" Then
             ListView1.Columns.Add("Latency", 150)
             ListView1.Columns.Add("Speed", 150)
@@ -75,7 +81,7 @@ Public Class parts
         Me.Hide()
     End Sub
 
-    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
 
-    End Sub
+
+
 End Class

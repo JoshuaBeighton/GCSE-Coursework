@@ -103,6 +103,7 @@ Public Structure GPU
     Dim chipManufacturer As String
     Dim baseClock As Integer
     Dim VRAM As Decimal
+    Dim TPD As Integer
     Dim price As Decimal
 End Structure
 

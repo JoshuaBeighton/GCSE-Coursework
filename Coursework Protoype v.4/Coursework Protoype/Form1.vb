@@ -5,6 +5,7 @@
         readOrderStock()
         readStock()
         readUser()
+        readGPU()
         Navigation.Show()
         Navigation.setup("M")
         Me.Hide()

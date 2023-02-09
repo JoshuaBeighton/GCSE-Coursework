@@ -79,6 +79,28 @@
         'close the file
         FileClose(1)
     End Sub
+    Sub readGPU()
+        'open the file called GPU.txt for input
+        FileOpen(1, "GPU.txt", OpenMode.Input)
+        'store  temporary GPU
+        Dim g As New GPU
+        'loop until the end of the file
+        While Not EOF(1)
+            'input the orderstock details
+            Input(1, g.ID)
+            Input(1, g.Series)
+            Input(1, g.Model)
+            Input(1, g.manufacturer)
+            Input(1, g.chipManufacturer)
+            Input(1, g.baseClock)
+            Input(1, g.VRAM)
+            Input(1, g.TPD)
+            Input(1, g.price)
+            AllGPUs.Add(g)
+        End While
+        'close the file
+        FileClose(1)
+    End Sub
 
     'write to the file for orders
     Public Sub writeOrder()
@@ -142,38 +164,42 @@
     End Sub
 
     Sub writeCPU()
-        FileOpen(1, "CPU.text", OpenMode.Output)
+        FileOpen(1, "CPU.txt", OpenMode.Output)
         For i = 0 To AllCPUs.Count - 1
             If AllCPUs(i).ID >= 0 Then
                 WriteLine(1, AllCPUs(i).ID, AllCPUs(i).name, AllCPUs(i).manufacturer, AllCPUs(i).socket, AllCPUs(i).cores, AllCPUs(i).baseSpeed, AllCPUs(i).boostSpeed, AllCPUs(i).TPD, AllCPUs(i).price)
             End If
         Next
+        FileClose(1)
     End Sub
 
     Sub writeGPU()
-        FileOpen(1, "GPU.text", OpenMode.Output)
+        FileOpen(1, "GPU.txt", OpenMode.Output)
         For i = 0 To AllGPUs.Count - 1
             If AllGPUs(i).ID >= 0 Then
-                WriteLine(1, AllGPUs(i).ID, AllGPUs(i).Series, AllGPUs(i).Model, AllGPUs(i).manufacturer, AllGPUs(i).chipmanufacturer, AllGPUs(i).baseclock, AllCPUs(i).VRAM, AllGPUs(i).TPD, AllGPUs(i).price)
+                WriteLine(1, AllGPUs(i).ID, AllGPUs(i).Series, AllGPUs(i).Model, AllGPUs(i).manufacturer, AllGPUs(i).chipManufacturer, AllGPUs(i).baseClock, AllGPUs(i).VRAM, AllGPUs(i).TPD, AllGPUs(i).price)
             End If
         Next
+        FileClose(1)
     End Sub
     Sub writeRAM()
-        FileOpen(1, "RAM.text", OpenMode.Output)
+        FileOpen(1, "RAM.txt", OpenMode.Output)
         For i = 0 To AllRAMs.Count - 1
             If AllRAMs(i).ID >= 0 Then
-                WriteLine(1, allrams(i).id, allrams(i).name,allrams(i).manufacturer,allrams(i).latency,allrams(i).speed,allrams(i).ddr,allrams(i).tpd,allrams(i).dims,allrams(i).price)
+                WriteLine(1, AllRAMs(i).ID, AllRAMs(i).name, AllRAMs(i).manufacturer, AllRAMs(i).latency, AllRAMs(i).speed, AllRAMs(i).ddr, AllRAMs(i).tpd, AllRAMs(i).dims, AllRAMs(i).price)
             End If
         Next
+        FileClose(1)
     End Sub
 
 
     Sub writePSU()
-        FileOpen(1, "PSU.text", OpenMode.Output)
+        FileOpen(1, "PSU.txt", OpenMode.Output)
         For i = 0 To AllPSUs.Count - 1
             If AllPSUs(i).ID >= 0 Then
-                WriteLine(1, AllPSUs(i).id,AllPSUs(i).name,AllPSUs(i).manufacturer,AllPSUs(i).efficiency,AllPSUs(i).modular,AllPSUs(i).power,AllPSUs(i).price)
+                WriteLine(1, AllPSUs(i).id, AllPSUs(i).name, AllPSUs(i).manufacturer, AllPSUs(i).efficiency, AllPSUs(i).modular, AllPSUs(i).power, AllPSUs(i).price)
             End If
         Next
-    end sub
+        FileClose(1)
+    End Sub
 End Module
