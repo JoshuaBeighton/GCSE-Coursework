@@ -9,7 +9,7 @@ Public Class Navigation
         btn_parts.Show()
         btn_sales.Show()
         btn_stock.Show()
-
+        btn_staff.Show()
         'if the user is an accountant
         If type = "A" Then
             'hide all irrelavant buttons
@@ -49,5 +49,9 @@ Public Class Navigation
     Private Sub btn_parts_Click(sender As Object, e As EventArgs) Handles btn_parts.Click
         PartsNaviagtion.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub Navigation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
