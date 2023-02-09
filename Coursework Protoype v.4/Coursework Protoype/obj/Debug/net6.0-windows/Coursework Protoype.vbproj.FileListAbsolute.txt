@@ -131,3 +131,5 @@ C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Proto
 C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\bin\Debug\net6.0-windows\Coursework Protoype.pdb
 C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.genruntimeconfig.cache
 C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\ref\Coursework Protoype.dll
+C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.PartsNaviagtion.resources
+C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.parts.resources

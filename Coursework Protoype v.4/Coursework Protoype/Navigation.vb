@@ -37,4 +37,9 @@
         Me.Hide()
         Form1.Show()
     End Sub
+
+    Private Sub btn_parts_Click(sender As Object, e As EventArgs) Handles btn_parts.Click
+        PartsNaviagtion.Show()
+        Me.Hide()
+    End Sub
 End Class
