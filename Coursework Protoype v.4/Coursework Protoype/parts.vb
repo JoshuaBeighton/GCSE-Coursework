@@ -50,16 +50,52 @@ Public Class parts
             ListView1.Columns.Add("DDR", 75)
             ListView1.Columns.Add("TPD", 100)
             ListView1.Columns.Add("DIMMs", 100)
+            Dim l As New ListViewItem
+            For i = 0 To AllRAMs.Count - 1
+
+                l.SubItems(0).Text = AllRAMs(i).ID
+                l.SubItems.Add(AllRAMs(i).name)
+                l.SubItems.Add(AllRAMs(i).manufacturer)
+                l.SubItems.Add(AllRAMs(i).latency)
+                l.SubItems.Add(AllRAMs(i).speed)
+                l.SubItems.Add(AllRAMs(i).ddr)
+                l.SubItems.Add(AllRAMs(i).tpd)
+                l.SubItems.Add(AllRAMs(i).dims)
+                ListView1.Items.Add(l)
+            Next
         ElseIf type = "PSU" Then
             ListView1.Columns.Add("Efficiency", 150)
             ListView1.Columns.Add("Modular", 120)
             ListView1.Columns.Add("Power", 150)
+            Dim l As ListViewItem
+            For i = 0 To AllPSUs.Count - 1
+                l.SubItems(0).Text = AllPSUs(i).ID
+                l.SubItems.Add(AllPSUs(i).name)
+                l.SubItems.Add(AllPSUs(i).manufacturer)
+                l.SubItems.Add(AllPSUs(i).efficiency)
+                l.SubItems.Add(AllPSUs(i).modular)
+                l.SubItems.Add(AllPSUs(i).power)
+                l.SubItems.Add(AllPSUs(i).price)
+                ListView1.Items.Add(l)
+            Next
         ElseIf type = "Motherboard" Then
             ListView1.Columns.Add("RAM Slots", 100)
             ListView1.Columns.Add("Socket", 100)
             ListView1.Columns.Add("SATAs", 100)
             ListView1.Columns.Add("M.2s", 100)
-            ListView1.Columns.Add("TPD", 100)
+            Dim l As New ListViewItem
+            For i = 0 To AllMoba.Count - 1
+
+                l.SubItems(0).Text = AllMoba(i).id
+                l.SubItems.Add(AllMoba(i).name)
+                l.SubItems.Add(AllMoba(i).manufacturer)
+                l.SubItems.Add(AllMoba(i).ramSlots)
+                l.SubItems.Add(AllMoba(i).socket)
+                l.SubItems.Add(AllMoba(i).SATAs)
+                l.SubItems.Add(AllMoba(i).m2s)
+                l.SubItems.Add(AllMoba(i).price)
+                ListView1.Items.Add(l)
+            Next
         ElseIf type = "Case" Then
             ListView1.Columns.Add("HDDs", 100)
             ListView1.Columns.Add("SSDs", 100)
