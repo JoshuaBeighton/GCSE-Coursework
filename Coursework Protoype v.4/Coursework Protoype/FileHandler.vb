@@ -140,4 +140,22 @@
         'close the file
         FileClose(1)
     End Sub
+
+    Sub writeCPU()
+        FileOpen(1, "CPU.text", OpenMode.Output)
+        For i = 0 To AllCPUs.Count - 1
+            If AllCPUs(i).ID >= 0 Then
+                WriteLine(1, AllCPUs(i).ID, AllCPUs(i).name, AllCPUs(i).manufacturer, AllCPUs(i).socket, AllCPUs(i).cores, AllCPUs(i).baseSpeed, AllCPUs(i).boostSpeed, AllCPUs(i).TPD, AllCPUs(i).price)
+            End If
+        Next
+    End Sub
+
+    Sub writeGPU()
+        FileOpen(1, "GPU.text", OpenMode.Output)
+        For i = 0 To AllGPUs.Count - 1
+            If AllGPUs(i).ID >= 0 Then
+                WriteLine(1, AllGPUs(i).ID, AllGPUs(i).Series, AllGPUs(i).Model, AllGPUs(i).manufacturer, AllGPUs(i).chipmanufacturer, AllCPUs(i).baseSpeed, AllCPUs(i).boostSpeed, AllCPUs(i).TPD, AllCPUs(i).price)
+            End If
+        Next
+    End Sub
 End Module

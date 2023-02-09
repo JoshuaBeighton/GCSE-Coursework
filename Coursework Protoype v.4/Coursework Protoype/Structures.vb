@@ -97,8 +97,10 @@ End Structure
 
 Public Structure GPU
     Dim ID As Integer
-    Dim name As String
+    Dim Series As String
+    Dim Model As String
     Dim manufacturer As String
+    Dim chipManufacturer As String
     Dim baseClock As Integer
     Dim VRAM As Decimal
     Dim price As Decimal
