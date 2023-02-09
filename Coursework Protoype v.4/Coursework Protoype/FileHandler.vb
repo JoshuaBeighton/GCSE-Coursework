@@ -154,8 +154,26 @@
         FileOpen(1, "GPU.text", OpenMode.Output)
         For i = 0 To AllGPUs.Count - 1
             If AllGPUs(i).ID >= 0 Then
-                WriteLine(1, AllGPUs(i).ID, AllGPUs(i).Series, AllGPUs(i).Model, AllGPUs(i).manufacturer, AllGPUs(i).chipmanufacturer, AllCPUs(i).baseSpeed, AllCPUs(i).boostSpeed, AllCPUs(i).TPD, AllCPUs(i).price)
+                WriteLine(1, AllGPUs(i).ID, AllGPUs(i).Series, AllGPUs(i).Model, AllGPUs(i).manufacturer, AllGPUs(i).chipmanufacturer, AllGPUs(i).baseclock, AllCPUs(i).VRAM, AllGPUs(i).TPD, AllGPUs(i).price)
             End If
         Next
     End Sub
+    Sub writeRAM()
+        FileOpen(1, "RAM.text", OpenMode.Output)
+        For i = 0 To AllRAMs.Count - 1
+            If AllRAMs(i).ID >= 0 Then
+                WriteLine(1, allrams(i).id, allrams(i).name,allrams(i).manufacturer,allrams(i).latency,allrams(i).speed,allrams(i).ddr,allrams(i).tpd,allrams(i).dims,allrams(i).price)
+            End If
+        Next
+    End Sub
+
+
+    Sub writePSU()
+        FileOpen(1, "PSU.text", OpenMode.Output)
+        For i = 0 To AllPSUs.Count - 1
+            If AllPSUs(i).ID >= 0 Then
+                WriteLine(1, AllPSUs(i).id,AllPSUs(i).name,AllPSUs(i).manufacturer,AllPSUs(i).efficiency,AllPSUs(i).modular,AllPSUs(i).power,AllPSUs(i).price)
+            End If
+        Next
+    end sub
 End Module

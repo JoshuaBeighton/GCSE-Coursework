@@ -13,7 +13,7 @@
     Public AllCases As New List(Of cases)
     Public AllMoba As New List(Of motherboard)
     Public AllStorage As New List(Of store)
-    Public AllPSU As New List(Of PSU)
+    Public AllPSUs As New List(Of PSU)
 
 
 End Module

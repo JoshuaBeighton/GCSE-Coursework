@@ -6,8 +6,10 @@ Public Class parts
     Sub setup(type As String)
         ListView1.Columns.Clear()
         ListView1.Columns.Add("ID", 60)
-        ListView1.Columns.Add("Name", 150)
-        ListView1.Columns.Add("Brand", 150)
+        if type <> "GPU" then
+            ListView1.Columns.Add("Name", 150)
+            ListView1.Columns.Add("Brand", 150)
+        end if
         If type <> "Storage" And type <> "RAM" Then
             Me.Text = type + "s"
         Else
@@ -27,6 +29,15 @@ Public Class parts
             ListView1.Columns.Add("Chip Manufacturer", 175)
             ListView1.Columns.Add("Base Clock", 100)
             ListView1.Columns.Add("VRAM", 100)
+            dim g as gpu
+            g.id = 0
+            g.model = "3060"
+            g.series = "ROG STRIX"
+            g.manufacturer = "ASUS"
+            g.chipManufacturer = "Nvidia"
+            g.baseclock = 3600
+            g.VRAM = 12
+            AllGPUs.add(g)
         ElseIf type = "RAM" Then
             ListView1.Columns.Add("Latency", 150)
             ListView1.Columns.Add("Speed", 150)
