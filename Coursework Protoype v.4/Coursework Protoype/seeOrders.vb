@@ -192,7 +192,13 @@
                 'check if we found the end of the current order
                 If AllOrderStock(i).order = search Then
                     'add the stock to the list of components
-                    components.Add(AllStock(AllOrderStock(i).stock).part)
+                    For j = 0 To AllStock.Count - 1
+                        If AllStock(j).ID = AllOrderStock(i).stock Then
+                            components.Add(AllStock(j).part)
+                        End If
+
+                    Next
+
                     i += 1
                 Else
                     foundEnd = True
@@ -638,6 +644,8 @@
 
     End Sub
 
+    Private Sub seeOrders_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class
 

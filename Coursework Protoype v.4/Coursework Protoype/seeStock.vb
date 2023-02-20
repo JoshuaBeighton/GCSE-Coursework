@@ -111,48 +111,48 @@
 
     'filters
     'Private Sub filter_click(sender As Object, e As EventArgs)
-        'If cmb_part.SelectedIndex <> -1 Then
-            'filterPart()
-            'cmb_part.Enabled = False
-        'End If
-        'If Convert.ToInt32(cmb_arrived.SelectedIndex) <> -1 Then
-            'filterArrived()
-            'cmb_arrived.Enabled = False
-        'End If
-        'If Convert.ToInt32(cmb_ordered.SelectedIndex) <> -1 Then
-            'filterOrdered(cmb_ordered.SelectedItem)
-            'cmb_ordered.Enabled = False
-        'End If
-        'If Convert.ToInt32(cmb_type.SelectedIndex) <> -1 Then
-            'filterType()
-            'cmb_type.Enabled = False
-        'End If
-        'If Convert.ToInt32(cmb_due.SelectedIndex) <> -1 Then
-            'filterDue(cmb_due.SelectedItem)
-            'cmb_due.Enabled = False
-        'End If
+    'If cmb_part.SelectedIndex <> -1 Then
+    'filterPart()
+    'cmb_part.Enabled = False
+    'End If
+    'If Convert.ToInt32(cmb_arrived.SelectedIndex) <> -1 Then
+    'filterArrived()
+    'cmb_arrived.Enabled = False
+    'End If
+    'If Convert.ToInt32(cmb_ordered.SelectedIndex) <> -1 Then
+    'filterOrdered(cmb_ordered.SelectedItem)
+    'cmb_ordered.Enabled = False
+    'End If
+    'If Convert.ToInt32(cmb_type.SelectedIndex) <> -1 Then
+    'filterType()
+    'cmb_type.Enabled = False
+    'End If
+    'If Convert.ToInt32(cmb_due.SelectedIndex) <> -1 Then
+    'filterDue(cmb_due.SelectedItem)
+    'cmb_due.Enabled = False
+    'End If
 
-'        cmb_arrived.Items.Clear()
-'        cmb_due.Items.Clear()
-'        cmb_ordered.Items.Clear()
-'        cmb_part.Items.Clear()
-'        cmb_type.Items.Clear()
+    '        cmb_arrived.Items.Clear()
+    '        cmb_due.Items.Clear()
+    '        cmb_ordered.Items.Clear()
+    '        cmb_part.Items.Clear()
+    '        cmb_type.Items.Clear()
 
-        'typePopulate()
-        'partPopulate()
-'
+    'typePopulate()
+    'partPopulate()
+    '
     'End Sub
 
     'filter based on what part the user has selected
-    Sub filterPart()
+    Sub filterPart(part As String)
         'store all of the values that fit the criteria
         Dim newList As New List(Of ListViewItem)
         'loop through the listview items
         For i = 0 To ListView1.Items.Count - 1
             'if the current listview item doent fit the criteria, add it to the list of removed items
-            If ListView1.Items(i).SubItems(2).Text <> cmb_part.SelectedItem Then
+            If ListView1.Items(i).SubItems(2).Text <> part Then
                 removed.Add(ListView1.Items(i))
-            'otherwise add it to the values to keep
+                'otherwise add it to the values to keep
             Else
                 newList.Add(ListView1.Items(i))
             End If
@@ -160,18 +160,20 @@
         'clear all the items in the listview, then add only the ones that should be there
         ListView1.Items.Clear()
         ListView1.Items.AddRange(newList.ToArray())
+        selecting = False
     End Sub
-    Sub filterType()
-    'store all of the values that fit the criteria
+    Sub filterType(type As String)
+
+        'store all of the values that fit the criteria
         Dim newList As New List(Of ListViewItem)
         'loop through the listview items
         For i = 0 To ListView1.Items.Count - 1
-        'if the current listview item doent fit the criteria, add it to the list of removed items
-            If ListView1.Items(i).SubItems(1).Text <> cmb_type.SelectedItem Then
+            'if the current listview item doent fit the criteria, add it to the list of removed items
+            If ListView1.Items(i).SubItems(1).Text <> type Then
                 removed.Add(ListView1.Items(i))
 
             Else
-            'otherwise add it to the values to keep
+                'otherwise add it to the values to keep
                 newList.Add(ListView1.Items(i))
             End If
         Next
@@ -601,7 +603,7 @@
     'when the combo box for type is changed
     Private Sub cmb_type_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_type.SelectedIndexChanged
         'filter by type
-        filterType()
+        filterType(cmb_type.SelectedText)
         'lock the combo box and clear the items within it
         cmb_type.Enabled = False
         cmb_part.Items.Clear()
@@ -611,7 +613,7 @@
 
     Private Sub cmb_part_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_part.SelectedIndexChanged
         'filter by part    
-        filterPart()
+        filterPart(cmb_part.SelectedText)
         'lock the combo box and clear the items within it
         cmb_part.Enabled = False
 
@@ -670,5 +672,20 @@
         EditStock.initialiseEditStock(ListView1.SelectedItems(0).SubItems(0).Text)
         Me.Hide()
     End Sub
+    Dim selecting As Boolean
+    Sub selectInit(type As String)
+        cmb_type.Enabled = False
+        filterType(type)
+        selecting = True
+    End Sub
+
+    Private Sub ListView1_ItemActivate(sender As Object, e As EventArgs) Handles ListView1.ItemActivate
+        If selecting Then
+            Write.onReturn(Convert.ToInt32(ListView1.SelectedItems(0).SubItems(0).Text))
+            Me.Hide()
+            Write.Show()
+        End If
+    End Sub
+
 
 End Class

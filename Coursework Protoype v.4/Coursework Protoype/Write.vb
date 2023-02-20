@@ -1,4 +1,11 @@
 ﻿Public Class Write
+    Dim sCPU As Integer
+    Dim sRAM As Integer
+    Dim sGPU As Integer
+    Dim sMoba As Integer
+    Dim sCase As Integer
+    Dim sPSU As Integer
+    Dim sSto As New List(Of Integer)
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_AddOrder.Click
         'create new order to store all of the 
         Dim o As New Order
@@ -10,84 +17,47 @@
         o.due = date_due.Value
         'add o to orders
         AllOrders.Add(o)
-        
+
         Dim os As New orderStock
-        Dim s As New Stock
-        s.ID = AllStock.Count
-        s.type = "CPU"
-        s.part = txt_CPU.Text
         os.ID = AllOrderStock.Count
         os.order = o.id
-        os.stock = s.ID
+        os.stock = sCPU
         AllOrderStock.Add(os)
-        AllStock.Add(s)
 
-
-
-        s.ID = AllStock.Count
-        s.type = "GPU"
-        s.part = txt_GPU.Text
         os.ID = AllOrderStock.Count
         os.order = o.id
-        os.stock = s.ID
+        os.stock = sGPU
         AllOrderStock.Add(os)
-        AllStock.Add(s)
 
 
 
-        s.ID = AllStock.Count
-        s.type = "RAM"
-        s.part = txt_RAM.Text
         os.ID = AllOrderStock.Count
         os.order = o.id
-        os.stock = s.ID
+        os.stock = sRAM
         AllOrderStock.Add(os)
-        AllStock.Add(s)
 
 
 
-        s.ID = AllStock.Count
-        s.type = "PSU"
-        s.part = txt_PSU.Text
         os.ID = AllOrderStock.Count
         os.order = o.id
-        os.stock = s.ID
+        os.stock = sPSU
         AllOrderStock.Add(os)
-        AllStock.Add(s)
 
-
-
-        s.ID = AllStock.Count
-        s.type = "Case"
-        s.part = txt_Case.Text
         os.ID = AllOrderStock.Count
         os.order = o.id
-        os.stock = s.ID
+        os.stock = sCase
         AllOrderStock.Add(os)
-        AllStock.Add(s)
 
-
-
-        s.ID = AllStock.Count
-        s.type = "Motherboard"
-        s.part = txt_motherboard.Text
         os.ID = AllOrderStock.Count
         os.order = o.id
-        os.stock = s.ID
+        os.stock = sMoba
         AllOrderStock.Add(os)
-        AllStock.Add(s)
 
 
-
-
-        For i = 0 To lst_sto.Items.Count - 1
-            s.ID = AllStock.Count
-            s.type = "Storage"
-            s.part = lst_sto.Items(i)
+        For i = 0 To sSto.Count - 1
             os.ID = AllOrderStock.Count
-            os.stock = s.ID
+            os.stock = sSto(i)
             AllOrderStock.Add(os)
-            AllStock.Add(s)
         Next
 
         'clear all of the values
@@ -98,7 +68,6 @@
         txt_motherboard.Clear()
         txt_PSU.Clear()
         txt_RAM.Clear()
-        txt_sto.Clear()
         lst_sto.Items.Clear()
 
         'write all of the changes to the files
@@ -109,10 +78,11 @@
 
     'when the button to add a storage device is pressed
     Private Sub btn_AddStorage_Click(sender As Object, e As EventArgs) Handles btn_AddStorage.Click
-        'add whats in the temporary text box to the list box, clear the text box and select it
-        lst_sto.Items.Add(txt_sto.Text)
-        txt_sto.Clear()
-        txt_sto.Select()
+        Me.Hide()
+        seeStock.Show()
+        seeStock.InitialiseSeeStock()
+        seeStock.selectInit("Storage")
+        type = "Storage"
     End Sub
 
     Private Sub btn_navi_Click(sender As Object, e As EventArgs) Handles btn_navi.Click#
@@ -121,5 +91,120 @@
         seeOrders.Show()
     End Sub
 
-    
+    Private Sub selCPU_Click(sender As Object, e As EventArgs) Handles selCPU.Click
+        Me.Hide()
+        seeStock.Show()
+        seeStock.InitialiseSeeStock()
+        seeStock.selectInit("CPU")
+        type = "CPU"
+    End Sub
+    Dim type As String
+
+    Private Sub selRAM_Click(sender As Object, e As EventArgs) Handles selRAM.Click
+        Me.Hide()
+        seeStock.Show()
+        seeStock.InitialiseSeeStock()
+        seeStock.selectInit("RAM")
+        type = "RAM"
+    End Sub
+
+    Private Sub selCase_Click(sender As Object, e As EventArgs) Handles selCase.Click
+        Me.Hide()
+        seeStock.Show()
+        seeStock.InitialiseSeeStock()
+        seeStock.selectInit("Case")
+        type = "Case"
+    End Sub
+
+    Private Sub selGPU_Click(sender As Object, e As EventArgs) Handles selGPU.Click
+        Me.Hide()
+        seeStock.Show()
+        seeStock.InitialiseSeeStock()
+        seeStock.selectInit("GPU")
+        type = "GPU"
+    End Sub
+
+
+
+    Private Sub selMoba_Click(sender As Object, e As EventArgs) Handles selMoba.Click
+        Me.Hide()
+        seeStock.Show()
+        seeStock.InitialiseSeeStock()
+        seeStock.selectInit("Motherboard")
+        type = "Motherboard"
+    End Sub
+    Sub onReturn(index As Integer)
+        Select Case type
+            Case "CPU"
+                selCPU.Hide()
+                txt_CPU.Show()
+                sCPU = index
+                For i = 0 To AllStock.Count - 1
+                    If index = AllStock(i).ID Then
+                        txt_CPU.Text = AllStock(i).part
+                    End If
+                Next
+            Case "GPU"
+                selGPU.Hide()
+                txt_GPU.Show()
+                sGPU = index
+                For i = 0 To AllStock.Count - 1
+                    If index = AllStock(i).ID Then
+                        txt_GPU.Text = AllStock(i).part
+                    End If
+                Next
+            Case "PSU"
+                selPSU.Hide()
+                txt_PSU.Show()
+                sPSU = index
+                For i = 0 To AllStock.Count - 1
+                    If index = AllStock(i).ID Then
+                        txt_PSU.Text = AllStock(i).part
+                    End If
+                Next
+            Case "Case"
+                selCase.Hide()
+                txt_Case.Show()
+                sCase = index
+                For i = 0 To AllStock.Count - 1
+                    If index = AllStock(i).ID Then
+                        txt_Case.Text = AllStock(i).part
+                    End If
+                Next
+            Case "Motherboard"
+                selMoba.Hide()
+                txt_motherboard.Show()
+                sMoba = index
+                For i = 0 To AllStock.Count - 1
+                    If index = AllStock(i).ID Then
+                        txt_motherboard.Text = AllStock(i).part
+                    End If
+                Next
+            Case "RAM"
+                selRAM.Hide()
+                txt_RAM.Show()
+                sRAM = index
+                For i = 0 To AllStock.Count - 1
+                    If index = AllStock(i).ID Then
+                        txt_RAM.Text = AllStock(i).part
+                    End If
+                Next
+            Case "Storage"
+                For i = 0 To AllStock.Count - 1
+                    If index = AllStock(i).ID Then
+                        lst_sto.Items.Add(AllStock(i).part)
+                    End If
+                Next
+
+                sSto.Add(index)
+        End Select
+    End Sub
+
+    Private Sub selPSU_Click(sender As Object, e As EventArgs) Handles selPSU.Click
+        Me.Hide()
+        seeStock.Show()
+        seeStock.InitialiseSeeStock()
+        seeStock.selectInit("PSU")
+        type = "PSU"
+    End Sub
 End Class

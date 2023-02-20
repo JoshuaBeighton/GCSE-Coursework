@@ -67,7 +67,7 @@ Public Class parts
             ListView1.Columns.Add("Efficiency", 150)
             ListView1.Columns.Add("Modular", 120)
             ListView1.Columns.Add("Power", 150)
-            Dim l As ListViewItem
+            Dim l As New ListViewItem
             For i = 0 To AllPSUs.Count - 1
                 l.SubItems(0).Text = AllPSUs(i).ID
                 l.SubItems.Add(AllPSUs(i).name)
