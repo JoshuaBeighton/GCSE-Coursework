@@ -98,7 +98,7 @@
         seeStock.selectInit("CPU")
         type = "CPU"
     End Sub
-    Dim type As String
+    Public type As String
 
     Private Sub selRAM_Click(sender As Object, e As EventArgs) Handles selRAM.Click
         Me.Hide()
@@ -199,7 +199,20 @@
                 sSto.Add(index)
         End Select
     End Sub
-
+    Sub init()
+        txt_Case.Hide()
+        txt_CPU.Hide()
+        txt_GPU.Hide()
+        txt_motherboard.Hide()
+        txt_PSU.Hide()
+        txt_RAM.Hide()
+        selCase.Show()
+        selCPU.Show()
+        selGPU.Show()
+        selMoba.Show()
+        selPSU.Show()
+        selRAM.Show()
+    End Sub
     Private Sub selPSU_Click(sender As Object, e As EventArgs) Handles selPSU.Click
         Me.Hide()
         seeStock.Show()

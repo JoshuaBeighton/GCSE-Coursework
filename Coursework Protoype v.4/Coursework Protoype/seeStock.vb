@@ -1,7 +1,13 @@
-﻿Public Class seeStock
+﻿Imports System.Windows.Forms.Design
+
+Public Class seeStock
     'open the form to write stock items
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         WriteStock.Show()
+        If selecting Then
+            WriteStock.init(Write.type)
+
+        End If
         Me.Close()
     End Sub
 
@@ -85,7 +91,7 @@
             trk_max.Value = max
             lbl_max.Text = max
             lbl_min.Text = min
-        'if there are no values present
+            'if there are no values present
         Else
             'set the max values of the trackbars to 100 and the mins to 0
             trk_max.Maximum = 100
@@ -186,11 +192,11 @@
         Dim newList As New List(Of ListViewItem)
         'loop through the listview items
         For i = 0 To ListView1.Items.Count - 1
-        'if the current listview item doent fit the criteria, add it to the list of removed items
+            'if the current listview item doent fit the criteria, add it to the list of removed items
             If ListView1.Items(i).SubItems(5).Text <> cmb_arrived.SelectedItem Then
                 removed.Add(ListView1.Items(i))
             Else
-            'otherwise add it to the values to keep
+                'otherwise add it to the values to keep
                 newList.Add(ListView1.Items(i))
             End If
         Next
@@ -208,7 +214,7 @@
             'For j = 0 To ListView1.Items.Count - 1
             'loop through the listview items
             For i = 0 To ListView1.Items.Count - 1
-            'if the current listview item doent fit the criteria, add it to the list of removed items
+                'if the current listview item doent fit the criteria, add it to the list of removed items
                 If (Convert.ToDateTime(ListView1.Items(i).SubItems(3).Text).Date > DateTimePicker1.Value) Then
                     removed.Add(ListView1.Items(i))
                     'otherwise add it to the values to keep
@@ -217,7 +223,7 @@
                 End If
             Next
             'Next
-        'if filtering by choosing a date after a certain date
+            'if filtering by choosing a date after a certain date
         ElseIf mode = "After" Then
             ''For j = 0 To ListView1.Items.Count - 1 - countDestroyed
             'loop through the listview items
@@ -231,7 +237,7 @@
                 End If
             Next
             'Next
-        'if filtering by choosing an order on a certain date
+            'if filtering by choosing an order on a certain date
         ElseIf mode = "On" Then
             'For j = 0 To ListView1.Items.Count - 1 - countDestroyed
             'loop through the listview items
@@ -269,7 +275,7 @@
                 End If
             Next
             'Next
-        'if filtering by choosing a date after a certain date
+            'if filtering by choosing a date after a certain date
         ElseIf mode = "After" Then
             ''For j = 0 To ListView1.Items.Count - 1 - countDestroyed
             'loop through the listview items
@@ -283,7 +289,7 @@
                 End If
             Next
             'Next
-        'if filtering by choosing an order on a certain date
+            'if filtering by choosing an order on a certain date
         ElseIf mode = "On" Then
             'For j = 0 To ListView1.Items.Count - 1 - countDestroyed
             'loop through the listview items
@@ -433,7 +439,7 @@
                 removed.Add(ListView1.Items(i))
                 'we have therefore changed something
                 edited = True
-            'if its not more expensive, add it to the list to keep
+                'if its not more expensive, add it to the list to keep
             Else
                 newList.Add(ListView1.Items(i))
             End If
@@ -450,7 +456,7 @@
         Next
         Dim newRemoved As New List(Of ListViewItem)
         'if we will add some items back in to the listview
-        If added.count > 0 then
+        If added.Count > 0 Then
             'add all of the items that have newly been found to the list of items to add back to the list view after its been cleared
             newList.AddRange(added.ToArray)
 
@@ -474,13 +480,13 @@
                     newRemoved.Add(removed(i))
                 End If
             Next
-        end if
+        End If
         'if something has changed
         If edited Then
             'if we have added something back, ensure that we remove the items we have added back from the removed list
-            if added.count > 0 Then
+            If added.Count > 0 Then
                 removed = newRemoved
-            End if
+            End If
             'visually update the listview
             ListView1.BeginUpdate()
             ListView1.Items.Clear()
@@ -505,7 +511,7 @@
             If Convert.ToInt32(ListView1.Items(i).SubItems(6).Text) < Convert.ToInt32(trk_min.Value) Then
                 removed.Add(ListView1.Items(i))
                 edited = True
-            'if its not more expensive, add it to the list to keep
+                'if its not more expensive, add it to the list to keep
             Else
                 newList.Add(ListView1.Items(i))
             End If
@@ -521,7 +527,7 @@
             End If
         Next
         'if we will add some items back in to the listview
-        if added.count>0 then
+        If added.Count > 0 Then
             'add all of the items that have newly been found to the list of items to add back to the list view after its been cleared
             newList.AddRange(added.ToArray)
             'store all of the values that we haven't added back in from the removed list
@@ -546,10 +552,10 @@
             Next
             'ensure that we remove the items we have added back from the removed list
             removed = newRemoved
-        end if
+        End If
         'if something has changed
         If edited Then
-        'visually update the listview
+            'visually update the listview
             ListView1.BeginUpdate()
             ListView1.Items.Clear()
             ListView1.Items.AddRange(newList.ToArray())
@@ -591,13 +597,13 @@
                 ListView1.Items.Remove(ListView1.SelectedItems(0))
             End While
 
-        'if the user hasn't selected anything
+            'if the user hasn't selected anything
         Else
             'tell them to select something
             MsgBox("Please Select An Item")
         End If
         'write to the stock file
-        WriteStockFile()
+        writeStockFile()
     End Sub
 
     'when the combo box for type is changed
@@ -677,6 +683,23 @@
         cmb_type.Enabled = False
         filterType(type)
         selecting = True
+        Dim found As Boolean = False
+        Dim tempItems As New List(Of ListViewItem)
+        Dim newITems As New List(Of ListViewItem)
+        For i = 0 To ListView1.Items.Count - 1
+            For j = 0 To AllOrderStock.Count - 1
+                If ListView1.Items(i).SubItems(0).Text = AllOrderStock(j).stock Then
+                    removed.Add(ListView1.Items(i))
+                    found = True
+                End If
+            Next
+            If Not found Then
+                newITems.Add(ListView1.Items(i))
+            End If
+        Next
+        ListView1.Items.Clear()
+        ListView1.Items.AddRange(newITems.ToArray())
+        MsgBox("test")
     End Sub
 
     Private Sub ListView1_ItemActivate(sender As Object, e As EventArgs) Handles ListView1.ItemActivate
@@ -686,6 +709,5 @@
             Write.Show()
         End If
     End Sub
-
 
 End Class

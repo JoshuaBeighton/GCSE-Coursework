@@ -1,7 +1,8 @@
 ﻿Public Class seeOrders
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-    'shows the write order form instead of the current form
+        'shows the write order form instead of the current form
         Write.Show()
+        Write.init()
         Me.Close()
     End Sub
 

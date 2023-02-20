@@ -1,21 +1,27 @@
 ﻿Public Class WriteStock
 
-
+    Sub init(type As String)
+        selecting = True
+        cmb_type.SelectedItem = type
+        cmb_type.Enabled = False
+    End Sub
+    Dim selecting As Boolean = False
     Private Sub btn_AddOrder_Click(sender As Object, e As EventArgs) Handles btn_AddOrder.Click
+        'create a new stock item
+        Dim s As New Stock
         'if the user has selected a type
         If cmb_type.SelectedIndex >= 0 Then
             'if the user has entered a part
             If txt_part.Text.Length > 0 Then
                 'if the user has entered a price
                 If txt_price.Text.Length > 0 Then
-                    'create a new stock item
-                    Dim s As New Stock
+
                     'set the stock item's ID to the amount of stock plus one
                     s.ID = AllStock.Count
                     'set the rest of the data according to what the user has entered
                     s.ordered = date_ordered.Value
                     s.Due = date_due.Value
-                    s.cost = Convert.ToInt32(txt_price.Text)
+                    s.cost = Convert.ToDecimal(txt_price.Text)
                     s.arrived = chk_arrived.Checked
                     s.type = cmb_type.SelectedItem
                     s.part = txt_part.Text
@@ -39,7 +45,11 @@
             'ask the user to enter a type
             MsgBox("Please Select A Type")
         End If
-
+        If selecting Then
+            Me.Hide()
+            Write.Show()
+            Write.onReturn(s.ID)
+        End If
     End Sub
 
     'go back to the main database
