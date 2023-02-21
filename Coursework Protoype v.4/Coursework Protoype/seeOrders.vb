@@ -608,9 +608,20 @@
             o = AllOrders(oID)
             'set the ID to itself times -1, subtract one so that it will always end up below 0, so its marked to be deleted
             o.id = (o.id * -1) - 1
-            
+
             AllOrders(oID) = o
+
+            Dim newOS As New List(Of orderStock)
+            For i = 0 To AllOrderStock.Count - 1
+                If AllOrderStock(i).order <> ListView1.SelectedItems(0).SubItems(0).Text Then
+                    newOS.Add(AllOrderStock(i))
+                End If
+            Next
+            AllOrderStock.Clear()
+            AllOrderStock.AddRange(newOS)
+
             ListView1.Items.Remove(ListView1.SelectedItems(0))
+
 
         End While
         writeOrder()

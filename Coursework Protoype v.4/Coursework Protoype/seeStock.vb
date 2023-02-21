@@ -13,7 +13,12 @@ Public Class seeStock
 
     'go back to the menu
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Navigation.Show()
+        If selecting Then
+            Write.Show()
+        Else
+            Navigation.Show()
+        End If
+
         Me.Close()
     End Sub
 
@@ -107,6 +112,9 @@ Public Class seeStock
     'when the form is shown, initialise
     Public Sub seeStock_Shown() Handles MyBase.Shown
         InitialiseSeeStock()
+        If selecting Then
+            selectInit(Write.type)
+        End If
     End Sub
 
     'store all of the items removed in
@@ -699,15 +707,22 @@ Public Class seeStock
         Next
         ListView1.Items.Clear()
         ListView1.Items.AddRange(newITems.ToArray())
-        MsgBox("test")
+
+
+
     End Sub
 
     Private Sub ListView1_ItemActivate(sender As Object, e As EventArgs) Handles ListView1.ItemActivate
-        If selecting Then
-            Write.onReturn(Convert.ToInt32(ListView1.SelectedItems(0).SubItems(0).Text))
-            Me.Hide()
-            Write.Show()
+        If ListView1.SelectedItems.Count = 1 Then
+            If selecting Then
+                Write.onReturn(Convert.ToInt32(ListView1.SelectedItems(0).SubItems(0).Text))
+                Me.Hide()
+                Write.Show()
+            End If
+        Else
+            MsgBox("Please Select Exactly One Item")
         End If
+
     End Sub
 
 End Class
