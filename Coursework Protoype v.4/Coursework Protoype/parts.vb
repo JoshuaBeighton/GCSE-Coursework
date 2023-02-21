@@ -117,7 +117,13 @@ Public Class parts
         Me.Hide()
     End Sub
 
+    Public selecting As Boolean
 
-
-
+    Private Sub ListView1_ItemActivate(sender As Object, e As EventArgs) Handles ListView1.ItemActivate
+        If ListView1.SelectedItems.Count = 1 Then
+            If selecting Then
+                WriteStock.onreturn(ListView1.SelectedItems(0).Index)
+            End If
+        End If
+    End Sub
 End Class

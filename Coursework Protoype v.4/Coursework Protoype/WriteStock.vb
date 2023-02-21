@@ -24,7 +24,7 @@
                     s.cost = Convert.ToDecimal(txt_price.Text)
                     s.arrived = chk_arrived.Checked
                     s.type = cmb_type.SelectedItem
-                    s.part = txt_part.Text
+                    s.part = partIndex
                     AllStock.Add(s)
 
                     'clear the UI elements
@@ -56,5 +56,27 @@
     Private Sub btn_navi_Click(sender As Object, e As EventArgs) Handles btn_navi.Click
         Me.Close()
         seeStock.Show()
+    End Sub
+
+    Private Sub btn_part_Click(sender As Object, e As EventArgs) Handles btn_part.Click
+        If cmb_type.SelectedText <> "" Then
+            parts.Show()
+            parts.setup(cmb_type.SelectedText)
+            parts.selecting = True
+        End If
+
+    End Sub
+    Dim partIndex As Integer
+    Public Sub onreturn(index As Integer)
+        partIndex = index
+        Select Case cmb_type.SelectedText
+            Case "CPU"
+                For i = 0 To AllCPUs.Count - 1
+                    If index = AllCPUs(i).ID Then
+                        txt_part.Text = AllCPUs(i).name
+                        txt_price.Text = AllCPUs(i).price
+                    End If
+                Next
+        End Select
     End Sub
 End Class

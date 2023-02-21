@@ -47,7 +47,21 @@ Public Class seeStock
                 'add all of the necessary subitems
                 tempL.SubItems(0).Text = (AllStock(i).ID)
                 tempL.SubItems.Add(AllStock(i).type)
-                tempL.SubItems.Add(AllStock(i).part)
+                Select Case AllStock(i).type
+                    Case "CPU"
+                        For j = 0 To AllCPUs.Count - 1
+                            If AllCPUs(j).ID = AllStock(i).part Then
+                                tempL.SubItems.Add(AllCPUs(j).name)
+                            End If
+                        Next
+                    Case "GPU"
+                        For j = 0 To AllGPUs.Count - 1
+                            If AllGPUs(j).ID = AllStock(i).part Then
+                                tempL.SubItems.Add(AllGPUs(j).Series)
+                            End If
+                        Next
+                End Select
+
                 tempL.SubItems.Add(AllStock(i).ordered)
                 tempL.SubItems.Add(AllStock(i).Due)
                 tempL.SubItems.Add(AllStock(i).arrived)
@@ -724,5 +738,6 @@ Public Class seeStock
         End If
 
     End Sub
+
 
 End Class
