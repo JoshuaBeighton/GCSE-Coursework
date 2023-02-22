@@ -59,8 +59,9 @@
     End Sub
 
     Private Sub btn_part_Click(sender As Object, e As EventArgs) Handles btn_part.Click
-        If cmb_type.SelectedText <> "" Then
+        If cmb_type.SelectedIndex <> -1 Then
             parts.Show()
+            Me.Hide()
             parts.setup(cmb_type.SelectedText)
             parts.selecting = True
         End If

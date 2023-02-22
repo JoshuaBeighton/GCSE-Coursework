@@ -4,12 +4,13 @@ Imports System.Threading.Tasks.Dataflow
 
 Public Class parts
     Sub setup(type As String)
+        ptype = type
         ListView1.Columns.Clear()
         ListView1.Columns.Add("ID", 60)
-        if type <> "GPU" then
+        If type <> "GPU" Then
             ListView1.Columns.Add("Name", 150)
             ListView1.Columns.Add("Brand", 150)
-        end if
+        End If
         If type <> "Storage" And type <> "RAM" Then
             Me.Text = type + "s"
         Else
@@ -125,5 +126,10 @@ Public Class parts
                 WriteStock.onreturn(ListView1.SelectedItems(0).Index)
             End If
         End If
+    End Sub
+    Public ptype As String
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        AddCPU.Show()
+        Me.Hide()
     End Sub
 End Class
