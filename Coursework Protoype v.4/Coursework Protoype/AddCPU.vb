@@ -14,5 +14,7 @@
         Me.Hide()
         parts.Show()
         parts.setup(parts.ptype)
+        FileHandler.writeCPU()
     End Sub
+
 End Class

@@ -22,6 +22,19 @@ Public Class parts
             ListView1.Columns.Add("Base Speed", 175)
             ListView1.Columns.Add("Boost Speed", 175)
             ListView1.Columns.Add("TPD", 100)
+            For i = 0 To AllCPUs.Count - 1
+                Dim l As New ListViewItem
+                l.SubItems(0).Text = AllCPUs(i).ID
+                l.SubItems.Add(AllCPUs(i).name)
+                l.SubItems.Add(AllCPUs(i).manufacturer)
+                l.SubItems.Add(AllCPUs(i).socket)
+                l.SubItems.Add(AllCPUs(i).cores)
+                l.SubItems.Add(AllCPUs(i).baseSpeed)
+                l.SubItems.Add(AllCPUs(i).boostSpeed)
+                l.SubItems.Add(AllCPUs(i).TPD)
+                l.SubItems.Add(AllCPUs(i).price)
+                ListView1.Items.Add(l)
+            Next
 
         ElseIf type = "GPU" Then
             ListView1.Columns.Add("Series", 100)

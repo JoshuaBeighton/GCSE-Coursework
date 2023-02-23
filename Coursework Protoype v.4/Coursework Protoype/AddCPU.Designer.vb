@@ -47,7 +47,7 @@ Partial Class AddCPU
         Me.btn_add.Location = New System.Drawing.Point(12, 308)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(131, 80)
-        Me.btn_add.TabIndex = 0
+        Me.btn_add.TabIndex = 8
         Me.btn_add.Text = "Add"
         Me.btn_add.UseVisualStyleBackColor = True
         '
@@ -55,8 +55,8 @@ Partial Class AddCPU
         '
         Me.btn_back.Location = New System.Drawing.Point(163, 308)
         Me.btn_back.Name = "btn_back"
-        Me.btn_back.Size = New System.Drawing.Size(112, 80)
-        Me.btn_back.TabIndex = 0
+        Me.btn_back.Size = New System.Drawing.Size(134, 80)
+        Me.btn_back.TabIndex = 9
         Me.btn_back.Text = "Go Back"
         Me.btn_back.UseVisualStyleBackColor = True
         '
@@ -65,7 +65,7 @@ Partial Class AddCPU
         Me.txt_name.Location = New System.Drawing.Point(147, 12)
         Me.txt_name.Name = "txt_name"
         Me.txt_name.Size = New System.Drawing.Size(150, 31)
-        Me.txt_name.TabIndex = 1
+        Me.txt_name.TabIndex = 0
         '
         'txt_manufacturer
         '
@@ -79,42 +79,42 @@ Partial Class AddCPU
         Me.txt_socket.Location = New System.Drawing.Point(147, 86)
         Me.txt_socket.Name = "txt_socket"
         Me.txt_socket.Size = New System.Drawing.Size(150, 31)
-        Me.txt_socket.TabIndex = 1
+        Me.txt_socket.TabIndex = 2
         '
         'txt_cores
         '
         Me.txt_cores.Location = New System.Drawing.Point(147, 123)
         Me.txt_cores.Name = "txt_cores"
         Me.txt_cores.Size = New System.Drawing.Size(150, 31)
-        Me.txt_cores.TabIndex = 1
+        Me.txt_cores.TabIndex = 3
         '
         'txt_basespeed
         '
         Me.txt_basespeed.Location = New System.Drawing.Point(147, 160)
         Me.txt_basespeed.Name = "txt_basespeed"
         Me.txt_basespeed.Size = New System.Drawing.Size(150, 31)
-        Me.txt_basespeed.TabIndex = 1
+        Me.txt_basespeed.TabIndex = 4
         '
         'txt_boostSpeed
         '
         Me.txt_boostSpeed.Location = New System.Drawing.Point(147, 197)
         Me.txt_boostSpeed.Name = "txt_boostSpeed"
         Me.txt_boostSpeed.Size = New System.Drawing.Size(150, 31)
-        Me.txt_boostSpeed.TabIndex = 1
+        Me.txt_boostSpeed.TabIndex = 5
         '
         'txt_power
         '
         Me.txt_power.Location = New System.Drawing.Point(147, 234)
         Me.txt_power.Name = "txt_power"
         Me.txt_power.Size = New System.Drawing.Size(150, 31)
-        Me.txt_power.TabIndex = 1
+        Me.txt_power.TabIndex = 6
         '
         'txt_price
         '
         Me.txt_price.Location = New System.Drawing.Point(147, 271)
         Me.txt_price.Name = "txt_price"
         Me.txt_price.Size = New System.Drawing.Size(150, 31)
-        Me.txt_price.TabIndex = 1
+        Me.txt_price.TabIndex = 7
         '
         'Label1
         '

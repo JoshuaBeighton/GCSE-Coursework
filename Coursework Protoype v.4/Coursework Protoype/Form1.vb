@@ -5,6 +5,7 @@
         readOrderStock()
         readStock()
         readUser()
+        readCPU()
         readGPU()
         Navigation.Show()
         Navigation.setup("M")

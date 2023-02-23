@@ -101,6 +101,34 @@
         'close the file
         FileClose(1)
     End Sub
+    Sub readCPU()
+        'open the file called CPU.txt for input
+        FileOpen(1, "CPU.txt", OpenMode.Input)
+        'store  temporary CPU
+        Dim c As New CPU
+        'loop until the end of the file
+        Dim temp As String
+
+        While Not EOF(1)
+            'input the orderstock details
+            Input(1, c.ID)
+            Input(1, c.name)
+            Input(1, c.manufacturer)
+            Input(1, c.socket)
+            Input(1, c.cores)
+            Input(1, temp)
+            c.baseSpeed = temp '.Substring(1, temp.Length - 1)
+            Input(1, temp)
+            c.boostSpeed = temp '.Substring(1, temp.Length - 1)
+            Input(1, c.TPD)
+            Input(1, temp)
+            c.price = temp '.Substring(1, temp.Length - 3)
+            AllCPUs.Add(c)
+        End While
+        'close the file
+        FileClose(1)
+    End Sub
+
 
     'write to the file for orders
     Public Sub writeOrder()
