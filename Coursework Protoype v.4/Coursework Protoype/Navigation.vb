@@ -1,4 +1,4 @@
-Public Class Navigation
+﻿Public Class Navigation
 
     
     Sub setup(type As Char)
@@ -46,6 +46,7 @@ Public Class Navigation
         Form1.Show()
     End Sub
 
+    'go to the parts form when the user clicks on the parts button
     Private Sub btn_parts_Click(sender As Object, e As EventArgs) Handles btn_parts.Click
         PartsNaviagtion.Show()
         Me.Hide()

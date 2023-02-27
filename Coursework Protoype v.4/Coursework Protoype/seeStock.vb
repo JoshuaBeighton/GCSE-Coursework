@@ -700,25 +700,43 @@ Public Class seeStock
         EditStock.initialiseEditStock(ListView1.SelectedItems(0).SubItems(0).Text)
         Me.Hide()
     End Sub
+
+
+
+    'store whether we are trying to select an item from this database or just browsing
     Dim selecting As Boolean
+
+    'initilise when we are selecting
     Sub selectInit(type As String)
+        'disable the cobo box that selects the type of part to filter by
         cmb_type.Enabled = False
+        'filter by the type we're selecting
         filterType(type)
+        'set the selecting value to true
         selecting = True
+        'store whether the current stock item is being in another order
         Dim found As Boolean = False
-        Dim tempItems As New List(Of ListViewItem)
+        'store a list of all the items that survive the filter
         Dim newITems As New List(Of ListViewItem)
+        'loop through the listviewitems
         For i = 0 To ListView1.Items.Count - 1
+            'loop through orderstock
             For j = 0 To AllOrderStock.Count - 1
+                'check if the listviewitem we are on is referenced in orderstock at the j index
                 If ListView1.Items(i).SubItems(0).Text = AllOrderStock(j).stock Then
+                    'if it is, it is being used in an order so we add the listviewitem to a list that stores all the items that have been removed by filtering
                     removed.Add(ListView1.Items(i))
+                    'record that we have found the item and it being used in an order
                     found = True
                 End If
             Next
+            'if the item is not being used in an order
             If Not found Then
+                'add the listviewitem to a list of listviewitems to add back to the listview after filtering
                 newITems.Add(ListView1.Items(i))
             End If
         Next
+        'clear the items in the listview and only add back the items that aren't being used in any orders
         ListView1.Items.Clear()
         ListView1.Items.AddRange(newITems.ToArray())
 
@@ -726,14 +744,20 @@ Public Class seeStock
 
     End Sub
 
+    'when an item is selected
     Private Sub ListView1_ItemActivate(sender As Object, e As EventArgs) Handles ListView1.ItemActivate
+        'if the user has selected an item
         If ListView1.SelectedItems.Count = 1 Then
+            'if we are trying to select a stock item
             If selecting Then
+                'pass the ID of the stock item back to the add parts form
                 Write.onReturn(Convert.ToInt32(ListView1.SelectedItems(0).SubItems(0).Text))
+                'navigate the user back to add parts
                 Me.Hide()
                 Write.Show()
             End If
         Else
+            'if the user hasn't selected an item or has selected multiple
             MsgBox("Please Select Exactly One Item")
         End If
 

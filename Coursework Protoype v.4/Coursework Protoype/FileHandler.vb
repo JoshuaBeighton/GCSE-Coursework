@@ -110,19 +110,16 @@
         Dim temp As String
 
         While Not EOF(1)
-            'input the orderstock details
+            
             Input(1, c.ID)
             Input(1, c.name)
             Input(1, c.manufacturer)
             Input(1, c.socket)
             Input(1, c.cores)
-            Input(1, temp)
-            c.baseSpeed = temp '.Substring(1, temp.Length - 1)
-            Input(1, temp)
-            c.boostSpeed = temp '.Substring(1, temp.Length - 1)
+            Input(1, c.baseSpeed)
+            Input(1, c.boostSpeed)
             Input(1, c.TPD)
-            Input(1, temp)
-            c.price = temp '.Substring(1, temp.Length - 3)
+            Input(1, c.price)
             AllCPUs.Add(c)
         End While
         'close the file
@@ -191,43 +188,66 @@
         FileClose(1)
     End Sub
 
+    'write CPUs
     Sub writeCPU()
+        'open the file called CPU.txt for output
         FileOpen(1, "CPU.txt", OpenMode.Output)
+        'loop through all the CPUs
         For i = 0 To AllCPUs.Count - 1
+            'if the cpu has not been marked for deletion
             If AllCPUs(i).ID >= 0 Then
+                'write to the line
                 WriteLine(1, AllCPUs(i).ID, AllCPUs(i).name, AllCPUs(i).manufacturer, AllCPUs(i).socket, AllCPUs(i).cores, AllCPUs(i).baseSpeed, AllCPUs(i).boostSpeed, AllCPUs(i).TPD, AllCPUs(i).price)
             End If
         Next
+        'close the file
         FileClose(1)
     End Sub
 
+    'write GPUs 
     Sub writeGPU()
+        'open the file GPU.txt for output
         FileOpen(1, "GPU.txt", OpenMode.Output)
+        'loop through all the GPUs
         For i = 0 To AllGPUs.Count - 1
+            'if the GPU has not been marked for deletion
             If AllGPUs(i).ID >= 0 Then
+                'write line with the GPU data
                 WriteLine(1, AllGPUs(i).ID, AllGPUs(i).Series, AllGPUs(i).Model, AllGPUs(i).manufacturer, AllGPUs(i).chipManufacturer, AllGPUs(i).baseClock, AllGPUs(i).VRAM, AllGPUs(i).TPD, AllGPUs(i).price)
             End If
         Next
+        'close the file
         FileClose(1)
     End Sub
+    'write RAM
     Sub writeRAM()
+        'open the file called "RAM.txt" for output
         FileOpen(1, "RAM.txt", OpenMode.Output)
+        'loop through the RAM data
         For i = 0 To AllRAMs.Count - 1
+            'if the item hasn't been marked for deletion
             If AllRAMs(i).ID >= 0 Then
+                'write line with the RAM data
                 WriteLine(1, AllRAMs(i).ID, AllRAMs(i).name, AllRAMs(i).manufacturer, AllRAMs(i).latency, AllRAMs(i).speed, AllRAMs(i).ddr, AllRAMs(i).tpd, AllRAMs(i).dims, AllRAMs(i).price)
             End If
         Next
+        'close the file
         FileClose(1)
     End Sub
 
-
+    'write psu data
     Sub writePSU()
+        'open the PSU.txt file for output
         FileOpen(1, "PSU.txt", OpenMode.Output)
+        'loop through the PSUs
         For i = 0 To AllPSUs.Count - 1
+            'if the item hasn't been marked for deletion
             If AllPSUs(i).ID >= 0 Then
+                'write line with the data
                 WriteLine(1, AllPSUs(i).id, AllPSUs(i).name, AllPSUs(i).manufacturer, AllPSUs(i).efficiency, AllPSUs(i).modular, AllPSUs(i).power, AllPSUs(i).price)
             End If
         Next
+        'close the file
         FileClose(1)
     End Sub
 End Module
