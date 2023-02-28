@@ -22,6 +22,11 @@
         parts.setup(parts.ptype)
         'write the CPUs
         FileHandler.writeCPU()
+
     End Sub
 
+    Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click
+        parts.Show()
+        Me.Hide()
+    End Sub
 End Class

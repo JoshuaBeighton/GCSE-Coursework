@@ -1,4 +1,4 @@
-﻿Public Module storage
+﻿Public Module Structures
     'store all of the order data
     Public AllOrders As New List(Of Order)
     'store all of the stock data

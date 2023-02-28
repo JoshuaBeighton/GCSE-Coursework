@@ -212,7 +212,7 @@ Partial Class AddCPU
         Me.Controls.Add(Me.btn_back)
         Me.Controls.Add(Me.btn_add)
         Me.Name = "AddCPU"
-        Me.Text = "AddCPU"
+        Me.Text = "Add CPU"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

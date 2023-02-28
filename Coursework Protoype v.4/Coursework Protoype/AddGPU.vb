@@ -1,5 +1,5 @@
 ﻿Public Class AddGPU
-'on the clicking the button to add a GPU
+    'on the clicking the button to add a GPU
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
         'create a temporary variable to store the data
         Dim g As New GPU
@@ -18,5 +18,13 @@
         AllGPUs.Add(g)
         'write the GPUs
         writeGPU()
+        parts.Show()
+        Me.Hide()
+        parts.setup(parts.ptype)
+    End Sub
+
+    Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click
+        parts.Show()
+        Me.Hide()
     End Sub
 End Class

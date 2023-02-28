@@ -101,13 +101,118 @@
         'close the file
         FileClose(1)
     End Sub
+    Sub readRAM()
+        'open the file called GPU.txt for input
+        FileOpen(1, "RAM.txt", OpenMode.Input)
+        'store  temporary GPU
+        Dim r As New RAM
+        'loop until the end of the file
+        While Not EOF(1)
+            'input the orderstock details
+            Input(1, r.ID)
+            Input(1, r.name)
+            Input(1, r.manufacturer)
+            Input(1, r.latency)
+            Input(1, r.speed)
+            Input(1, r.ddr)
+            Input(1, r.tpd)
+            Input(1, r.dims)
+            Input(1, r.price)
+            AllRAMs.Add(r)
+        End While
+        'close the file
+        FileClose(1)
+    End Sub
+    Sub readPSU()
+        'open the file called GPU.txt for input
+        FileOpen(1, "PSU.txt", OpenMode.Input)
+        'store  temporary GPU
+        Dim p As New PSU
+        'loop until the end of the file
+        While Not EOF(1)
+            'input the orderstock details
+            Input(1, p.ID)
+            Input(1, p.name)
+            Input(1, p.manufacturer)
+            Input(1, p.efficiency)
+            Input(1, p.modular)
+            Input(1, p.power)
+            Input(1, p.price)
+            AllPSUs.Add(p)
+        End While
+        'close the file
+        FileClose(1)
+    End Sub
+
+    Sub readCase()
+        'open the file called GPU.txt for input
+        FileOpen(1, "Case.txt", OpenMode.Input)
+        'store  temporary GPU
+        Dim c As New cases
+        'loop until the end of the file
+        While Not EOF(1)
+            'input the orderstock details
+            Input(1, c.id)
+            Input(1, c.name)
+            Input(1, c.manufacturer)
+            Input(1, c.HDDs)
+            Input(1, c.SSDs)
+            Input(1, c.price)
+            AllCases.Add(c)
+        End While
+        'close the file
+        FileClose(1)
+    End Sub
+    Sub readMoba()
+        'open the file called GPU.txt for input
+        FileOpen(1, "Motherboard.txt", OpenMode.Input)
+        'store  temporary GPU
+        Dim m As New motherboard
+        'loop until the end of the file
+        While Not EOF(1)
+            'input the orderstock details
+            Input(1, m.id)
+            Input(1, m.name)
+            Input(1, m.manufacturer)
+            Input(1, m.ramSlots)
+            Input(1, m.socket)
+            Input(1, m.SATAs)
+            Input(1, m.m2s)
+            Input(1, m.price)
+            AllMoba.Add(m)
+        End While
+        'close the file
+        FileClose(1)
+    End Sub
+    Sub readStorage()
+        'open the file called Storage.txt for input
+        FileOpen(1, "Storage.txt", OpenMode.Input)
+        'store  temporary GPU
+        Dim s As New store
+        'loop until the end of the file
+        While Not EOF(1)
+            'input the orderstock details
+            Input(1, s.ID)
+            Input(1, s.name)
+            Input(1, s.manufacturer)
+            Input(1, s.type)
+            Input(1, s.speed)
+            Input(1, s.capacity)
+            Input(1, s.connection)
+            Input(1, s.price)
+            AllStorage.Add(s)
+        End While
+        'close the file
+        FileClose(1)
+    End Sub
+
+
     Sub readCPU()
         'open the file called CPU.txt for input
         FileOpen(1, "CPU.txt", OpenMode.Input)
         'store  temporary CPU
         Dim c As New CPU
         'loop until the end of the file
-        Dim temp As String
 
         While Not EOF(1)
             
@@ -250,4 +355,51 @@
         'close the file
         FileClose(1)
     End Sub
+    'write case data
+    Sub writeCases()
+        'open the case.txt file for output
+        FileOpen(1, "Case.txt", OpenMode.Output)
+        'loop through the cases
+        For i = 0 To AllCases.Count - 1
+            'if the item hasn't been marked for deletion
+            If AllCases(i).id >= 0 Then
+                'write line with the data
+                WriteLine(1, AllCases(i).name, AllCases(i).manufacturer, AllCases(i).HDDs, AllCases(i).SSDs, AllCases(i).price)
+            End If
+        Next
+        'close the file
+        FileClose(1)
+    End Sub
+
+    'write motherboard data
+    Sub writeMoba()
+        'open the motherboard.txt file for output
+        FileOpen(1, "Motherboard.txt", OpenMode.Output)
+        'loop through the motherboard
+        For i = 0 To AllMoba.Count - 1
+            'if the item hasn't been marked for deletion
+            If AllMoba(i).id >= 0 Then
+                'write line with the data
+                WriteLine(1, AllMoba(i).id, AllMoba(i).name, AllMoba(i).manufacturer, AllMoba(i).ramSlots, AllMoba(i).socket, AllMoba(i).SATAs, AllMoba(i).m2s, AllMoba(i).price)
+            End If
+        Next
+        'close the file
+        FileClose(1)
+    End Sub
+    'write storage data
+    Sub writeStorage()
+        'open the storage.txt file for output
+        FileOpen(1, "Storage.txt", OpenMode.Output)
+        'loop through the storage
+        For i = 0 To AllStorage.Count - 1
+            'if the item hasn't been marked for deletion
+            If AllStorage(i).ID >= 0 Then
+                'write line with the data
+                WriteLine(1, AllStorage(i).ID, AllStorage(i).name, AllStorage(i).manufacturer, AllStorage(i).type, AllStorage(i).speed, AllStorage(i).capacity, AllStorage(i).connection, AllStorage(i).price)
+            End If
+        Next
+        'close the file
+        FileClose(1)
+    End Sub
+
 End Module

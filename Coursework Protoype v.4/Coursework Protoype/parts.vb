@@ -6,6 +6,7 @@ Public Class parts
     'setup the parts form
     Sub setup(type As String)
         ptype = type
+        ListView1.Items.Clear()
         ListView1.Columns.Clear()
         'add the ID column
         ListView1.Columns.Add("ID", 60)
@@ -179,7 +180,7 @@ Public Class parts
             'if we are trying to select an item
             If selecting Then
                 'go back to writestock and pass it the ID of the part item the user selected
-                WriteStock.onreturn(ListView1.SelectedItems(0).SubItems(0))
+                WriteStock.onreturn(ListView1.SelectedItems(0).SubItems(0).Text)
             End If
         End If
     End Sub
@@ -188,7 +189,110 @@ Public Class parts
 
     'add a part
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        AddCPU.Show()
-        Me.Hide()
+        Select Case ptype
+            Case "CPU"
+                AddCPU.Show()
+                Me.Hide()
+            Case "GPU"
+                AddGPU.Show()
+                Me.Hide()
+            Case "PSU"
+                AddPSU.Show()
+                Me.Hide()
+            Case "RAM"
+                AddRAM.Show()
+                Me.Hide()
+            Case "Case"
+                AddCase.Show()
+                Me.Hide()
+            Case "Motherboard"
+                AddMoba.Show()
+                Me.Hide()
+            Case "Storage"
+                AddStorage.Show()
+                Me.Hide()
+        End Select
+    End Sub
+
+    Private Sub btn_delete_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
+        Select Case ptype
+            Case "CPU"
+                While ListView1.SelectedItems.Count > 0
+                    For i = 0 To AllCPUs.Count - 1
+                        If AllCPUs(i).ID = ListView1.SelectedItems(0).SubItems(0).Text Then
+                            Dim item As CPU = AllCPUs(i)
+                            item.ID = -1 - item.ID
+                            AllCPUs(i) = item
+                        End If
+                        ListView1.SelectedItems(0).Remove()
+                    Next
+                End While
+            Case "GPU"
+                While ListView1.SelectedItems.Count > 0
+                    For i = 0 To AllGPUs.Count - 1
+                        If AllGPUs(i).ID = ListView1.SelectedItems(0).SubItems(0).Text Then
+                            Dim item As GPU = AllGPUs(i)
+                            item.ID = -1 - item.ID
+                            AllGPUs(i) = item
+                        End If
+                        ListView1.SelectedItems(0).Remove()
+                    Next
+                End While
+            Case "PSU"
+                While ListView1.SelectedItems.Count > 0
+                    For i = 0 To AllPSUs.Count - 1
+                        If AllPSUs(i).ID = ListView1.SelectedItems(0).SubItems(0).Text Then
+                            Dim item As PSU = AllPSUs(i)
+                            item.ID = -1 - item.ID
+                            AllPSUs(i) = item
+                        End If
+                        ListView1.SelectedItems(0).Remove()
+                    Next
+                End While
+            Case "RAM"
+                While ListView1.SelectedItems.Count > 0
+                    For i = 0 To AllRAMs.Count - 1
+                        If AllRAMs(i).ID = ListView1.SelectedItems(0).SubItems(0).Text Then
+                            Dim item As RAM = AllRAMs(i)
+                            item.ID = -1 - item.ID
+                            AllRAMs(i) = item
+                        End If
+                        ListView1.SelectedItems(0).Remove()
+                    Next
+                End While
+            Case "Case"
+                While ListView1.SelectedItems.Count > 0
+                    For i = 0 To AllCases.Count - 1
+                        If AllCases(i).id = ListView1.SelectedItems(0).SubItems(0).Text Then
+                            Dim item As cases = AllCases(i)
+                            item.ID = -1 - item.ID
+                            AllCases(i) = item
+                        End If
+                        ListView1.SelectedItems(0).Remove()
+                    Next
+                End While
+            Case "Motherboard"
+                While ListView1.SelectedItems.Count > 0
+                    For i = 0 To AllMoba.Count - 1
+                        If AllMoba(i).id = ListView1.SelectedItems(0).SubItems(0).Text Then
+                            Dim item As motherboard = AllMoba(i)
+                            item.id = -1 - item.id
+                            AllMoba(i) = item
+                        End If
+                        ListView1.SelectedItems(0).Remove()
+                    Next
+                End While
+            Case "Storage"
+                While ListView1.SelectedItems.Count > 0
+                    For i = 0 To AllStorage.Count - 1
+                        If AllStorage(i).ID = ListView1.SelectedItems(0).SubItems(0).Text Then
+                            Dim item As store = AllStorage(i)
+                            item.ID = -1 - item.ID
+                            AllStorage(i) = item
+                        End If
+                        ListView1.SelectedItems(0).Remove()
+                    Next
+                End While
+        End Select
     End Sub
 End Class

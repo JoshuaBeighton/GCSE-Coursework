@@ -134,3 +134,9 @@ C:\Users\joshu\Source\Repos\Coursework1\Coursework Protoype v.4\Coursework Proto
 C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.PartsNaviagtion.resources
 C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.parts.resources
 C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.AddCPU.resources
+C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.AddCase.resources
+C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.AddGPU.resources
+C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.AddPSU.resources
+C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.AddMoba.resources
+C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.AddRAM.resources
+C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.AddStorage.resources
