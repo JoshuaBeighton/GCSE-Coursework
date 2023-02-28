@@ -15,4 +15,10 @@
         Me.Hide()
         parts.setup(parts.ptype)
     End Sub
+
+    Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click
+        parts.Show()
+        Me.Hide()
+        parts.setup(parts.ptype)
+    End Sub
 End Class
