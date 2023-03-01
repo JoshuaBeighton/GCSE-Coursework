@@ -5,8 +5,9 @@ Public Class seeStock
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         WriteStock.Show()
         If selecting Then
-            WriteStock.init(Write.type)
-
+            WriteStock.selectInit(Write.type)
+        Else
+            WriteStock.init()
         End If
         Me.Close()
     End Sub

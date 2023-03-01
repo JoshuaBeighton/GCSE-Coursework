@@ -120,7 +120,7 @@ Partial Class seeStock
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(1234, 258)
+        Me.Button1.Location = New System.Drawing.Point(1234, 262)
         Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(187, 83)
@@ -235,7 +235,7 @@ Partial Class seeStock
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(1234, 352)
+        Me.Button3.Location = New System.Drawing.Point(1234, 356)
         Me.Button3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(187, 83)
@@ -245,7 +245,7 @@ Partial Class seeStock
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(1234, 445)
+        Me.Button4.Location = New System.Drawing.Point(1234, 449)
         Me.Button4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(187, 83)

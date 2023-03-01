@@ -181,6 +181,8 @@ Public Class parts
             If selecting Then
                 'go back to writestock and pass it the ID of the part item the user selected
                 WriteStock.onreturn(ListView1.SelectedItems(0).SubItems(0).Text)
+                Me.Hide()
+                WriteStock.Show()
             End If
         End If
     End Sub
@@ -295,4 +297,6 @@ Public Class parts
                 End While
         End Select
     End Sub
+
+
 End Class

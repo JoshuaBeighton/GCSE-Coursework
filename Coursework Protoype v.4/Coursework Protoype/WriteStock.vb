@@ -1,9 +1,16 @@
 ﻿Public Class WriteStock
 
-    Sub init(type As String)
+    Sub selectInit(type As String)
         selecting = True
         cmb_type.SelectedItem = type
         cmb_type.Enabled = False
+        btn_part.Show()
+        txt_part.Hide()
+    End Sub
+    Sub init()
+        btn_part.Show()
+        txt_part.Hide()
+
     End Sub
     Dim selecting As Boolean = False
     Private Sub btn_AddOrder_Click(sender As Object, e As EventArgs) Handles btn_AddOrder.Click
@@ -49,7 +56,11 @@
             Me.Hide()
             Write.Show()
             Write.onReturn(s.ID)
+        Else
+            Me.Hide()
+            seeStock.Show()
         End If
+
     End Sub
 
     'go back to the main database
@@ -62,7 +73,7 @@
         If cmb_type.SelectedIndex <> -1 Then
             parts.Show()
             Me.Hide()
-            parts.setup(cmb_type.SelectedText)
+            parts.setup(cmb_type.SelectedItem)
             parts.selecting = True
         End If
 
@@ -70,7 +81,7 @@
     Dim partIndex As Integer
     Public Sub onreturn(index As Integer)
         partIndex = index
-        Select Case cmb_type.SelectedText
+        Select Case cmb_type.SelectedItem
             Case "CPU"
                 For i = 0 To AllCPUs.Count - 1
                     If index = AllCPUs(i).ID Then
@@ -79,5 +90,7 @@
                     End If
                 Next
         End Select
+        btn_part.Hide()
+        txt_part.Show()
     End Sub
 End Class
