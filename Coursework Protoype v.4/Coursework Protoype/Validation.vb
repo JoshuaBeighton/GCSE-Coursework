@@ -81,4 +81,26 @@
         Return False
     End Function
 
+    Public Function slotsCheck(c As cases, s() As store) As Boolean
+        Dim hdd As Integer
+        Dim ssd As Integer
+        For i = 0 To s.Length - 1
+            If s(i).type = "HDD" Then
+                hdd += 1
+            ElseIf s(i).type = "SSD" Then
+                ssd += 1
+            End If
+        Next
+        Dim flag As Boolean = True
+        If hdd > c.HDDs Then
+            flag = False
+            MsgBox("Not Enough Slots for the HDDs")
+        End If
+        If ssd > c.SSDs Then
+            MsgBox("Not Enough Slots for the SSDs")
+        End If
+        Return flag
+    End Function
+
+
 End Module
