@@ -117,6 +117,7 @@
             Input(1, r.ddr)
             Input(1, r.tpd)
             Input(1, r.dims)
+            Input(1, r.capacity)
             Input(1, r.price)
             AllRAMs.Add(r)
         End While
@@ -196,7 +197,8 @@
             Input(1, s.name)
             Input(1, s.manufacturer)
             Input(1, s.type)
-            Input(1, s.speed)
+            Input(1, s.read)
+            Input(1, s.write)
             Input(1, s.capacity)
             Input(1, s.connection)
             Input(1, s.price)
@@ -333,7 +335,7 @@
             'if the item hasn't been marked for deletion
             If AllRAMs(i).ID >= 0 Then
                 'write line with the RAM data
-                WriteLine(1, AllRAMs(i).ID, AllRAMs(i).name, AllRAMs(i).manufacturer, AllRAMs(i).latency, AllRAMs(i).speed, AllRAMs(i).ddr, AllRAMs(i).tpd, AllRAMs(i).dims, AllRAMs(i).price)
+                WriteLine(1, AllRAMs(i).ID, AllRAMs(i).name, AllRAMs(i).manufacturer, AllRAMs(i).latency, AllRAMs(i).speed, AllRAMs(i).ddr, AllRAMs(i).tpd, AllRAMs(i).dims, AllRAMs(i).capacity, AllRAMs(i).price)
             End If
         Next
         'close the file
@@ -364,7 +366,7 @@
             'if the item hasn't been marked for deletion
             If AllCases(i).id >= 0 Then
                 'write line with the data
-                WriteLine(1, AllCases(i).name, AllCases(i).manufacturer, AllCases(i).HDDs, AllCases(i).SSDs, AllCases(i).price)
+                WriteLine(1, AllCases(i).id, AllCases(i).name, AllCases(i).manufacturer, AllCases(i).HDDs, AllCases(i).SSDs, AllCases(i).price)
             End If
         Next
         'close the file
@@ -395,7 +397,7 @@
             'if the item hasn't been marked for deletion
             If AllStorage(i).ID >= 0 Then
                 'write line with the data
-                WriteLine(1, AllStorage(i).ID, AllStorage(i).name, AllStorage(i).manufacturer, AllStorage(i).type, AllStorage(i).speed, AllStorage(i).capacity, AllStorage(i).connection, AllStorage(i).price)
+                WriteLine(1, AllStorage(i).ID, AllStorage(i).name, AllStorage(i).manufacturer, AllStorage(i).type, AllStorage(i).read, AllStorage(i).write, AllStorage(i).capacity, AllStorage(i).connection, AllStorage(i).price)
             End If
         Next
         'close the file

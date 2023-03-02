@@ -1,1 +1,1 @@
-0,"Vengeance Pro","Corsair",0,2400,4,10,2,150
+0,"Vengeance","Corsair",0,2400,4,20,4,16,150

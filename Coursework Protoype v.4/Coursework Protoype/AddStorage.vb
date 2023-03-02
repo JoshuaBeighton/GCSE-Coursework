@@ -4,7 +4,10 @@
         s.ID = AllStorage.Count
         s.name = txt_name.Text
         s.manufacturer = txt_manufacturer.Text
-        s.speed = txt_speed.Text
+        s.read = txt_write.Text
+        s.read = txt_read.Text
+        s.write = txt_write.Text
+
         s.type = txt_type.Text
         s.capacity = txt_capacity.Text
         s.connection = txt_connection.Text

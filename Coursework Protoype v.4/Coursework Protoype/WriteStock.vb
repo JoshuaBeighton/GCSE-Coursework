@@ -60,7 +60,7 @@
             Me.Hide()
             seeStock.Show()
         End If
-
+        FileHandler.writeStockFile()
     End Sub
 
     'go back to the main database
@@ -87,6 +87,48 @@
                     If index = AllCPUs(i).ID Then
                         txt_part.Text = AllCPUs(i).name
                         txt_price.Text = AllCPUs(i).price
+                    End If
+                Next
+            Case "GPU"
+                For i = 0 To AllGPUs.Count - 1
+                    If index = AllGPUs(i).ID Then
+                        txt_part.Text = AllGPUs(i).Series
+                        txt_price.Text = AllGPUs(i).price
+                    End If
+                Next
+            Case "RAM"
+                For i = 0 To AllRAMs.Count - 1
+                    If index = AllRAMs(i).ID Then
+                        txt_part.Text = AllRAMs(i).name
+                        txt_price.Text = AllRAMs(i).price
+                    End If
+                Next
+            Case "PSU"
+                For i = 0 To AllPSUs.Count - 1
+                    If index = AllPSUs(i).ID Then
+                        txt_part.Text = AllPSUs(i).name
+                        txt_price.Text = AllPSUs(i).price
+                    End If
+                Next
+            Case "Motherboard"
+                For i = 0 To AllMoba.Count - 1
+                    If index = AllMoba(i).id Then
+                        txt_part.Text = AllMoba(i).name
+                        txt_price.Text = AllMoba(i).price
+                    End If
+                Next
+            Case "Storage"
+                For i = 0 To AllStorage.Count - 1
+                    If index = AllStorage(i).ID Then
+                        txt_part.Text = AllStorage(i).name
+                        txt_price.Text = AllStorage(i).price
+                    End If
+                Next
+            Case "Case"
+                For i = 0 To AllCases.Count - 1
+                    If index = AllCases(i).id Then
+                        txt_part.Text = AllCases(i).name
+                        txt_price.Text = AllCases(i).price
                     End If
                 Next
         End Select

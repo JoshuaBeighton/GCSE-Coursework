@@ -81,6 +81,7 @@ Public Class parts
             ListView1.Columns.Add("DDR", 75)
             ListView1.Columns.Add("TPD", 100)
             ListView1.Columns.Add("DIMMs", 100)
+            ListView1.Columns.Add("Capacity", 100)
             'declare a temporary list view item
             Dim l As New ListViewItem
             'loop through all of the RAM data
@@ -94,6 +95,8 @@ Public Class parts
                 l.SubItems.Add(AllRAMs(i).ddr)
                 l.SubItems.Add(AllRAMs(i).tpd)
                 l.SubItems.Add(AllRAMs(i).dims)
+                l.SubItems.Add(AllRAMs(i).capacity)
+                l.SubItems.Add(AllRAMs(i).price)
                 'add the listviewitem to the listview
                 ListView1.Items.Add(l)
             Next
@@ -145,7 +148,20 @@ Public Class parts
             'add the relevant columns
             ListView1.Columns.Add("HDDs", 100)
             ListView1.Columns.Add("SSDs", 100)
-        'if the type is storage
+            'declare a temporary listviewitem
+            Dim l As New ListViewItem
+            'loop through the cases
+            For i = 0 To AllCases.Count - 1
+                'add the relevant data to the temporary listviewitem
+                l.SubItems(0).Text = AllCases(i).id
+                l.SubItems.Add(AllCases(i).name)
+                l.SubItems.Add(AllCases(i).manufacturer)
+                l.SubItems.Add(AllCases(i).HDDs)
+                l.SubItems.Add(AllCases(i).SSDs)
+                l.SubItems.Add(AllCases(i).price)
+                ListView1.Items.Add(l)
+            Next
+            'if the type is storage
         ElseIf type = "Storage" Then
             'add the relevant columns
             ListView1.Columns.Add("Type", 100)
@@ -153,6 +169,22 @@ Public Class parts
             ListView1.Columns.Add("Write", 100)
             ListView1.Columns.Add("Capacity", 150)
             ListView1.Columns.Add("Interface", 100)
+            'declare a temporary listviewitem
+            Dim l As New ListViewItem
+            'loop through the storage
+            For i = 0 To AllStorage.Count - 1
+                'add the relevant data to the temporary listviewitem
+                l.SubItems(0).Text = AllStorage(i).ID
+                l.SubItems.Add(AllStorage(i).name)
+                l.SubItems.Add(AllStorage(i).manufacturer)
+                l.SubItems.Add(AllStorage(i).type)
+                l.SubItems.Add(AllStorage(i).read)
+                l.SubItems.Add(AllStorage(i).write)
+                l.SubItems.Add(AllStorage(i).capacity)
+                l.SubItems.Add(AllStorage(i).connection)
+                l.SubItems.Add(AllCases(i).price)
+                ListView1.Items.Add(l)
+            Next
         End If
         'a variable to store the width that has been used so far
         Dim width As Integer

@@ -40,12 +40,14 @@ Partial Class AddRAM
         Me.btn_add = New System.Windows.Forms.Button()
         Me.txt_dimms = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.txt_capacity = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(11, 274)
+        Me.Label8.Location = New System.Drawing.Point(11, 311)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(49, 25)
         Me.Label8.TabIndex = 12
@@ -107,7 +109,7 @@ Partial Class AddRAM
         '
         'txt_price
         '
-        Me.txt_price.Location = New System.Drawing.Point(146, 271)
+        Me.txt_price.Location = New System.Drawing.Point(146, 308)
         Me.txt_price.Name = "txt_price"
         Me.txt_price.Size = New System.Drawing.Size(150, 31)
         Me.txt_price.TabIndex = 25
@@ -156,7 +158,7 @@ Partial Class AddRAM
         '
         'btn_back
         '
-        Me.btn_back.Location = New System.Drawing.Point(162, 308)
+        Me.btn_back.Location = New System.Drawing.Point(162, 345)
         Me.btn_back.Name = "btn_back"
         Me.btn_back.Size = New System.Drawing.Size(134, 80)
         Me.btn_back.TabIndex = 27
@@ -165,7 +167,7 @@ Partial Class AddRAM
         '
         'btn_add
         '
-        Me.btn_add.Location = New System.Drawing.Point(11, 308)
+        Me.btn_add.Location = New System.Drawing.Point(11, 345)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(131, 80)
         Me.btn_add.TabIndex = 26
@@ -188,12 +190,29 @@ Partial Class AddRAM
         Me.Label6.TabIndex = 13
         Me.Label6.Text = "DIMMs"
         '
+        'txt_capacity
+        '
+        Me.txt_capacity.Location = New System.Drawing.Point(146, 271)
+        Me.txt_capacity.Name = "txt_capacity"
+        Me.txt_capacity.Size = New System.Drawing.Size(150, 31)
+        Me.txt_capacity.TabIndex = 24
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(11, 274)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(79, 25)
+        Me.Label9.TabIndex = 13
+        Me.Label9.Text = "Capacity"
+        '
         'AddRAM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(308, 399)
+        Me.ClientSize = New System.Drawing.Size(308, 433)
         Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label5)
@@ -202,6 +221,7 @@ Partial Class AddRAM
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txt_price)
+        Me.Controls.Add(Me.txt_capacity)
         Me.Controls.Add(Me.txt_dimms)
         Me.Controls.Add(Me.txt_power)
         Me.Controls.Add(Me.txt_DDR)
@@ -236,4 +256,6 @@ Partial Class AddRAM
     Friend WithEvents btn_add As Button
     Friend WithEvents txt_dimms As TextBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents txt_capacity As TextBox
+    Friend WithEvents Label9 As Label
 End Class

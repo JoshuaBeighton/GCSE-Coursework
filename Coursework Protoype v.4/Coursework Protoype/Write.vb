@@ -1,4 +1,6 @@
-﻿Public Class Write
+﻿Imports System.Threading
+
+Public Class Write
     'store the ID of the stock item storing the CPU
     Dim sCPU As Integer
     'store the ID of the stock item storing the RAM
@@ -194,7 +196,11 @@
                     'if the selected item is the currently checked item in allstock
                     If index = AllStock(i).ID Then
                         'set the value of the text box to the name of the part
-                        txt_CPU.Text = AllStock(i).part
+                        For j = 0 To AllCPUs.Count - 1
+                            If AllCPUs(j).ID = AllStock(i).part Then
+                                txt_CPU.Text = AllCPUs(j).name
+                            End If
+                        Next
                     End If
                 Next
             'if we're waiting to get a GPU back
@@ -209,7 +215,11 @@
                     'if the selected item is the currently checked item in allstock
                     If index = AllStock(i).ID Then
                         'set the value of the text box to the name of the part
-                        txt_GPU.Text = AllStock(i).part
+                        For j = 0 To AllGPUs.Count - 1
+                            If AllGPUs(j).ID = AllStock(i).part Then
+                                txt_GPU.Text = AllGPUs(j).Series & " " & AllGPUs(j).Model
+                            End If
+                        Next
                     End If
                 Next
             'if we're waiting to get a PSU back
@@ -224,7 +234,11 @@
                     'if the selected item is the currently checked item in allstock
                     If index = AllStock(i).ID Then
                         'set the value of the text box to the name of the part
-                        txt_PSU.Text = AllStock(i).part
+                        For j = 0 To AllPSUs.Count - 1
+                            If AllPSUs(j).ID = AllStock(i).part Then
+                                txt_PSU.Text = AllPSUs(j).name & " " & AllPSUs(j).power & "W"
+                            End If
+                        Next
                     End If
                 Next
             'if we're waiting to get a case back
@@ -239,7 +253,11 @@
                     'if the selected item is the currently checked item in allstock
                     If index = AllStock(i).ID Then
                         'set the value of the text box to the name of the part
-                        txt_Case.Text = AllStock(i).part
+                        For j = 0 To AllCases.Count - 1
+                            If AllCases(j).id = AllStock(i).part Then
+                                txt_Case.Text = AllCases(j).name
+                            End If
+                        Next
                     End If
                 Next
             'if we're waiting to get a motehrboard back
@@ -254,7 +272,11 @@
                     'if the selected item is the currently checked item in allstock
                     If index = AllStock(i).ID Then
                         'set the value of the text box to the name of the part
-                        txt_motherboard.Text = AllStock(i).part
+                        For j = 0 To AllMoba.Count - 1
+                            If AllMoba(j).id = AllStock(i).part Then
+                                txt_motherboard.Text = AllMoba(j).name
+                            End If
+                        Next
                     End If
                 Next
             'if we're waiting to get RAM back
@@ -269,7 +291,11 @@
                     'if the selected item is the currently checked item in allstock
                     If index = AllStock(i).ID Then
                         'set the value of the text box to the name of the part
-                        txt_RAM.Text = AllStock(i).part
+                        For j = 0 To AllRAMs.Count - 1
+                            If AllRAMs(j).ID = AllStock(i).part Then
+                                txt_RAM.Text = AllRAMs(j).name & AllRAMs(j).capacity & "GB"
+                            End If
+                        Next
                     End If
                 Next
             'if we're waiting to get storage back
@@ -279,7 +305,11 @@
                     'if the selected item is the currently checked item in allstock
                     If index = AllStock(i).ID Then
                         'set the value of the text box to the name of the part
-                        lst_sto.Items.Add(AllStock(i).part)
+                        For j = 0 To AllStorage.Count - 1
+                            If AllStorage(j).ID = AllStock(i).part Then
+                                lst_sto.Items.Add(AllStorage(j).name + " " & AllStorage(j).capacity & "GB " & AllStorage(j).type)
+                            End If
+                        Next
                     End If
                 Next
                 'store the ID of the selected item

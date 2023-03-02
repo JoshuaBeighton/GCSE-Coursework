@@ -58,7 +58,37 @@ Public Class seeStock
                     Case "GPU"
                         For j = 0 To AllGPUs.Count - 1
                             If AllGPUs(j).ID = AllStock(i).part Then
-                                tempL.SubItems.Add(AllGPUs(j).Series)
+                                tempL.SubItems.Add(AllGPUs(j).Series & " " & AllGPUs(j).Model)
+                            End If
+                        Next
+                    Case "PSU"
+                        For j = 0 To AllPSUs.Count - 1
+                            If AllPSUs(j).ID = AllStock(i).part Then
+                                tempL.SubItems.Add(AllPSUs(j).name & " " & AllPSUs(j).power & "W")
+                            End If
+                        Next
+                    Case "Motherboard"
+                        For j = 0 To AllMoba.Count - 1
+                            If AllMoba(j).id = AllStock(i).part Then
+                                tempL.SubItems.Add(AllMoba(j).name)
+                            End If
+                        Next
+                    Case "Storage"
+                        For j = 0 To AllStorage.Count - 1
+                            If AllStorage(j).ID = AllStock(i).part Then
+                                tempL.SubItems.Add(AllStorage(j).name & " " & AllStorage(j).capacity & "GB " & AllStorage(j).type)
+                            End If
+                        Next
+                    Case "RAM"
+                        For j = 0 To AllRAMs.Count - 1
+                            If AllRAMs(j).ID = AllStock(i).part Then
+                                tempL.SubItems.Add(AllRAMs(j).name & " " & AllRAMs(j).capacity & "GB " & AllRAMs(j).speed & "MHz")
+                            End If
+                        Next
+                    Case "Case"
+                        For j = 0 To AllCases.Count - 1
+                            If AllCases(j).id = AllStock(i).part Then
+                                tempL.SubItems.Add(AllCases(j).name)
                             End If
                         Next
                 End Select

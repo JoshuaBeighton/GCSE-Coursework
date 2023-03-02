@@ -8,7 +8,9 @@
         r.ddr = txt_DDR.Text
         r.tpd = txt_power.Text
         r.dims = txt_dimms.Text
+        r.capacity = txt_capacity.Text
         r.price = txt_price.Text
+
         AllRAMs.Add(r)
         parts.Show()
         Me.Hide()
