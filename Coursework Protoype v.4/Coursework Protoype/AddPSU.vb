@@ -13,6 +13,14 @@
         parts.Show()
         Me.Hide()
         parts.setup(parts.ptype)
+        Dim l As log
+        l.id = findNextIndex("AllLogs")
+        l.user = Form1.currentUser
+        l.action = "Add"
+        l.data = p.ID & p.name & p.manufacturer & p.price
+        l.time = Now
+        AllLogs.Add(l)
+        writeLogs()
     End Sub
 
     Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click

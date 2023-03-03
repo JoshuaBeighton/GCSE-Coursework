@@ -16,6 +16,14 @@
         Me.Hide()
         writeRAM()
         parts.setup(parts.ptype)
+        Dim l As log
+        l.id = findNextIndex("AllLogs")
+        l.user = Form1.currentUser
+        l.action = "Add"
+        l.data = r.ID & r.name & r.manufacturer & r.price
+        l.time = Now
+        AllLogs.Add(l)
+        writeLogs()
     End Sub
 
     Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click

@@ -112,56 +112,56 @@ Partial Class AddRAM
         Me.txt_price.Location = New System.Drawing.Point(146, 308)
         Me.txt_price.Name = "txt_price"
         Me.txt_price.Size = New System.Drawing.Size(150, 31)
-        Me.txt_price.TabIndex = 25
+        Me.txt_price.TabIndex = 8
         '
         'txt_power
         '
         Me.txt_power.Location = New System.Drawing.Point(146, 197)
         Me.txt_power.Name = "txt_power"
         Me.txt_power.Size = New System.Drawing.Size(150, 31)
-        Me.txt_power.TabIndex = 24
+        Me.txt_power.TabIndex = 5
         '
         'txt_DDR
         '
         Me.txt_DDR.Location = New System.Drawing.Point(146, 160)
         Me.txt_DDR.Name = "txt_DDR"
         Me.txt_DDR.Size = New System.Drawing.Size(150, 31)
-        Me.txt_DDR.TabIndex = 22
+        Me.txt_DDR.TabIndex = 4
         '
         'txt_speed
         '
         Me.txt_speed.Location = New System.Drawing.Point(146, 123)
         Me.txt_speed.Name = "txt_speed"
         Me.txt_speed.Size = New System.Drawing.Size(150, 31)
-        Me.txt_speed.TabIndex = 21
+        Me.txt_speed.TabIndex = 3
         '
         'txt_latency
         '
         Me.txt_latency.Location = New System.Drawing.Point(146, 86)
         Me.txt_latency.Name = "txt_latency"
         Me.txt_latency.Size = New System.Drawing.Size(150, 31)
-        Me.txt_latency.TabIndex = 20
+        Me.txt_latency.TabIndex = 2
         '
         'txt_manufacturer
         '
         Me.txt_manufacturer.Location = New System.Drawing.Point(146, 49)
         Me.txt_manufacturer.Name = "txt_manufacturer"
         Me.txt_manufacturer.Size = New System.Drawing.Size(150, 31)
-        Me.txt_manufacturer.TabIndex = 11
+        Me.txt_manufacturer.TabIndex = 1
         '
         'txt_name
         '
         Me.txt_name.Location = New System.Drawing.Point(146, 12)
         Me.txt_name.Name = "txt_name"
         Me.txt_name.Size = New System.Drawing.Size(150, 31)
-        Me.txt_name.TabIndex = 10
+        Me.txt_name.TabIndex = 0
         '
         'btn_back
         '
         Me.btn_back.Location = New System.Drawing.Point(162, 345)
         Me.btn_back.Name = "btn_back"
         Me.btn_back.Size = New System.Drawing.Size(134, 80)
-        Me.btn_back.TabIndex = 27
+        Me.btn_back.TabIndex = 10
         Me.btn_back.Text = "Go Back"
         Me.btn_back.UseVisualStyleBackColor = True
         '
@@ -170,7 +170,7 @@ Partial Class AddRAM
         Me.btn_add.Location = New System.Drawing.Point(11, 345)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(131, 80)
-        Me.btn_add.TabIndex = 26
+        Me.btn_add.TabIndex = 9
         Me.btn_add.Text = "Add"
         Me.btn_add.UseVisualStyleBackColor = True
         '
@@ -179,7 +179,7 @@ Partial Class AddRAM
         Me.txt_dimms.Location = New System.Drawing.Point(146, 234)
         Me.txt_dimms.Name = "txt_dimms"
         Me.txt_dimms.Size = New System.Drawing.Size(150, 31)
-        Me.txt_dimms.TabIndex = 24
+        Me.txt_dimms.TabIndex = 6
         '
         'Label6
         '
@@ -195,7 +195,7 @@ Partial Class AddRAM
         Me.txt_capacity.Location = New System.Drawing.Point(146, 271)
         Me.txt_capacity.Name = "txt_capacity"
         Me.txt_capacity.Size = New System.Drawing.Size(150, 31)
-        Me.txt_capacity.TabIndex = 24
+        Me.txt_capacity.TabIndex = 7
         '
         'Label9
         '

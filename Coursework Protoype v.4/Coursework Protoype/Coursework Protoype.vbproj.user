@@ -22,7 +22,31 @@
     <Compile Update="AddStorage.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="EditCase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EditCPU.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EditGPU.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EditMotherboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EditPSU.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EditRAM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EditStorage.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Logs.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Navigation.vb">

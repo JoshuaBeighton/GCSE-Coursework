@@ -68,6 +68,7 @@ Partial Class Write
         Me.txt_CPU.Name = "txt_CPU"
         Me.txt_CPU.Size = New System.Drawing.Size(141, 31)
         Me.txt_CPU.TabIndex = 0
+        Me.txt_CPU.TabStop = False
         Me.txt_CPU.Visible = False
         '
         'txt_GPU
@@ -77,6 +78,7 @@ Partial Class Write
         Me.txt_GPU.Name = "txt_GPU"
         Me.txt_GPU.Size = New System.Drawing.Size(141, 31)
         Me.txt_GPU.TabIndex = 1
+        Me.txt_GPU.TabStop = False
         Me.txt_GPU.Visible = False
         '
         'Label2
@@ -96,6 +98,7 @@ Partial Class Write
         Me.txt_PSU.Name = "txt_PSU"
         Me.txt_PSU.Size = New System.Drawing.Size(141, 31)
         Me.txt_PSU.TabIndex = 3
+        Me.txt_PSU.TabStop = False
         Me.txt_PSU.Visible = False
         '
         'Label3
@@ -115,6 +118,7 @@ Partial Class Write
         Me.txt_RAM.Name = "txt_RAM"
         Me.txt_RAM.Size = New System.Drawing.Size(141, 31)
         Me.txt_RAM.TabIndex = 2
+        Me.txt_RAM.TabStop = False
         Me.txt_RAM.Visible = False
         '
         'Label4
@@ -134,6 +138,7 @@ Partial Class Write
         Me.txt_motherboard.Name = "txt_motherboard"
         Me.txt_motherboard.Size = New System.Drawing.Size(141, 31)
         Me.txt_motherboard.TabIndex = 5
+        Me.txt_motherboard.TabStop = False
         Me.txt_motherboard.Visible = False
         '
         'Label5
@@ -153,6 +158,7 @@ Partial Class Write
         Me.txt_Case.Name = "txt_Case"
         Me.txt_Case.Size = New System.Drawing.Size(141, 31)
         Me.txt_Case.TabIndex = 4
+        Me.txt_Case.TabStop = False
         Me.txt_Case.Visible = False
         '
         'Label6
@@ -171,7 +177,7 @@ Partial Class Write
         Me.btn_AddStorage.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_AddStorage.Name = "btn_AddStorage"
         Me.btn_AddStorage.Size = New System.Drawing.Size(143, 38)
-        Me.btn_AddStorage.TabIndex = 7
+        Me.btn_AddStorage.TabIndex = 6
         Me.btn_AddStorage.Text = "Add Storage"
         Me.btn_AddStorage.UseVisualStyleBackColor = True
         '
@@ -194,6 +200,7 @@ Partial Class Write
         Me.lst_sto.Name = "lst_sto"
         Me.lst_sto.Size = New System.Drawing.Size(264, 79)
         Me.lst_sto.TabIndex = 13
+        Me.lst_sto.TabStop = False
         '
         'Label8
         '
@@ -211,7 +218,7 @@ Partial Class Write
         Me.txt_cust.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txt_cust.Name = "txt_cust"
         Me.txt_cust.Size = New System.Drawing.Size(141, 31)
-        Me.txt_cust.TabIndex = 8
+        Me.txt_cust.TabIndex = 7
         '
         'Label9
         '
@@ -229,7 +236,7 @@ Partial Class Write
         Me.date_due.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.date_due.Name = "date_due"
         Me.date_due.Size = New System.Drawing.Size(284, 31)
-        Me.date_due.TabIndex = 9
+        Me.date_due.TabIndex = 8
         '
         'btn_AddOrder
         '
@@ -237,7 +244,7 @@ Partial Class Write
         Me.btn_AddOrder.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_AddOrder.Name = "btn_AddOrder"
         Me.btn_AddOrder.Size = New System.Drawing.Size(313, 123)
-        Me.btn_AddOrder.TabIndex = 10
+        Me.btn_AddOrder.TabIndex = 9
         Me.btn_AddOrder.Text = "Add Order"
         Me.btn_AddOrder.UseVisualStyleBackColor = True
         '
@@ -247,7 +254,7 @@ Partial Class Write
         Me.btn_navi.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_navi.Name = "btn_navi"
         Me.btn_navi.Size = New System.Drawing.Size(286, 123)
-        Me.btn_navi.TabIndex = 11
+        Me.btn_navi.TabIndex = 10
         Me.btn_navi.Text = "Go Back To Navigation"
         Me.btn_navi.UseVisualStyleBackColor = True
         '
@@ -256,7 +263,7 @@ Partial Class Write
         Me.selCPU.Location = New System.Drawing.Point(114, 37)
         Me.selCPU.Name = "selCPU"
         Me.selCPU.Size = New System.Drawing.Size(141, 31)
-        Me.selCPU.TabIndex = 14
+        Me.selCPU.TabIndex = 0
         Me.selCPU.Text = "Select"
         Me.selCPU.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.selCPU.UseVisualStyleBackColor = True
@@ -266,7 +273,7 @@ Partial Class Write
         Me.selRAM.Location = New System.Drawing.Point(114, 99)
         Me.selRAM.Name = "selRAM"
         Me.selRAM.Size = New System.Drawing.Size(141, 31)
-        Me.selRAM.TabIndex = 14
+        Me.selRAM.TabIndex = 2
         Me.selRAM.Text = "Select"
         Me.selRAM.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.selRAM.UseVisualStyleBackColor = True
@@ -276,7 +283,7 @@ Partial Class Write
         Me.selCase.Location = New System.Drawing.Point(114, 162)
         Me.selCase.Name = "selCase"
         Me.selCase.Size = New System.Drawing.Size(141, 31)
-        Me.selCase.TabIndex = 14
+        Me.selCase.TabIndex = 4
         Me.selCase.Text = "Select"
         Me.selCase.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.selCase.UseVisualStyleBackColor = True
@@ -286,7 +293,7 @@ Partial Class Write
         Me.selGPU.Location = New System.Drawing.Point(481, 36)
         Me.selGPU.Name = "selGPU"
         Me.selGPU.Size = New System.Drawing.Size(141, 31)
-        Me.selGPU.TabIndex = 14
+        Me.selGPU.TabIndex = 1
         Me.selGPU.Text = "Select"
         Me.selGPU.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.selGPU.UseVisualStyleBackColor = True
@@ -296,7 +303,7 @@ Partial Class Write
         Me.selPSU.Location = New System.Drawing.Point(481, 101)
         Me.selPSU.Name = "selPSU"
         Me.selPSU.Size = New System.Drawing.Size(141, 31)
-        Me.selPSU.TabIndex = 14
+        Me.selPSU.TabIndex = 3
         Me.selPSU.Text = "Select"
         Me.selPSU.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.selPSU.UseVisualStyleBackColor = True
@@ -306,7 +313,7 @@ Partial Class Write
         Me.selMoba.Location = New System.Drawing.Point(481, 162)
         Me.selMoba.Name = "selMoba"
         Me.selMoba.Size = New System.Drawing.Size(141, 31)
-        Me.selMoba.TabIndex = 14
+        Me.selMoba.TabIndex = 5
         Me.selMoba.Text = "Select"
         Me.selMoba.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.selMoba.UseVisualStyleBackColor = True
@@ -345,7 +352,7 @@ Partial Class Write
         Me.Controls.Add(Me.Label1)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "Write"
-        Me.Text = "Select"
+        Me.Text = "Add Order"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

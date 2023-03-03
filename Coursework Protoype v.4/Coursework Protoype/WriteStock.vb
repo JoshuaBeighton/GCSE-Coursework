@@ -40,6 +40,14 @@
                     chk_arrived.Checked = False
                     cmb_type.SelectedIndex = -1
                     cmb_type.Text = ""
+                    Dim l As log
+                    l.id = findNextIndex("AllLogs")
+                    l.user = Form1.currentUser
+                    l.action = "Delete"
+                    l.data = s.ID & s.part & s.cost
+                    l.time = Now
+                    AllLogs.Add(l)
+                    writeLogs()
                 Else
                     'ask the user to enter a price
                     MsgBox("Please Enter a Price")
@@ -75,6 +83,7 @@
             Me.Hide()
             parts.setup(cmb_type.SelectedItem)
             parts.selecting = True
+            parts.editing = False
         End If
 
     End Sub

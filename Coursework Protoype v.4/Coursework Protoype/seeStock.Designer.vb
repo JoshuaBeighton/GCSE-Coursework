@@ -54,7 +54,7 @@ Partial Class seeStock
         Me.cmb_arrived.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cmb_arrived.Name = "cmb_arrived"
         Me.cmb_arrived.Size = New System.Drawing.Size(171, 33)
-        Me.cmb_arrived.TabIndex = 19
+        Me.cmb_arrived.TabIndex = 6
         Me.cmb_arrived.Text = "Arrived"
         '
         'cmb_type
@@ -64,7 +64,7 @@ Partial Class seeStock
         Me.cmb_type.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cmb_type.Name = "cmb_type"
         Me.cmb_type.Size = New System.Drawing.Size(171, 33)
-        Me.cmb_type.TabIndex = 21
+        Me.cmb_type.TabIndex = 0
         Me.cmb_type.Text = "Type"
         '
         'lbl_Ordered
@@ -85,7 +85,7 @@ Partial Class seeStock
         Me.cmb_ordered.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cmb_ordered.Name = "cmb_ordered"
         Me.cmb_ordered.Size = New System.Drawing.Size(171, 33)
-        Me.cmb_ordered.TabIndex = 16
+        Me.cmb_ordered.TabIndex = 3
         Me.cmb_ordered.Text = "Not Filtered"
         '
         'DateTimePicker1
@@ -94,7 +94,7 @@ Partial Class seeStock
         Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(284, 31)
-        Me.DateTimePicker1.TabIndex = 15
+        Me.DateTimePicker1.TabIndex = 2
         '
         'ListView1
         '
@@ -114,7 +114,7 @@ Partial Class seeStock
         Me.btn_Clear.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_Clear.Name = "btn_Clear"
         Me.btn_Clear.Size = New System.Drawing.Size(187, 83)
-        Me.btn_Clear.TabIndex = 9
+        Me.btn_Clear.TabIndex = 7
         Me.btn_Clear.Text = "Clear Filters"
         Me.btn_Clear.UseVisualStyleBackColor = True
         '
@@ -124,7 +124,7 @@ Partial Class seeStock
         Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(187, 83)
-        Me.Button1.TabIndex = 11
+        Me.Button1.TabIndex = 8
         Me.Button1.Text = "Add Stock"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -134,7 +134,7 @@ Partial Class seeStock
         Me.DateTimePicker2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(284, 31)
-        Me.DateTimePicker2.TabIndex = 15
+        Me.DateTimePicker2.TabIndex = 4
         '
         'cmb_due
         '
@@ -144,7 +144,7 @@ Partial Class seeStock
         Me.cmb_due.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cmb_due.Name = "cmb_due"
         Me.cmb_due.Size = New System.Drawing.Size(171, 33)
-        Me.cmb_due.TabIndex = 16
+        Me.cmb_due.TabIndex = 5
         Me.cmb_due.Text = "Not Filtered"
         '
         'Label1
@@ -200,7 +200,7 @@ Partial Class seeStock
         Me.cmb_part.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cmb_part.Name = "cmb_part"
         Me.cmb_part.Size = New System.Drawing.Size(255, 33)
-        Me.cmb_part.TabIndex = 19
+        Me.cmb_part.TabIndex = 1
         Me.cmb_part.Text = "Part"
         '
         'Button2
@@ -239,7 +239,7 @@ Partial Class seeStock
         Me.Button3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(187, 83)
-        Me.Button3.TabIndex = 11
+        Me.Button3.TabIndex = 9
         Me.Button3.Text = "Delete Stock"
         Me.Button3.UseVisualStyleBackColor = True
         '
@@ -249,7 +249,7 @@ Partial Class seeStock
         Me.Button4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(187, 83)
-        Me.Button4.TabIndex = 11
+        Me.Button4.TabIndex = 10
         Me.Button4.Text = "Edit Stock"
         Me.Button4.UseVisualStyleBackColor = True
         '
@@ -282,7 +282,7 @@ Partial Class seeStock
         Me.DoubleBuffered = True
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "seeStock"
-        Me.Text = "See Stock"
+        Me.Text = "Stock"
         CType(Me.trk_min, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.trk_max, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

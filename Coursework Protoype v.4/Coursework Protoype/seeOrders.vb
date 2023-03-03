@@ -580,7 +580,14 @@
             o = AllOrders(oID)
             'set the ID to itself times -1, subtract one so that it will always end up below 0, so its marked to be deleted
             o.id = (o.id * -1) - 1
-
+            Dim l As log
+            l.id = findNextIndex("AllLogs")
+            l.user = Form1.currentUser
+            l.action = "Delete"
+            l.data = o.id & o.customer & o.price
+            l.time = Now
+            AllLogs.Add(l)
+            writeLogs()
             AllOrders(oID) = o
 
             Dim newOS As New List(Of orderStock)
@@ -597,6 +604,7 @@
 
         End While
         writeOrder()
+
     End Sub
 
 

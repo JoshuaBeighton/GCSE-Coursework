@@ -14,7 +14,7 @@
     Public AllMoba As New List(Of motherboard)
     Public AllStorage As New List(Of store)
     Public AllPSUs As New List(Of PSU)
-
+    Public AllLogs As New List(Of log)
 
 End Module
 
@@ -215,4 +215,12 @@ Public Structure cases
     Dim SSDs As Integer
     'store the price of the motherboard
     Dim price As Decimal
+End Structure
+
+Public Structure log
+    Dim id As Integer
+    Dim user As String
+    Dim action As String
+    Dim data As String
+    Dim time As Date
 End Structure

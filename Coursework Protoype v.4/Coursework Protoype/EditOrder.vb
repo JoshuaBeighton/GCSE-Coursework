@@ -107,6 +107,14 @@
         seeOrders.Show()
         Me.Hide()
         seeOrders.initialiseAllOrders()
+        Dim l As log
+        l.id = findNextIndex("AllLogs")
+        l.user = Form1.currentUser
+        l.action = "Edit"
+        l.data = o.id & o.customer & o.due
+        l.time = Now
+        AllLogs.Add(l)
+        writeLogs()
     End Sub
 
     Private Sub btn_AddStorage_Click(sender As Object, e As EventArgs) Handles btn_AddStorage.Click

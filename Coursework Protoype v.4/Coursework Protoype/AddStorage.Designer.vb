@@ -30,16 +30,16 @@ Partial Class AddStorage
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_price = New System.Windows.Forms.TextBox()
-        Me.txt_connection = New System.Windows.Forms.TextBox()
-        Me.txt_capacity = New System.Windows.Forms.TextBox()
         Me.txt_write = New System.Windows.Forms.TextBox()
-        Me.txt_type = New System.Windows.Forms.TextBox()
         Me.txt_manufacturer = New System.Windows.Forms.TextBox()
         Me.txt_name = New System.Windows.Forms.TextBox()
         Me.btn_back = New System.Windows.Forms.Button()
         Me.btn_add = New System.Windows.Forms.Button()
         Me.txt_read = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.txt_capacity = New System.Windows.Forms.TextBox()
+        Me.cmb_type = New System.Windows.Forms.ComboBox()
+        Me.cmb_connection = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'Label8
@@ -110,56 +110,35 @@ Partial Class AddStorage
         Me.txt_price.Location = New System.Drawing.Point(146, 271)
         Me.txt_price.Name = "txt_price"
         Me.txt_price.Size = New System.Drawing.Size(150, 31)
-        Me.txt_price.TabIndex = 25
-        '
-        'txt_connection
-        '
-        Me.txt_connection.Location = New System.Drawing.Point(146, 234)
-        Me.txt_connection.Name = "txt_connection"
-        Me.txt_connection.Size = New System.Drawing.Size(150, 31)
-        Me.txt_connection.TabIndex = 23
-        '
-        'txt_capacity
-        '
-        Me.txt_capacity.Location = New System.Drawing.Point(146, 197)
-        Me.txt_capacity.Name = "txt_capacity"
-        Me.txt_capacity.Size = New System.Drawing.Size(150, 31)
-        Me.txt_capacity.TabIndex = 22
+        Me.txt_price.TabIndex = 7
         '
         'txt_write
         '
         Me.txt_write.Location = New System.Drawing.Point(146, 160)
         Me.txt_write.Name = "txt_write"
         Me.txt_write.Size = New System.Drawing.Size(150, 31)
-        Me.txt_write.TabIndex = 21
-        '
-        'txt_type
-        '
-        Me.txt_type.Location = New System.Drawing.Point(146, 86)
-        Me.txt_type.Name = "txt_type"
-        Me.txt_type.Size = New System.Drawing.Size(150, 31)
-        Me.txt_type.TabIndex = 20
+        Me.txt_write.TabIndex = 4
         '
         'txt_manufacturer
         '
         Me.txt_manufacturer.Location = New System.Drawing.Point(146, 49)
         Me.txt_manufacturer.Name = "txt_manufacturer"
         Me.txt_manufacturer.Size = New System.Drawing.Size(150, 31)
-        Me.txt_manufacturer.TabIndex = 11
+        Me.txt_manufacturer.TabIndex = 1
         '
         'txt_name
         '
         Me.txt_name.Location = New System.Drawing.Point(146, 12)
         Me.txt_name.Name = "txt_name"
         Me.txt_name.Size = New System.Drawing.Size(150, 31)
-        Me.txt_name.TabIndex = 10
+        Me.txt_name.TabIndex = 0
         '
         'btn_back
         '
         Me.btn_back.Location = New System.Drawing.Point(162, 308)
         Me.btn_back.Name = "btn_back"
         Me.btn_back.Size = New System.Drawing.Size(134, 80)
-        Me.btn_back.TabIndex = 27
+        Me.btn_back.TabIndex = 9
         Me.btn_back.Text = "Go Back"
         Me.btn_back.UseVisualStyleBackColor = True
         '
@@ -168,7 +147,7 @@ Partial Class AddStorage
         Me.btn_add.Location = New System.Drawing.Point(11, 308)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(131, 80)
-        Me.btn_add.TabIndex = 26
+        Me.btn_add.TabIndex = 8
         Me.btn_add.Text = "Add"
         Me.btn_add.UseVisualStyleBackColor = True
         '
@@ -177,7 +156,7 @@ Partial Class AddStorage
         Me.txt_read.Location = New System.Drawing.Point(146, 123)
         Me.txt_read.Name = "txt_read"
         Me.txt_read.Size = New System.Drawing.Size(150, 31)
-        Me.txt_read.TabIndex = 21
+        Me.txt_read.TabIndex = 3
         '
         'Label7
         '
@@ -188,11 +167,38 @@ Partial Class AddStorage
         Me.Label7.TabIndex = 16
         Me.Label7.Text = "Read Speed"
         '
+        'txt_capacity
+        '
+        Me.txt_capacity.Location = New System.Drawing.Point(146, 197)
+        Me.txt_capacity.Name = "txt_capacity"
+        Me.txt_capacity.Size = New System.Drawing.Size(150, 31)
+        Me.txt_capacity.TabIndex = 5
+        '
+        'cmb_type
+        '
+        Me.cmb_type.FormattingEnabled = True
+        Me.cmb_type.Items.AddRange(New Object() {"HDD", "SSD"})
+        Me.cmb_type.Location = New System.Drawing.Point(146, 86)
+        Me.cmb_type.Name = "cmb_type"
+        Me.cmb_type.Size = New System.Drawing.Size(150, 33)
+        Me.cmb_type.TabIndex = 2
+        '
+        'cmb_connection
+        '
+        Me.cmb_connection.FormattingEnabled = True
+        Me.cmb_connection.Items.AddRange(New Object() {"SATA", "M.2"})
+        Me.cmb_connection.Location = New System.Drawing.Point(146, 232)
+        Me.cmb_connection.Name = "cmb_connection"
+        Me.cmb_connection.Size = New System.Drawing.Size(150, 33)
+        Me.cmb_connection.TabIndex = 6
+        '
         'AddStorage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(308, 401)
+        Me.Controls.Add(Me.cmb_connection)
+        Me.Controls.Add(Me.cmb_type)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -202,11 +208,9 @@ Partial Class AddStorage
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txt_price)
-        Me.Controls.Add(Me.txt_connection)
         Me.Controls.Add(Me.txt_capacity)
         Me.Controls.Add(Me.txt_read)
         Me.Controls.Add(Me.txt_write)
-        Me.Controls.Add(Me.txt_type)
         Me.Controls.Add(Me.txt_manufacturer)
         Me.Controls.Add(Me.txt_name)
         Me.Controls.Add(Me.btn_back)
@@ -226,14 +230,14 @@ Partial Class AddStorage
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents txt_price As TextBox
-    Friend WithEvents txt_connection As TextBox
-    Friend WithEvents txt_capacity As TextBox
     Friend WithEvents txt_write As TextBox
-    Friend WithEvents txt_type As TextBox
     Friend WithEvents txt_manufacturer As TextBox
     Friend WithEvents txt_name As TextBox
     Friend WithEvents btn_back As Button
     Friend WithEvents btn_add As Button
     Friend WithEvents txt_read As TextBox
     Friend WithEvents Label7 As Label
+    Friend WithEvents txt_capacity As TextBox
+    Friend WithEvents cmb_type As ComboBox
+    Friend WithEvents cmb_connection As ComboBox
 End Class

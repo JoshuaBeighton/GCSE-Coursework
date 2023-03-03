@@ -643,6 +643,14 @@ Public Class seeStock
                 Next
                 'set s equal to the stock item in allstock at position j and set its ID to itself *-1, subtract one so that even the ID with 0 will have a negative index when this is performed
                 s = AllStock(item)
+                Dim l As log
+                l.id = findNextIndex("AllLogs")
+                l.user = Form1.currentUser
+                l.action = "Delete"
+                l.data = s.ID & s.part & s.cost
+                l.time = Now
+                AllLogs.Add(l)
+                writeLogs()
                 s.ID = (s.ID * -1) - 1
                 'set the item in all stock to be the new item
                 AllStock(item) = s
@@ -662,7 +670,7 @@ Public Class seeStock
     'when the combo box for type is changed
     Private Sub cmb_type_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_type.SelectedIndexChanged
         'filter by type
-        filterType(cmb_type.SelectedText)
+        filterType(cmb_type.SelectedItem)
         'lock the combo box and clear the items within it
         cmb_type.Enabled = False
         cmb_part.Items.Clear()
@@ -754,7 +762,7 @@ Public Class seeStock
             'loop through orderstock
             For j = 0 To AllOrderStock.Count - 1
                 'check if the listviewitem we are on is referenced in orderstock at the j index
-                If ListView1.Items(i).SubItems(0).Text = AllOrderStock(j).stock Then
+                If ListView1.Items(i).SubItems(0).Text = AllOrderStock(j).stock.ToString() Then
                     'if it is, it is being used in an order so we add the listviewitem to a list that stores all the items that have been removed by filtering
                     removed.Add(ListView1.Items(i))
                     'record that we have found the item and it being used in an order
@@ -766,12 +774,27 @@ Public Class seeStock
                 'add the listviewitem to a list of listviewitems to add back to the listview after filtering
                 newITems.Add(ListView1.Items(i))
             End If
+            found = False
         Next
         'clear the items in the listview and only add back the items that aren't being used in any orders
         ListView1.Items.Clear()
         ListView1.Items.AddRange(newITems.ToArray())
-
-
+        Dim flag As Boolean = False
+        newITems = New List(Of ListViewItem)
+        For j = 0 To ListView1.Items.Count - 1
+            For i = 0 To Write.sSto.Count - 1
+                If ListView1.Items(j).SubItems(0).Text = Write.sSto(i).ToString Then
+                    flag = True
+                    removed.Add(ListView1.Items(j))
+                End If
+            Next
+            If Not flag Then
+                newITems.Add(ListView1.Items(j))
+            End If
+            flag = False
+        Next
+        ListView1.Items.Clear()
+        ListView1.Items.AddRange(newITems.ToArray())
 
     End Sub
 

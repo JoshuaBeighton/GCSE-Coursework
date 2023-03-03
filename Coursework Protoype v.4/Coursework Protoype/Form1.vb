@@ -1,5 +1,6 @@
 ﻿Public Class Form1
     'set up the data
+    Public currentUser As String = "testM"
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         readOrders()
         readOrderStock()
@@ -12,6 +13,7 @@
         readPSU()
         readRAM()
         readStorage()
+        readLogs()
         Navigation.Show()
         Navigation.setup("M")
         Me.Hide()
@@ -29,7 +31,16 @@
                 Navigation.Show()
                 Navigation.setup(AllUsers(i).permission)
                 Me.Hide()
+                currentUser = AllUsers(i).username
                 found = True
+                Dim l As log
+                l.id = findNextIndex("AllLogs")
+                l.user = currentUser
+                l.action = "Login"
+                l.data = AllUsers(i).ID & AllUsers(i).username & AllUsers(i).permission
+                l.time = Now
+                AllLogs.Add(l)
+                writeLogs()
             End If
         Next
         'if the credentials are not in the system
@@ -52,4 +63,5 @@
         Navigation.Show()
         Navigation.setup("M")
     End Sub
+
 End Class

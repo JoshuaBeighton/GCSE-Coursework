@@ -14,7 +14,7 @@ Public Class Write
     'store the ID of the stock item storing the PSU
     Dim sPSU As Integer
     'store the IDs of the stock items storing the storage
-    Dim sSto As New List(Of Integer)
+    Public sSto As New List(Of Integer)
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_AddOrder.Click
         Dim c As CPU
@@ -73,7 +73,14 @@ Public Class Write
             o.due = date_due.Value
             'add o to orders
             AllOrders.Add(o)
-
+            Dim l As log
+            l.id = findNextIndex("AllLogs")
+            l.user = Form1.currentUser
+            l.action = "Delete"
+            l.data = o.id & o.customer & o.price
+            l.time = Now
+            AllLogs.Add(l)
+            writeLogs()
             'create new orderstock item
             Dim os As New orderStock
             'set its ID to the count of orderstock items

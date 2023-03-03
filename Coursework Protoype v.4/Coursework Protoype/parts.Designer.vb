@@ -37,6 +37,7 @@ Partial Class parts
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(1210, 583)
         Me.ListView1.TabIndex = 0
+        Me.ListView1.TabStop = False
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
         '
@@ -45,7 +46,7 @@ Partial Class parts
         Me.Button1.Location = New System.Drawing.Point(1228, 12)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(184, 141)
-        Me.Button1.TabIndex = 1
+        Me.Button1.TabIndex = 0
         Me.Button1.Text = "Add Part"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -63,7 +64,7 @@ Partial Class parts
         Me.btn_delete.Location = New System.Drawing.Point(1228, 306)
         Me.btn_delete.Name = "btn_delete"
         Me.btn_delete.Size = New System.Drawing.Size(184, 141)
-        Me.btn_delete.TabIndex = 1
+        Me.btn_delete.TabIndex = 2
         Me.btn_delete.Text = "Delete Part"
         Me.btn_delete.UseVisualStyleBackColor = True
         '
@@ -72,7 +73,7 @@ Partial Class parts
         Me.btn_back.Location = New System.Drawing.Point(1228, 454)
         Me.btn_back.Name = "btn_back"
         Me.btn_back.Size = New System.Drawing.Size(184, 141)
-        Me.btn_back.TabIndex = 1
+        Me.btn_back.TabIndex = 3
         Me.btn_back.Text = "Go Back"
         Me.btn_back.UseVisualStyleBackColor = True
         '
@@ -87,7 +88,7 @@ Partial Class parts
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ListView1)
         Me.Name = "parts"
-        Me.Text = "parts"
+        Me.Text = "Parts"
         Me.ResumeLayout(False)
 
     End Sub

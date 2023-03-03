@@ -19,7 +19,43 @@
         'close the file
         FileClose(1)
     End Sub
-    
+
+
+    'read from the logs file
+    Public Sub readLogs()
+        'open the file called Logs.txt for input
+        FileOpen(1, "Logs.txt", OpenMode.Input)
+        'store  temporary log
+        Dim l As New log
+        'loop until the end of the file
+        While Not EOF(1)
+            'input the stock details
+            Input(1, l.id)
+            Input(1, l.user)
+            Input(1, l.action)
+            Input(1, l.data)
+            Input(1, l.time)
+            AllLogs.Add(l)
+        End While
+        'close the file
+        FileClose(1)
+    End Sub
+    Public Sub writeLogs()
+        'open the file called Logs.txt for output
+        FileOpen(1, "Logs.txt", OpenMode.Output)
+        'loop through all of the orders
+        For i = 0 To AllLogs.Count - 1
+            'if it has not been marked for deletion
+            If AllLogs(i).id >= 0 Then
+                'write that data to the file
+                WriteLine(1, AllLogs(i).id, AllLogs(i).user, AllLogs(i).action, AllLogs(i).data, AllLogs(i).time)
+            End If
+        Next
+        'close the file
+        FileClose(1)
+    End Sub
+
+
     'read from the stock file
     Public Sub readStock()
         'open the file called stock.txt for input

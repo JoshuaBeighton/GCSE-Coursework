@@ -22,7 +22,14 @@
         parts.setup(parts.ptype)
         'write the CPUs
         FileHandler.writeCPU()
-
+        Dim l As log
+        l.id = findNextIndex("AllLogs")
+        l.user = Form1.currentUser
+        l.action = "Add"
+        l.data = c.ID & c.name & c.manufacturer & c.price
+        l.time = Now
+        AllLogs.Add(l)
+        writeLogs()
     End Sub
 
     Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click

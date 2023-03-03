@@ -108,56 +108,56 @@ Partial Class AddMoba
         Me.txt_price.Location = New System.Drawing.Point(147, 239)
         Me.txt_price.Name = "txt_price"
         Me.txt_price.Size = New System.Drawing.Size(150, 31)
-        Me.txt_price.TabIndex = 25
+        Me.txt_price.TabIndex = 6
         '
         'txt_m2
         '
         Me.txt_m2.Location = New System.Drawing.Point(147, 202)
         Me.txt_m2.Name = "txt_m2"
         Me.txt_m2.Size = New System.Drawing.Size(150, 31)
-        Me.txt_m2.TabIndex = 23
+        Me.txt_m2.TabIndex = 5
         '
         'txt_SATA
         '
         Me.txt_SATA.Location = New System.Drawing.Point(147, 165)
         Me.txt_SATA.Name = "txt_SATA"
         Me.txt_SATA.Size = New System.Drawing.Size(150, 31)
-        Me.txt_SATA.TabIndex = 22
+        Me.txt_SATA.TabIndex = 4
         '
         'txt_socket
         '
         Me.txt_socket.Location = New System.Drawing.Point(147, 128)
         Me.txt_socket.Name = "txt_socket"
         Me.txt_socket.Size = New System.Drawing.Size(150, 31)
-        Me.txt_socket.TabIndex = 21
+        Me.txt_socket.TabIndex = 3
         '
         'txt_ram
         '
         Me.txt_ram.Location = New System.Drawing.Point(147, 91)
         Me.txt_ram.Name = "txt_ram"
         Me.txt_ram.Size = New System.Drawing.Size(150, 31)
-        Me.txt_ram.TabIndex = 20
+        Me.txt_ram.TabIndex = 2
         '
         'txt_manufacturer
         '
         Me.txt_manufacturer.Location = New System.Drawing.Point(147, 54)
         Me.txt_manufacturer.Name = "txt_manufacturer"
         Me.txt_manufacturer.Size = New System.Drawing.Size(150, 31)
-        Me.txt_manufacturer.TabIndex = 11
+        Me.txt_manufacturer.TabIndex = 1
         '
         'txt_name
         '
         Me.txt_name.Location = New System.Drawing.Point(147, 17)
         Me.txt_name.Name = "txt_name"
         Me.txt_name.Size = New System.Drawing.Size(150, 31)
-        Me.txt_name.TabIndex = 10
+        Me.txt_name.TabIndex = 0
         '
         'btn_back
         '
         Me.btn_back.Location = New System.Drawing.Point(163, 276)
         Me.btn_back.Name = "btn_back"
         Me.btn_back.Size = New System.Drawing.Size(134, 80)
-        Me.btn_back.TabIndex = 27
+        Me.btn_back.TabIndex = 8
         Me.btn_back.Text = "Go Back"
         Me.btn_back.UseVisualStyleBackColor = True
         '
@@ -166,7 +166,7 @@ Partial Class AddMoba
         Me.btn_add.Location = New System.Drawing.Point(12, 276)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(131, 80)
-        Me.btn_add.TabIndex = 26
+        Me.btn_add.TabIndex = 7
         Me.btn_add.Text = "Add"
         Me.btn_add.UseVisualStyleBackColor = True
         '
