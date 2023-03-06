@@ -1,5 +1,6 @@
 ﻿Public Class Staff
     Sub init()
+        ListView1.Items.Clear()
         For i = 0 To AllUsers.Count - 1
             Dim l As New ListViewItem
             l.SubItems(0).Text = AllUsers(i).ID
@@ -23,5 +24,33 @@
             .Add("Permission", ListView1.Width - 330)
         End With
 
+    End Sub
+
+    Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click
+        Me.Hide()
+        Navigation.Show()
+    End Sub
+
+    Private Sub btn_delete_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
+        For i = 0 To AllUsers.Count - 1
+            If AllUsers(i).ID = ListView1.SelectedItems(0).SubItems(0).Text Then
+                Dim u As user = AllUsers(i)
+                u.ID = -1 - u.ID
+                AllUsers(i) = u
+                ListView1.Items.Remove(ListView1.SelectedItems(0))
+            End If
+        Next
+        writeUser()
+    End Sub
+
+    Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
+        AddUsers.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btn_edit_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
+        EditUsers.Show()
+        EditUsers.init(ListView1.SelectedItems(0).SubItems(0).Text)
+        Me.Hide()
     End Sub
 End Class

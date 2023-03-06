@@ -91,18 +91,15 @@ Public Class Write
                 Next
             End If
         Next
-        Debug.WriteLine("CPU Socket: " & c.socket)
-        Debug.WriteLine("Motherboard Socket: " & m.socket)
-        Debug.WriteLine("CPU Power: " & c.TPD)
-        Debug.WriteLine("GPU Power: " & g.TPD)
-        Debug.WriteLine("RAM Power: " & r.tpd)
-        Debug.WriteLine("PSU Power: " & p.power)
+
         If powerCheck(c, g, r, p) And socketCheck(m, c) And connctionsCheck(m, s) And slotsCheck(ca, s) Then
 
             'create new order to store all of the data
             Dim o As New Order
             'set the ID to equal the amount of orders plus one
             o.id = AllOrders.Count
+            'set the price to the value of the text box for price
+            o.price = txt_price.Text
             'set the customer to the value of the text box for customers
             o.customer = custID
             'set the due date to the datetimepicker value
@@ -525,4 +522,9 @@ Public Class Write
         'store that we are waiting for a motherboard
         type = "Motherboard"
     End Sub
+
+    Private Sub Write_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        PictureBox1.SendToBack()
+    End Sub
+
 End Class

@@ -58,6 +58,12 @@ Partial Class Write
         Me.lbl_ram = New System.Windows.Forms.LinkLabel()
         Me.lbl_CPU = New System.Windows.Forms.LinkLabel()
         Me.lbl_gpu = New System.Windows.Forms.LinkLabel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.txt_price = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -193,6 +199,8 @@ Partial Class Write
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label7.Location = New System.Drawing.Point(17, 252)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
@@ -349,6 +357,7 @@ Partial Class Write
         'lbl_clearSto
         '
         Me.lbl_clearSto.AutoSize = True
+        Me.lbl_clearSto.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.lbl_clearSto.Location = New System.Drawing.Point(571, 328)
         Me.lbl_clearSto.Name = "lbl_clearSto"
         Me.lbl_clearSto.Size = New System.Drawing.Size(51, 25)
@@ -416,11 +425,49 @@ Partial Class Write
         Me.lbl_gpu.TabStop = True
         Me.lbl_gpu.Text = "Edit"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.PictureBox1.Location = New System.Drawing.Point(17, 224)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(614, 129)
+        Me.PictureBox1.TabIndex = 23
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.SystemColors.Control
+        Me.PictureBox2.Location = New System.Drawing.Point(17, 293)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(317, 60)
+        Me.PictureBox2.TabIndex = 23
+        Me.PictureBox2.TabStop = False
+        '
+        'txt_price
+        '
+        Me.txt_price.Location = New System.Drawing.Point(114, 312)
+        Me.txt_price.Name = "txt_price"
+        Me.txt_price.Size = New System.Drawing.Size(141, 31)
+        Me.txt_price.TabIndex = 24
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(21, 312)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(49, 25)
+        Me.Label10.TabIndex = 25
+        Me.Label10.Text = "Price"
+        '
         'Write
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(641, 588)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.txt_price)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lbl_Cust)
         Me.Controls.Add(Me.lbl_clearSto)
         Me.Controls.Add(Me.lbl_motherboard)
@@ -460,6 +507,8 @@ Partial Class Write
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "Write"
         Me.Text = "Add Order"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -501,4 +550,8 @@ Partial Class Write
     Friend WithEvents lbl_ram As LinkLabel
     Friend WithEvents lbl_CPU As LinkLabel
     Friend WithEvents lbl_gpu As LinkLabel
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents txt_price As TextBox
+    Friend WithEvents Label10 As Label
 End Class

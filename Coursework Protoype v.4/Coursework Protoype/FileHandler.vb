@@ -76,7 +76,6 @@
         FileClose(1)
     End Sub
 
-
     'read from the stock file
     Public Sub readStock()
         'open the file called stock.txt for input

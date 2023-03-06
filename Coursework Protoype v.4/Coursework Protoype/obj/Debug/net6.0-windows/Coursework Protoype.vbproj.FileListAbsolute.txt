@@ -152,3 +152,5 @@ C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Proto
 C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.AddCustomer.resources
 C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.EditCustomer.resources
 C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.Staff.resources
+C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.AddUsers.resources
+C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.EditUsers.resources
