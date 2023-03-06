@@ -39,7 +39,37 @@
         'close the file
         FileClose(1)
     End Sub
+    Public Sub readSales()
+        'open the file called Sales.txt for input
+        FileOpen(1, "Sales.txt", OpenMode.Input)
+        'store  temporary log
+        Dim s As New sale
+        'loop until the end of the file
+        While Not EOF(1)
+            'input the stock details
+            Input(1, s.id)
+            Input(1, s.amount)
+            Input(1, s.time)
+            allSales.Add(s)
+        End While
+        'close the file
+        FileClose(1)
+    End Sub
 
+    Public Sub writeSales()
+        'open the file called Sales.txt for output
+        FileOpen(1, "Sales.txt", OpenMode.Output)
+        'loop through all of the orders
+        For i = 0 To allSales.Count - 1
+            'if it has not been marked for deletion
+            If allSales(i).id >= 0 Then
+                'write that data to the file
+                WriteLine(1, allSales(i).id, allSales(i).amount, allSales(i).time)
+            End If
+        Next
+        'close the file
+        FileClose(1)
+    End Sub
 
 
     'read from the logs file

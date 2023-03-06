@@ -26,6 +26,7 @@
         'set the due date equal to whats in date_due
         o.due = date_due.Value
         'set the order at position oID to O
+        o.price = txt_price.Text
         AllOrders(oID) = o
 
         Dim os As New orderStock
@@ -114,6 +115,7 @@
                     txt_cust.Text = allCustomers(i).firstName & " " & allCustomers(i).lastName
                 End If
             Next
+            txt_price.Text = AllOrders(orderID).price
             'set the due date box equal to the date stored in the order
             date_due.Value = AllOrders(orderID).due
             Dim startIndex As Integer = -1
@@ -126,8 +128,6 @@
                 End If
             End While
             index = startIndex
-            Debug.WriteLine(index)
-            Debug.WriteLine(orderID)
             For i = 0 To AllStock.Count - 1
                 Select Case AllStock(i).ID
                     Case AllOrderStock(index).stock
@@ -217,6 +217,7 @@
         seeStock.selectInit("CPU")
         'store that we are waiting for a CPU
         Type = "CPU"
+        txt_price.Text = Convert.ToDecimal(txt_price.Text) - (AllStock(sCPU).cost * 1.1)
     End Sub
 
     Private Sub lbl_ram_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_ram.LinkClicked
@@ -228,6 +229,7 @@
         seeStock.selectInit("RAM")
         'store that we are waiting for RAM
         Type = "RAM"
+        txt_price.Text = Convert.ToDecimal(txt_price.Text) - (AllStock(sRAM).cost * 1.1)
     End Sub
 
     Private Sub lbl_case_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_case.LinkClicked
@@ -239,6 +241,7 @@
         seeStock.selectInit("Case")
         'store that we are waiting for a case
         Type = "Case"
+        txt_price.Text = Convert.ToDecimal(txt_price.Text) - (AllStock(sCase).cost * 1.1)
     End Sub
 
     Private Sub lbl_gpu_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_gpu.LinkClicked
@@ -250,6 +253,7 @@
         seeStock.selectInit("GPU")
         'store that we are waiting for a GPU
         Type = "GPU"
+        txt_price.Text = Convert.ToDecimal(txt_price.Text) - (AllStock(sGPU).cost * 1.1)
     End Sub
 
     Private Sub lbl_psu_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_psu.LinkClicked
@@ -261,6 +265,7 @@
         seeStock.selectInit("PSU")
         'store that we are waiting for a PSU
         Type = "PSU"
+        txt_price.Text = Convert.ToDecimal(txt_price.Text) - (AllStock(sPSU).cost * 1.1)
     End Sub
 
     Private Sub lbl_motherboard_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_motherboard.LinkClicked
@@ -272,10 +277,13 @@
         seeStock.selectInit("Motherboard")
         'store that we are waiting for a motherboard
         Type = "Motherboard"
+        txt_price.Text = Convert.ToDecimal(txt_price.Text) - (AllStock(sMoba).cost * 1.1)
     End Sub
 
     'on returning from the see stock page 
     Sub onReturn(index As Integer)
+        txt_price.Text = Convert.ToDecimal(txt_price.Text) + (AllStock(index).cost * 1.1)
+
         'do different things depending on which part we are waiting to get back
         Select Case Type
             'if we're waiting to get a CPU back
@@ -408,5 +416,9 @@
                 txt_cust.Text = allCustomers(i).firstName & " " & allCustomers(i).lastName
             End If
         Next
+    End Sub
+
+    Private Sub EditOrder_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        PictureBox1.SendToBack()
     End Sub
 End Class

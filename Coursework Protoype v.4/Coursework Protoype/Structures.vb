@@ -16,9 +16,16 @@
     Public AllPSUs As New List(Of PSU)
     Public AllLogs As New List(Of log)
     Public allCustomers As New List(Of customer)
+    Public allSales As New List(Of sale)
 End Module
 
 'structure for storing data about an order
+Public Structure sale
+    Dim id As Integer
+    Dim amount As Decimal
+    Dim time As Date
+End Structure
+
 Public Structure Order
     'id of the order (PK)
     Dim id As Integer

@@ -217,6 +217,7 @@ Public Class Write
         seeStock.selectInit("CPU")
         'store that we are waiting for a CPU
         type = "CPU"
+        lbl_CPU.Show()
     End Sub
     'store what type of item we are waiting to be selected 
     Public type As String
@@ -231,6 +232,7 @@ Public Class Write
         seeStock.selectInit("RAM")
         'store that we are waiting for RAM
         type = "RAM"
+        lbl_ram.Show()
     End Sub
 
     'on clicking the select Case button
@@ -243,6 +245,7 @@ Public Class Write
         seeStock.selectInit("Case")
         'store that we are waiting for a case
         type = "Case"
+        lbl_case.Show()
     End Sub
 
     'on clicking the select GPU button
@@ -255,6 +258,7 @@ Public Class Write
         seeStock.selectInit("GPU")
         'store that we are waiting for a GPU
         type = "GPU"
+        lbl_gpu.Show()
     End Sub
 
 
@@ -268,12 +272,15 @@ Public Class Write
         seeStock.selectInit("Motherboard")
         'store that we are waiting for a motherboard
         type = "Motherboard"
+        lbl_motherboard.Show()
     End Sub
 
     'on returning from the see stock page 
     Sub onReturn(index As Integer)
+        txt_price.Text = Convert.ToDecimal(txt_price.Text) + (AllStock(index).cost * 1.1)
         'do different things depending on which part we are waiting to get back
         Select Case type
+
             'if we're waiting to get a CPU back
             Case "CPU"
                 'hide the button to select and show the text box that shows which item was selected
@@ -446,6 +453,7 @@ Public Class Write
         Me.Hide()
         btn_cust.Hide()
         txt_cust.Show()
+        lbl_Cust.Show()
     End Sub
 
     Public Sub onCustReturn(id As Integer)
@@ -466,6 +474,7 @@ Public Class Write
         seeStock.selectInit("CPU")
         'store that we are waiting for a CPU
         type = "CPU"
+        txt_price.Text = Convert.ToDecimal(txt_price.Text) - (AllStock(sCPU).cost * 1.1)
     End Sub
 
     Private Sub lbl_ram_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_ram.LinkClicked
@@ -477,6 +486,7 @@ Public Class Write
         seeStock.selectInit("RAM")
         'store that we are waiting for RAM
         type = "RAM"
+        txt_price.Text = Convert.ToDecimal(txt_price.Text) - (AllStock(sRAM).cost * 1.1)
     End Sub
 
     Private Sub lbl_case_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_case.LinkClicked
@@ -488,6 +498,7 @@ Public Class Write
         seeStock.selectInit("Case")
         'store that we are waiting for a case
         type = "Case"
+        txt_price.Text = Convert.ToDecimal(txt_price.Text) - (AllStock(sCase).cost * 1.1)
     End Sub
 
     Private Sub lbl_gpu_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_gpu.LinkClicked
@@ -499,6 +510,7 @@ Public Class Write
         seeStock.selectInit("GPU")
         'store that we are waiting for a GPU
         type = "GPU"
+        txt_price.Text = Convert.ToDecimal(txt_price.Text) - (AllStock(sGPU).cost * 1.1)
     End Sub
 
     Private Sub lbl_psu_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_psu.LinkClicked
@@ -510,6 +522,7 @@ Public Class Write
         seeStock.selectInit("PSU")
         'store that we are waiting for a PSU
         type = "PSU"
+        txt_price.Text = Convert.ToDecimal(txt_price.Text) - (AllStock(sPSU).cost * 1.1)
     End Sub
 
     Private Sub lbl_motherboard_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_motherboard.LinkClicked
@@ -521,10 +534,12 @@ Public Class Write
         seeStock.selectInit("Motherboard")
         'store that we are waiting for a motherboard
         type = "Motherboard"
+        txt_price.Text = Convert.ToDecimal(txt_price.Text) - (AllStock(sMoba).cost * 1.1)
     End Sub
 
     Private Sub Write_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PictureBox1.SendToBack()
+        txt_price.Text = "0"
     End Sub
 
 End Class

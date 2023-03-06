@@ -52,6 +52,12 @@ Partial Class EditOrder
         Me.lbl_case = New System.Windows.Forms.LinkLabel()
         Me.lbl_clearSto = New System.Windows.Forms.LinkLabel()
         Me.lbl_Cust = New System.Windows.Forms.LinkLabel()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txt_price = New System.Windows.Forms.TextBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -336,11 +342,49 @@ Partial Class EditOrder
         Me.lbl_Cust.TabStop = True
         Me.lbl_Cust.Text = "Edit"
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(20, 318)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(49, 25)
+        Me.Label10.TabIndex = 29
+        Me.Label10.Text = "Price"
+        '
+        'txt_price
+        '
+        Me.txt_price.Location = New System.Drawing.Point(113, 318)
+        Me.txt_price.Name = "txt_price"
+        Me.txt_price.Size = New System.Drawing.Size(141, 31)
+        Me.txt_price.TabIndex = 28
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.SystemColors.Control
+        Me.PictureBox2.Location = New System.Drawing.Point(16, 299)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(317, 60)
+        Me.PictureBox2.TabIndex = 26
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.PictureBox1.Location = New System.Drawing.Point(16, 230)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(609, 129)
+        Me.PictureBox1.TabIndex = 27
+        Me.PictureBox1.TabStop = False
+        '
         'EditOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(641, 588)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.txt_price)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lbl_Cust)
         Me.Controls.Add(Me.lbl_clearSto)
         Me.Controls.Add(Me.lbl_motherboard)
@@ -374,6 +418,8 @@ Partial Class EditOrder
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "EditOrder"
         Me.Text = "Edit Order"
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -409,4 +455,8 @@ Partial Class EditOrder
     Friend WithEvents lbl_case As LinkLabel
     Friend WithEvents lbl_clearSto As LinkLabel
     Friend WithEvents lbl_Cust As LinkLabel
+    Friend WithEvents Label10 As Label
+    Friend WithEvents txt_price As TextBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

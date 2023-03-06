@@ -188,7 +188,7 @@ Partial Class Write
         '
         'btn_AddStorage
         '
-        Me.btn_AddStorage.Location = New System.Drawing.Point(114, 247)
+        Me.btn_AddStorage.Location = New System.Drawing.Point(112, 247)
         Me.btn_AddStorage.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_AddStorage.Name = "btn_AddStorage"
         Me.btn_AddStorage.Size = New System.Drawing.Size(143, 38)
@@ -201,7 +201,7 @@ Partial Class Write
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label7.Location = New System.Drawing.Point(17, 252)
+        Me.Label7.Location = New System.Drawing.Point(17, 254)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(77, 25)
@@ -353,6 +353,7 @@ Partial Class Write
         Me.lbl_Cust.TabIndex = 15
         Me.lbl_Cust.TabStop = True
         Me.lbl_Cust.Text = "Edit"
+        Me.lbl_Cust.Visible = False
         '
         'lbl_clearSto
         '
@@ -374,6 +375,7 @@ Partial Class Write
         Me.lbl_motherboard.TabIndex = 17
         Me.lbl_motherboard.TabStop = True
         Me.lbl_motherboard.Text = "Edit"
+        Me.lbl_motherboard.Visible = False
         '
         'lbl_psu
         '
@@ -384,6 +386,7 @@ Partial Class Write
         Me.lbl_psu.TabIndex = 18
         Me.lbl_psu.TabStop = True
         Me.lbl_psu.Text = "Edit"
+        Me.lbl_psu.Visible = False
         '
         'lbl_case
         '
@@ -394,6 +397,7 @@ Partial Class Write
         Me.lbl_case.TabIndex = 19
         Me.lbl_case.TabStop = True
         Me.lbl_case.Text = "Edit"
+        Me.lbl_case.Visible = False
         '
         'lbl_ram
         '
@@ -404,6 +408,7 @@ Partial Class Write
         Me.lbl_ram.TabIndex = 20
         Me.lbl_ram.TabStop = True
         Me.lbl_ram.Text = "Edit"
+        Me.lbl_ram.Visible = False
         '
         'lbl_CPU
         '
@@ -414,6 +419,7 @@ Partial Class Write
         Me.lbl_CPU.TabIndex = 21
         Me.lbl_CPU.TabStop = True
         Me.lbl_CPU.Text = "Edit"
+        Me.lbl_CPU.Visible = False
         '
         'lbl_gpu
         '
@@ -424,13 +430,14 @@ Partial Class Write
         Me.lbl_gpu.TabIndex = 22
         Me.lbl_gpu.TabStop = True
         Me.lbl_gpu.Text = "Edit"
+        Me.lbl_gpu.Visible = False
         '
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.PictureBox1.Location = New System.Drawing.Point(17, 224)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(614, 129)
+        Me.PictureBox1.Size = New System.Drawing.Size(609, 129)
         Me.PictureBox1.TabIndex = 23
         Me.PictureBox1.TabStop = False
         '
