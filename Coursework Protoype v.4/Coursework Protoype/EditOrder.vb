@@ -17,71 +17,108 @@
     Public sSto As New List(Of Integer)
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_AddOrder.Click
-        'order structure to store the edited data
-        Dim o As New Order
-        'set the ID of O equal to the ID of the order that's being edited
-        o.id = AllOrders(oID).id
-        'set the value of the customer equal to the value in txt cust
-        o.customer = custID
-        'set the due date equal to whats in date_due
-        o.due = date_due.Value
-        'set the order at position oID to O
-        o.price = txt_price.Text
-        AllOrders(oID) = o
+        If txt_Case.Text <> "" Then
+            If txt_CPU.Text <> "" Then
+                If txt_cust.Text <> "" Then
+                    If txt_GPU.Text <> "" Then
+                        If txt_motherboard.Text <> "" Then
+                            If txt_price.Text <> "" Then
+                                If txt_PSU.Text <> "" Then
+                                    If txt_RAM.Text <> "" Then
+                                        If lst_sto.Items.Count <> 0 Then
+                                            'order structure to store the edited data
+                                            Dim o As New Order
+                                            'set the ID of O equal to the ID of the order that's being edited
+                                            o.id = AllOrders(oID).id
+                                            'set the value of the customer equal to the value in txt cust
+                                            o.customer = custID
+                                            'set the due date equal to whats in date_due
+                                            o.due = date_due.Value
+                                            'set the order at position oID to O
+                                            o.price = txt_price.Text
+                                            AllOrders(oID) = o
 
-        Dim os As New orderStock
-        os.ID = AllOrderStock.Count
-        os.order = o.id
-        os.stock = sCPU
-        AllOrderStock.Add(os)
-
-
-
-        os.ID = AllOrderStock.Count
-        os.stock = sGPU
-        AllOrderStock.Add(os)
-
-
-
-        os.ID = AllOrderStock.Count
-        os.stock = sRAM
-        AllOrderStock.Add(os)
+                                            Dim os As New orderStock
+                                            os.ID = AllOrderStock.Count
+                                            os.order = o.id
+                                            os.stock = sCPU
+                                            AllOrderStock.Add(os)
 
 
-        os.ID = AllOrderStock.Count
-        os.stock = sPSU
-        AllOrderStock.Add(os)
 
-        os.ID = AllOrderStock.Count
-        os.stock = sCase
-        AllOrderStock.Add(os)
-
-        os.ID = AllOrderStock.Count
-        os.stock = sMoba
-        AllOrderStock.Add(os)
+                                            os.ID = AllOrderStock.Count
+                                            os.stock = sGPU
+                                            AllOrderStock.Add(os)
 
 
-        For i = 0 To lst_sto.Items.Count - 1
-            os.ID = AllOrderStock.Count
-            os.stock = sSto(i)
-            AllOrderStock.Add(os)
-        Next
+
+                                            os.ID = AllOrderStock.Count
+                                            os.stock = sRAM
+                                            AllOrderStock.Add(os)
 
 
-        FileHandler.writeOrder()
-        FileHandler.writeOrderStock()
-        FileHandler.writeStockFile()
-        seeOrders.Show()
-        Me.Hide()
-        seeOrders.initialiseAllOrders()
-        Dim l As log
-        l.id = findNextIndex("AllLogs")
-        l.user = Form1.currentUser
-        l.action = "Edit"
-        l.data = o.id & o.customer & o.due
-        l.time = Now
-        AllLogs.Add(l)
-        writeLogs()
+                                            os.ID = AllOrderStock.Count
+                                            os.stock = sPSU
+                                            AllOrderStock.Add(os)
+
+                                            os.ID = AllOrderStock.Count
+                                            os.stock = sCase
+                                            AllOrderStock.Add(os)
+
+                                            os.ID = AllOrderStock.Count
+                                            os.stock = sMoba
+                                            AllOrderStock.Add(os)
+
+
+                                            For i = 0 To lst_sto.Items.Count - 1
+                                                os.ID = AllOrderStock.Count
+                                                os.stock = sSto(i)
+                                                AllOrderStock.Add(os)
+                                            Next
+
+
+                                            FileHandler.writeOrder()
+                                            FileHandler.writeOrderStock()
+                                            FileHandler.writeStockFile()
+                                            seeOrders.Show()
+                                            Me.Hide()
+                                            seeOrders.initialiseAllOrders()
+                                            Dim l As log
+                                            l.id = findNextIndex("AllLogs")
+                                            l.user = Form1.currentUser
+                                            l.action = "Edit"
+                                            l.data = o.id & o.customer & o.due
+                                            l.time = Now
+                                            AllLogs.Add(l)
+                                            writeLogs()
+                                        Else
+                                            MsgBox("Please enter which storage device(s) will be used in the order")
+                                        End If
+                                    Else
+                                        MsgBox("Please enter which RAM will be used in the order")
+                                    End If
+                                Else
+                                    MsgBox("Please enter which PSU will be used in the order")
+                                End If
+                            Else
+                                MsgBox("Please enter the price of the order")
+                            End If
+                        Else
+                            MsgBox("Please enter which motherboard will be used in the order")
+                        End If
+                    Else
+                        MsgBox("Please enter which GPU will be used in the order")
+                    End If
+                Else
+                    MsgBox("Please enter the custommer of the order")
+                End If
+            Else
+                MsgBox("Please enter which CPU will be used in the order")
+            End If
+        Else
+            MsgBox("Please enter which case will be used in the order")
+        End If
+
     End Sub
 
     Private Sub btn_AddStorage_Click(sender As Object, e As EventArgs) Handles btn_AddStorage.Click

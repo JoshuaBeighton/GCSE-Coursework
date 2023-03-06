@@ -57,7 +57,7 @@ Partial Class Customers
         Me.btn_edit.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_edit.Name = "btn_edit"
         Me.btn_edit.Size = New System.Drawing.Size(187, 83)
-        Me.btn_edit.TabIndex = 17
+        Me.btn_edit.TabIndex = 2
         Me.btn_edit.Text = "Edit Customer"
         Me.btn_edit.UseVisualStyleBackColor = True
         '
@@ -67,7 +67,7 @@ Partial Class Customers
         Me.btn_delete.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_delete.Name = "btn_delete"
         Me.btn_delete.Size = New System.Drawing.Size(187, 83)
-        Me.btn_delete.TabIndex = 16
+        Me.btn_delete.TabIndex = 1
         Me.btn_delete.Text = "Delete Customer"
         Me.btn_delete.UseVisualStyleBackColor = True
         '
@@ -77,7 +77,7 @@ Partial Class Customers
         Me.btn_addCust.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_addCust.Name = "btn_addCust"
         Me.btn_addCust.Size = New System.Drawing.Size(187, 83)
-        Me.btn_addCust.TabIndex = 15
+        Me.btn_addCust.TabIndex = 0
         Me.btn_addCust.Text = "Add Customer"
         Me.btn_addCust.UseVisualStyleBackColor = True
         '

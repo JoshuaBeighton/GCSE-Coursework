@@ -16,11 +16,6 @@
     <Import Include="System.Windows.Forms" />
   </ItemGroup>
 
-
-  <ItemGroup>
-    <PackageReference Include="Maikebing.System.Windows.Forms.DataVisualization" Version="5.0.1" />
-  </ItemGroup>
-
   <ItemGroup>
     <Compile Update="My Project\Application.Designer.vb">
       <DesignTime>True</DesignTime>

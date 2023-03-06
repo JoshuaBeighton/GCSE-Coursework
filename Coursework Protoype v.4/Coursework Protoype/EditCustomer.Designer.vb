@@ -36,7 +36,7 @@ Partial Class EditCustomer
         Me.btn_edit.Location = New System.Drawing.Point(12, 123)
         Me.btn_edit.Name = "btn_edit"
         Me.btn_edit.Size = New System.Drawing.Size(365, 38)
-        Me.btn_edit.TabIndex = 10
+        Me.btn_edit.TabIndex = 3
         Me.btn_edit.Text = "Edit"
         Me.btn_edit.UseVisualStyleBackColor = True
         '
@@ -72,21 +72,21 @@ Partial Class EditCustomer
         Me.txt_number.Location = New System.Drawing.Point(176, 86)
         Me.txt_number.Name = "txt_number"
         Me.txt_number.Size = New System.Drawing.Size(201, 31)
-        Me.txt_number.TabIndex = 9
+        Me.txt_number.TabIndex = 2
         '
         'txt_last
         '
         Me.txt_last.Location = New System.Drawing.Point(176, 49)
         Me.txt_last.Name = "txt_last"
         Me.txt_last.Size = New System.Drawing.Size(201, 31)
-        Me.txt_last.TabIndex = 8
+        Me.txt_last.TabIndex = 1
         '
         'txt_first
         '
         Me.txt_first.Location = New System.Drawing.Point(176, 12)
         Me.txt_first.Name = "txt_first"
         Me.txt_first.Size = New System.Drawing.Size(201, 31)
-        Me.txt_first.TabIndex = 4
+        Me.txt_first.TabIndex = 0
         '
         'EditCustomer
         '

@@ -19,176 +19,212 @@ Public Class Write
     Public sSto As New List(Of Integer)
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_AddOrder.Click
-        Dim c As New CPU
-        Dim g As New GPU
-        Dim r As New RAM
-        Dim m As New motherboard
-        Dim p As New PSU
-        Dim ca As New cases
-        Dim s(sSto.Count - 1) As store
-        For i = 0 To AllStock.Count - 1
-            If sCPU = AllStock(i).ID Then
-                For j = 0 To AllCPUs.Count - 1
-                    If AllCPUs(j).ID = AllStock(i).part Then
-                        c = AllCPUs(j)
-                    End If
-                Next
-            End If
-        Next
-        For i = 0 To AllStock.Count - 1
-            If sGPU = AllStock(i).ID Then
-                For j = 0 To AllGPUs.Count - 1
-                    If AllGPUs(j).ID = AllStock(i).part Then
-                        g = AllGPUs(j)
-                    End If
-                Next
-            End If
-        Next
-        For i = 0 To AllStock.Count - 1
-            If sRAM = AllStock(i).ID Then
-                For j = 0 To AllRAMs.Count - 1
-                    If AllRAMs(j).ID = AllStock(i).part Then
-                        r = AllRAMs(j)
-                    End If
-                Next
-            End If
-        Next
-        For i = 0 To AllStock.Count - 1
-            If sMoba = AllStock(i).ID Then
-                For j = 0 To AllMoba.Count - 1
-                    If AllMoba(j).id = AllStock(i).part Then
-                        m = AllMoba(j)
-                    End If
-                Next
-            End If
-        Next
-        For i = 0 To AllStock.Count - 1
-            If sCase = AllStock(i).ID Then
-                For j = 0 To AllCases.Count - 1
-                    If AllCases(j).id = AllStock(i).part Then
-                        ca = AllCases(j)
-                    End If
-                Next
-            End If
-        Next
-        For k = 0 To sSto.Count - 1
-            For i = 0 To AllStock.Count - 1
-                If sSto(k) = AllStock(i).ID Then
-                    For j = 0 To AllStorage.Count - 1
-                        If AllStorage(j).ID = AllStock(i).part Then
-                            s(k) = AllStorage(j)
+        If txt_Case.Text <> "" Then
+            If txt_CPU.Text <> "" Then
+                If txt_cust.Text <> "" Then
+                    If txt_GPU.Text <> "" Then
+                        If txt_motherboard.Text <> "" Then
+                            If txt_price.Text <> "" Then
+                                If txt_PSU.Text <> "" Then
+                                    If txt_RAM.Text <> "" Then
+                                        If lst_sto.Items.Count <> 0 Then
+                                            Dim c As New CPU
+                                            Dim g As New GPU
+                                            Dim r As New RAM
+                                            Dim m As New motherboard
+                                            Dim p As New PSU
+                                            Dim ca As New cases
+                                            Dim s(sSto.Count - 1) As store
+                                            For i = 0 To AllStock.Count - 1
+                                                If sCPU = AllStock(i).ID Then
+                                                    For j = 0 To AllCPUs.Count - 1
+                                                        If AllCPUs(j).ID = AllStock(i).part Then
+                                                            c = AllCPUs(j)
+                                                        End If
+                                                    Next
+                                                End If
+                                            Next
+                                            For i = 0 To AllStock.Count - 1
+                                                If sGPU = AllStock(i).ID Then
+                                                    For j = 0 To AllGPUs.Count - 1
+                                                        If AllGPUs(j).ID = AllStock(i).part Then
+                                                            g = AllGPUs(j)
+                                                        End If
+                                                    Next
+                                                End If
+                                            Next
+                                            For i = 0 To AllStock.Count - 1
+                                                If sRAM = AllStock(i).ID Then
+                                                    For j = 0 To AllRAMs.Count - 1
+                                                        If AllRAMs(j).ID = AllStock(i).part Then
+                                                            r = AllRAMs(j)
+                                                        End If
+                                                    Next
+                                                End If
+                                            Next
+                                            For i = 0 To AllStock.Count - 1
+                                                If sMoba = AllStock(i).ID Then
+                                                    For j = 0 To AllMoba.Count - 1
+                                                        If AllMoba(j).id = AllStock(i).part Then
+                                                            m = AllMoba(j)
+                                                        End If
+                                                    Next
+                                                End If
+                                            Next
+                                            For i = 0 To AllStock.Count - 1
+                                                If sCase = AllStock(i).ID Then
+                                                    For j = 0 To AllCases.Count - 1
+                                                        If AllCases(j).id = AllStock(i).part Then
+                                                            ca = AllCases(j)
+                                                        End If
+                                                    Next
+                                                End If
+                                            Next
+                                            For k = 0 To sSto.Count - 1
+                                                For i = 0 To AllStock.Count - 1
+                                                    If sSto(k) = AllStock(i).ID Then
+                                                        For j = 0 To AllStorage.Count - 1
+                                                            If AllStorage(j).ID = AllStock(i).part Then
+                                                                s(k) = AllStorage(j)
+                                                            End If
+                                                        Next
+                                                    End If
+                                                Next
+                                            Next
+                                            For i = 0 To AllStock.Count - 1
+                                                If sPSU = AllStock(i).ID Then
+                                                    For j = 0 To AllPSUs.Count - 1
+                                                        If AllPSUs(j).ID = AllStock(i).part Then
+                                                            p = AllPSUs(j)
+                                                        End If
+                                                    Next
+                                                End If
+                                            Next
+
+                                            If powerCheck(c, g, r, p) And socketCheck(m, c) And connctionsCheck(m, s) And slotsCheck(ca, s) Then
+
+                                                'create new order to store all of the data
+                                                Dim o As New Order
+                                                'set the ID to equal the amount of orders plus one
+                                                o.id = AllOrders.Count
+                                                'set the price to the value of the text box for price
+                                                o.price = txt_price.Text
+                                                'set the customer to the value of the text box for customers
+                                                o.customer = custID
+                                                'set the due date to the datetimepicker value
+                                                o.due = date_due.Value
+                                                'add o to orders
+                                                AllOrders.Add(o)
+                                                Dim l As log
+                                                l.id = findNextIndex("AllLogs")
+                                                l.user = Form1.currentUser
+                                                l.action = "Delete"
+                                                l.data = o.id & o.customer & o.price
+                                                l.time = Now
+                                                AllLogs.Add(l)
+                                                writeLogs()
+                                                'create new orderstock item
+                                                Dim os As New orderStock
+                                                'set its ID to the count of orderstock items
+                                                os.ID = AllOrderStock.Count
+                                                'set its order ID to that of the Order - this will not need to be changed again as it is the same for all orderstock items for the same order
+                                                os.order = o.id
+                                                'set its stock ID to that of the CPU
+                                                os.stock = sCPU
+                                                'add the orderstock item
+                                                AllOrderStock.Add(os)
+
+                                                'set its ID to the count of orderstock items
+                                                os.ID = AllOrderStock.Count
+                                                'set its stock ID to that of the GPU
+                                                os.stock = sGPU
+                                                'add the orderstock item
+                                                AllOrderStock.Add(os)
+
+
+                                                'set its ID to the count of orderstock items
+                                                os.ID = AllOrderStock.Count
+                                                'set its stock ID to that of the RAM
+                                                os.stock = sRAM
+                                                'add the orderstock item
+                                                AllOrderStock.Add(os)
+
+
+                                                'set its ID to the count of orderstock items
+                                                os.ID = AllOrderStock.Count
+                                                'set its stock ID to that of the PSU
+                                                os.stock = sPSU
+                                                'add the orderstock item
+                                                AllOrderStock.Add(os)
+
+                                                'set its ID to the count of orderstock items
+                                                os.ID = AllOrderStock.Count
+                                                'set its stock ID to that of the case
+                                                os.stock = sCase
+                                                'add the orderstock item
+                                                AllOrderStock.Add(os)
+
+                                                'set its ID to the count of orderstock items
+                                                os.ID = AllOrderStock.Count
+                                                'set its stock ID to that of the motherboard
+                                                os.stock = sMoba
+                                                'add the orderstock item
+                                                AllOrderStock.Add(os)
+
+                                                'loop through the storage devices
+                                                For i = 0 To sSto.Count - 1
+                                                    'set the orderstock ID to the count of orderstock items
+                                                    os.ID = AllOrderStock.Count
+                                                    'set its stock ID to that of the current storage device
+                                                    os.stock = sSto(i)
+                                                    'add the orderstock item
+                                                    AllOrderStock.Add(os)
+                                                Next
+
+                                                'clear all of the values
+                                                txt_Case.Clear()
+                                                txt_CPU.Clear()
+                                                txt_cust.Clear()
+                                                txt_GPU.Clear()
+                                                txt_motherboard.Clear()
+                                                txt_PSU.Clear()
+                                                txt_RAM.Clear()
+                                                lst_sto.Items.Clear()
+                                                txt_cust.Clear()
+
+                                                Me.Hide()
+                                                seeOrders.Show()
+                                                'write all of the changes to the files
+                                                FileHandler.writeOrder()
+                                                FileHandler.writeOrderStock()
+                                                FileHandler.writeStockFile()
+                                            End If
+                                        Else
+                                            MsgBox("Please enter which storage device(s) will be used in the order")
+                                        End If
+                                    Else
+                                        MsgBox("Please enter which RAM will be used in the order")
+                                    End If
+                                Else
+                                    MsgBox("Please enter which PSU will be used in the order")
+                                End If
+                            Else
+                                MsgBox("Please enter the price of the order")
+                            End If
+                        Else
+                            MsgBox("Please enter which motherboard will be used in the order")
                         End If
-                    Next
-                End If
-            Next
-        Next
-        For i = 0 To AllStock.Count - 1
-            If sPSU = AllStock(i).ID Then
-                For j = 0 To AllPSUs.Count - 1
-                    If AllPSUs(j).ID = AllStock(i).part Then
-                        p = AllPSUs(j)
+                    Else
+                        MsgBox("Please enter which GPU will be used in the order")
                     End If
-                Next
+                Else
+                    MsgBox("Please enter the custommer of the order")
+                End If
+            Else
+                MsgBox("Please enter which CPU will be used in the order")
             End If
-        Next
-
-        If powerCheck(c, g, r, p) And socketCheck(m, c) And connctionsCheck(m, s) And slotsCheck(ca, s) Then
-
-            'create new order to store all of the data
-            Dim o As New Order
-            'set the ID to equal the amount of orders plus one
-            o.id = AllOrders.Count
-            'set the price to the value of the text box for price
-            o.price = txt_price.Text
-            'set the customer to the value of the text box for customers
-            o.customer = custID
-            'set the due date to the datetimepicker value
-            o.due = date_due.Value
-            'add o to orders
-            AllOrders.Add(o)
-            Dim l As log
-            l.id = findNextIndex("AllLogs")
-            l.user = Form1.currentUser
-            l.action = "Delete"
-            l.data = o.id & o.customer & o.price
-            l.time = Now
-            AllLogs.Add(l)
-            writeLogs()
-            'create new orderstock item
-            Dim os As New orderStock
-            'set its ID to the count of orderstock items
-            os.ID = AllOrderStock.Count
-            'set its order ID to that of the Order - this will not need to be changed again as it is the same for all orderstock items for the same order
-            os.order = o.id
-            'set its stock ID to that of the CPU
-            os.stock = sCPU
-            'add the orderstock item
-            AllOrderStock.Add(os)
-
-            'set its ID to the count of orderstock items
-            os.ID = AllOrderStock.Count
-            'set its stock ID to that of the GPU
-            os.stock = sGPU
-            'add the orderstock item
-            AllOrderStock.Add(os)
-
-
-            'set its ID to the count of orderstock items
-            os.ID = AllOrderStock.Count
-            'set its stock ID to that of the RAM
-            os.stock = sRAM
-            'add the orderstock item
-            AllOrderStock.Add(os)
-
-
-            'set its ID to the count of orderstock items
-            os.ID = AllOrderStock.Count
-            'set its stock ID to that of the PSU
-            os.stock = sPSU
-            'add the orderstock item
-            AllOrderStock.Add(os)
-
-            'set its ID to the count of orderstock items
-            os.ID = AllOrderStock.Count
-            'set its stock ID to that of the case
-            os.stock = sCase
-            'add the orderstock item
-            AllOrderStock.Add(os)
-
-            'set its ID to the count of orderstock items
-            os.ID = AllOrderStock.Count
-            'set its stock ID to that of the motherboard
-            os.stock = sMoba
-            'add the orderstock item
-            AllOrderStock.Add(os)
-
-            'loop through the storage devices
-            For i = 0 To sSto.Count - 1
-                'set the orderstock ID to the count of orderstock items
-                os.ID = AllOrderStock.Count
-                'set its stock ID to that of the current storage device
-                os.stock = sSto(i)
-                'add the orderstock item
-                AllOrderStock.Add(os)
-            Next
-
-            'clear all of the values
-            txt_Case.Clear()
-            txt_CPU.Clear()
-            txt_cust.Clear()
-            txt_GPU.Clear()
-            txt_motherboard.Clear()
-            txt_PSU.Clear()
-            txt_RAM.Clear()
-            lst_sto.Items.Clear()
-            txt_cust.Clear()
-
-            Me.Hide()
-            seeOrders.Show()
-            'write all of the changes to the files
-            FileHandler.writeOrder()
-            FileHandler.writeOrderStock()
-            FileHandler.writeStockFile()
+        Else
+            MsgBox("Please enter which case will be used in the order")
         End If
     End Sub
 

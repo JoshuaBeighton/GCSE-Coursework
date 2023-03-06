@@ -14,6 +14,18 @@
                 Else
                     Return 0
                 End If
+            Case "Case"
+                If AllCases.Count > 0 Then
+                    max = AllCases(0).id
+                    For i = 0 To AllCases.Count - 1
+                        If AllCases(i).id > max Then
+                            max = AllCases(i).id
+                        End If
+                    Next
+                    Return max + 1
+                Else
+                    Return 0
+                End If
             Case "AllLogs"
                 If AllLogs.Count > 0 Then
                     max = AllLogs(0).id
