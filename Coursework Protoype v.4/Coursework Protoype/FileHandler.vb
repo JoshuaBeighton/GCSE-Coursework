@@ -21,6 +21,27 @@
     End Sub
 
 
+    'read from the orders file
+    Public Sub readCustomers()
+        'open the file called customers.txt for input
+        FileOpen(1, "Customers.txt", OpenMode.Input)
+        'store  temporary customer
+        Dim c As New customer
+        'loop until the end of the file
+        While Not EOF(1)
+            'input the customer details
+            Input(1, c.ID)
+            Input(1, c.firstName)
+            Input(1, c.lastName)
+            Input(1, c.contact)
+            allCustomers.Add(c)
+        End While
+        'close the file
+        FileClose(1)
+    End Sub
+
+
+
     'read from the logs file
     Public Sub readLogs()
         'open the file called Logs.txt for input
@@ -280,6 +301,24 @@
             If AllOrders(i).id >= 0 Then
                 'write that data to the file
                 WriteLine(1, AllOrders(i).id, AllOrders(i).customer, AllOrders(i).due, AllOrders(i).price)
+            End If
+        Next
+        'close the file
+        FileClose(1)
+    End Sub
+
+
+
+    'write to the file for customers
+    Public Sub writeCustomers()
+        'open the file called customers.txt for output
+        FileOpen(1, "Customers.txt", OpenMode.Output)
+        'loop through all of the orders
+        For i = 0 To allCustomers.Count - 1
+            'if it has not been marked for deletion
+            If allCustomers(i).ID >= 0 Then
+                'write that data to the file
+                WriteLine(1, allCustomers(i).ID, allCustomers(i).firstName, allCustomers(i).lastName, allCustomers(i).contact)
             End If
         Next
         'close the file

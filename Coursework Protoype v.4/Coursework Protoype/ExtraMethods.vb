@@ -14,7 +14,18 @@
                 Else
                     Return 0
                 End If
-                'more work here
+            Case "Customer"
+                If allCustomers.Count > 0 Then
+                    max = allCustomers(0).ID
+                    For i = 0 To allCustomers.Count - 1
+                        If allCustomers(i).ID > max Then
+                            max = allCustomers(i).ID
+                        End If
+                    Next
+                    Return max + 1
+                Else
+                    Return 0
+                End If
         End Select
     End Function
 End Module

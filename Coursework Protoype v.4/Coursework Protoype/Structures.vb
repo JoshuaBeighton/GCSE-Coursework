@@ -15,7 +15,7 @@
     Public AllStorage As New List(Of store)
     Public AllPSUs As New List(Of PSU)
     Public AllLogs As New List(Of log)
-
+    Public allCustomers As New List(Of customer)
 End Module
 
 'structure for storing data about an order
@@ -23,7 +23,7 @@ Public Structure Order
     'id of the order (PK)
     Dim id As Integer
     'store which customer the order belongs to
-    Dim customer As String 'this will be changed to integer in the production model, however i do not have a database to index to in this prototype, so just the name will suffice
+    Dim customer As Integer 'this will be changed to integer in the production model, however i do not have a database to index to in this prototype, so just the name will suffice
     'store the date the order is due
     Dim due As Date
     'store the price of the order
@@ -215,6 +215,13 @@ Public Structure cases
     Dim SSDs As Integer
     'store the price of the motherboard
     Dim price As Decimal
+End Structure
+
+Public Structure customer
+    Dim ID As Integer
+    Dim firstName As String
+    Dim lastName As String
+    Dim contact As String
 End Structure
 
 Public Structure log

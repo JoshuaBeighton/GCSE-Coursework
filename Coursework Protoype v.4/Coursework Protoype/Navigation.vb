@@ -58,4 +58,10 @@
         Me.Hide()
         Logs.init()
     End Sub
+
+    Private Sub btn_cust_Click(sender As Object, e As EventArgs) Handles btn_cust.Click
+        Customers.Show()
+        Customers.custInit()
+        Me.Hide()
+    End Sub
 End Class

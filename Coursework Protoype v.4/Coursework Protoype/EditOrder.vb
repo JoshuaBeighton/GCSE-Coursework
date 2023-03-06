@@ -1,7 +1,20 @@
 ﻿Public Class EditOrder
     'store the ID of the order to be edited
     Dim oID As Integer
-
+    'store the ID of the stock item storing the CPU
+    Dim sCPU As Integer
+    'store the ID of the stock item storing the RAM
+    Dim sRAM As Integer
+    'store the ID of the stock item storing the GPU
+    Dim sGPU As Integer
+    'store the ID of the stock item storing the Motherboard
+    Dim sMoba As Integer
+    'store the ID of the stock item storing the Case
+    Dim sCase As Integer
+    'store the ID of the stock item storing the PSU
+    Dim sPSU As Integer
+    'store the IDs of the stock items storing the storage
+    Public sSto As New List(Of Integer)
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_AddOrder.Click
         'order structure to store the edited data
@@ -17,89 +30,43 @@
 
         'this will be changed in final
         Dim os As New orderStock
-        Dim s As New Stock
-        s.ID = AllStock.Count
-        s.type = "CPU"
-        s.part = txt_CPU.Text
         os.ID = AllOrderStock.Count
         os.order = o.id
-        os.stock = s.ID
+        os.stock = sCPU
         AllOrderStock.Add(os)
-        AllStock.Add(s)
 
 
 
-        s.ID = AllStock.Count
-        s.type = "GPU"
-        s.part = txt_GPU.Text
         os.ID = AllOrderStock.Count
-        os.stock = s.ID
+        os.stock = sGPU
         AllOrderStock.Add(os)
-        AllStock.Add(s)
 
 
 
-        s.ID = AllStock.Count
-        s.type = "RAM"
-        s.part = txt_RAM.Text
         os.ID = AllOrderStock.Count
-        os.stock = s.ID
+        os.stock = sRAM
         AllOrderStock.Add(os)
-        AllStock.Add(s)
 
 
-
-        s.ID = AllStock.Count
-        s.type = "PSU"
-        s.part = txt_PSU.Text
         os.ID = AllOrderStock.Count
-        os.stock = s.ID
+        os.stock = sPSU
         AllOrderStock.Add(os)
-        AllStock.Add(s)
 
-
-
-        s.ID = AllStock.Count
-        s.type = "Case"
-        s.part = txt_Case.Text
         os.ID = AllOrderStock.Count
-        os.stock = s.ID
+        os.stock = sCase
         AllOrderStock.Add(os)
-        AllStock.Add(s)
 
-
-
-        s.ID = AllStock.Count
-        s.type = "Motherboard"
-        s.part = txt_motherboard.Text
         os.ID = AllOrderStock.Count
-        os.stock = s.ID
+        os.stock = sMoba
         AllOrderStock.Add(os)
-        AllStock.Add(s)
-
-
 
 
         For i = 0 To lst_sto.Items.Count - 1
-            s.ID = AllStock.Count
-            s.type = "Storage"
-            s.part = lst_sto.Items(i)
             os.ID = AllOrderStock.Count
-            os.stock = s.ID
+            os.stock = sSto(i)
             AllOrderStock.Add(os)
-            AllStock.Add(s)
         Next
 
-
-        txt_Case.Clear()
-        txt_CPU.Clear()
-        txt_cust.Clear()
-        txt_GPU.Clear()
-        txt_motherboard.Clear()
-        txt_PSU.Clear()
-        txt_RAM.Clear()
-        txt_sto.Clear()
-        lst_sto.Items.Clear()
 
         FileHandler.writeOrder()
         FileHandler.writeOrderStock()
@@ -149,24 +116,52 @@
             Dim startIndex As Integer = -1
             Dim index As Integer
             While startIndex = -1 And index < AllOrderStock.Count
-                If AllOrderStock(index).order = orderID Then
+                If AllOrderStock(index).order = id Then
                     startIndex = index
+                Else
+                    index += 1
                 End If
-                index += 1
             End While
-            index -= 1
-            txt_CPU.Text = AllStock(AllOrderStock(index).stock).part
-            txt_GPU.Text = AllStock(AllOrderStock(index + 1).stock).part
-            txt_RAM.Text = AllStock(AllOrderStock(index + 2).stock).part
-            txt_PSU.Text = AllStock(AllOrderStock(index + 3).stock).part
-            txt_Case.Text = AllStock(AllOrderStock(index + 4).stock).part
-            txt_motherboard.Text = AllStock(AllOrderStock(index + 5).stock).part
+            index = startIndex
+            Debug.WriteLine(index)
+            Debug.WriteLine(orderID)
+            For i = 0 To AllStock.Count - 1
+                Select Case AllStock(i).ID
+                    Case AllOrderStock(index).stock
+                        sCPU = AllStock(i).ID
+                        txt_CPU.Text = AllStock(i).part
+                    Case AllOrderStock(index + 1).stock
+                        sGPU = AllStock(i).ID
+                        txt_GPU.Text = AllStock(i).part
+                    Case AllOrderStock(index + 2).stock
+                        sRAM = AllStock(i).ID
+                        txt_RAM.Text = AllStock(i).part
+                    Case AllOrderStock(index + 3).stock
+                        sPSU = AllStock(i).ID
+                        txt_PSU.Text = AllStock(i).part
+                    Case AllOrderStock(index + 4).stock
+                        sCase = AllStock(i).ID
+                        txt_Case.Text = AllStock(i).part
+                    Case AllOrderStock(index + 5).stock
+                        sMoba = AllStock(i).ID
+                        txt_motherboard.Text = AllStock(i).part
+                End Select
+
+            Next
             index += 6
             lst_sto.Items.Clear()
-            While index <= AllOrderStock.Count - 1
+            Dim foundEnd As Boolean = False
+            While index <= AllOrderStock.Count - 1 And Not foundEnd
                 If AllOrderStock(index).order = orderID Then
                     lst_sto.Items.Add(AllStock(AllOrderStock(index).stock).part)
-
+                    For i = 0 To AllStock.Count - 1
+                        If AllStock(i).ID = AllOrderStock(index).stock Then
+                            lst_sto.Items.Add(AllStock(i).part)
+                            sSto.Add(AllStock(i).ID)
+                        End If
+                    Next
+                Else
+                    foundEnd = True
                 End If
                 index += 1
             End While
@@ -178,9 +173,194 @@
             Next
             AllOrderStock = newlist
         Else
-            MsgBox("Oopsie Daisie, there was a problem!")
+            MsgBox("There was an issue locating the order")
         End If
         oID = orderID
+    End Sub
+    Dim Type As String
+    Private Sub lbl_CPU_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_CPU.LinkClicked
+        'navigate to the see stock page
+        Me.Hide()
+        seeStock.Show()
+        'initialise see stock to select a CPU
+        seeStock.InitialiseSeeStock()
+        seeStock.selectInit("CPU")
+        'store that we are waiting for a CPU
+        Type = "CPU"
+    End Sub
+
+    Private Sub lbl_ram_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_ram.LinkClicked
+        'navigate to the see stock page
+        Me.Hide()
+        seeStock.Show()
+        'initialise see stock to select RAM
+        seeStock.InitialiseSeeStock()
+        seeStock.selectInit("RAM")
+        'store that we are waiting for RAM
+        Type = "RAM"
+    End Sub
+
+    Private Sub lbl_case_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_case.LinkClicked
+        'navigate to the see stock page
+        Me.Hide()
+        seeStock.Show()
+        'initialise see stock to select a case
+        seeStock.InitialiseSeeStock()
+        seeStock.selectInit("Case")
+        'store that we are waiting for a case
+        Type = "Case"
+    End Sub
+
+    Private Sub lbl_gpu_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_gpu.LinkClicked
+        'navigate to the see stock page
+        Me.Hide()
+        seeStock.Show()
+        'initialise see stock to select a GPU
+        seeStock.InitialiseSeeStock()
+        seeStock.selectInit("GPU")
+        'store that we are waiting for a GPU
+        Type = "GPU"
+    End Sub
+
+    Private Sub lbl_psu_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_psu.LinkClicked
+        'navigate to the see stock page
+        Me.Hide()
+        seeStock.Show()
+        'initialise see stock to select a PSU
+        seeStock.InitialiseSeeStock()
+        seeStock.selectInit("PSU")
+        'store that we are waiting for a PSU
+        Type = "PSU"
+    End Sub
+
+    Private Sub lbl_motherboard_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_motherboard.LinkClicked
+        'navigate to the see stock page
+        Me.Hide()
+        seeStock.Show()
+        'initialise see stock to select a motherboard
+        seeStock.InitialiseSeeStock()
+        seeStock.selectInit("Motherboard")
+        'store that we are waiting for a motherboard
+        Type = "Motherboard"
+    End Sub
+
+    'on returning from the see stock page 
+    Sub onReturn(index As Integer)
+        'do different things depending on which part we are waiting to get back
+        Select Case Type
+            'if we're waiting to get a CPU back
+            Case "CPU"
+                'store the ID of the selected item
+                sCPU = index
+                'loop through the stock list
+                For i = 0 To AllStock.Count - 1
+                    'if the selected item is the currently checked item in allstock
+                    If index = AllStock(i).ID Then
+                        'set the value of the text box to the name of the part
+                        For j = 0 To AllCPUs.Count - 1
+                            If AllCPUs(j).ID = AllStock(i).part Then
+                                txt_CPU.Text = AllCPUs(j).name
+                            End If
+                        Next
+                    End If
+                Next
+            'if we're waiting to get a GPU back
+            Case "GPU"
+                'store the ID of the selected item
+                sGPU = index
+                'loop through the stock list
+                For i = 0 To AllStock.Count - 1
+                    'if the selected item is the currently checked item in allstock
+                    If index = AllStock(i).ID Then
+                        'set the value of the text box to the name of the part
+                        For j = 0 To AllGPUs.Count - 1
+                            If AllGPUs(j).ID = AllStock(i).part Then
+                                txt_GPU.Text = AllGPUs(j).Series & " " & AllGPUs(j).Model
+                            End If
+                        Next
+                    End If
+                Next
+            'if we're waiting to get a PSU back
+            Case "PSU"
+                'store the ID of the selected item
+                sPSU = index
+                'loop through the stock list
+                For i = 0 To AllStock.Count - 1
+                    'if the selected item is the currently checked item in allstock
+                    If index = AllStock(i).ID Then
+                        'set the value of the text box to the name of the part
+                        For j = 0 To AllPSUs.Count - 1
+                            If AllPSUs(j).ID = AllStock(i).part Then
+                                txt_PSU.Text = AllPSUs(j).name & " " & AllPSUs(j).power & "W"
+                            End If
+                        Next
+                    End If
+                Next
+            'if we're waiting to get a case back
+            Case "Case"
+                'store the ID of the selected item
+                sCase = index
+                'loop through the stock list
+                For i = 0 To AllStock.Count - 1
+                    'if the selected item is the currently checked item in allstock
+                    If index = AllStock(i).ID Then
+                        'set the value of the text box to the name of the part
+                        For j = 0 To AllCases.Count - 1
+                            If AllCases(j).id = AllStock(i).part Then
+                                txt_Case.Text = AllCases(j).name
+                            End If
+                        Next
+                    End If
+                Next
+            'if we're waiting to get a motehrboard back
+            Case "Motherboard"
+                'store the ID of the selected item
+                sMoba = index
+                'loop through the stock list
+                For i = 0 To AllStock.Count - 1
+                    'if the selected item is the currently checked item in allstock
+                    If index = AllStock(i).ID Then
+                        'set the value of the text box to the name of the part
+                        For j = 0 To AllMoba.Count - 1
+                            If AllMoba(j).id = AllStock(i).part Then
+                                txt_motherboard.Text = AllMoba(j).name
+                            End If
+                        Next
+                    End If
+                Next
+            'if we're waiting to get RAM back
+            Case "RAM"
+                'store the ID of the selected item
+                sRAM = index
+                'loop through the stock list
+                For i = 0 To AllStock.Count - 1
+                    'if the selected item is the currently checked item in allstock
+                    If index = AllStock(i).ID Then
+                        'set the value of the text box to the name of the part
+                        For j = 0 To AllRAMs.Count - 1
+                            If AllRAMs(j).ID = AllStock(i).part Then
+                                txt_RAM.Text = AllRAMs(j).name & AllRAMs(j).capacity & "GB"
+                            End If
+                        Next
+                    End If
+                Next
+            'if we're waiting to get storage back
+            Case "Storage"
+                'loop through the stock list
+                For i = 0 To AllStock.Count - 1
+                    'if the selected item is the currently checked item in allstock
+                    If index = AllStock(i).ID Then
+                        'set the value of the text box to the name of the part
+                        For j = 0 To AllStorage.Count - 1
+                            If AllStorage(j).ID = AllStock(i).part Then
+                                lst_sto.Items.Add(AllStorage(j).name + " " & AllStorage(j).capacity & "GB " & AllStorage(j).type)
+                            End If
+                        Next
+                    End If
+                Next
+                'store the ID of the selected item
+                sSto.Add(index)
+        End Select
     End Sub
 
 End Class

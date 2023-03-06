@@ -14,6 +14,7 @@
         readRAM()
         readStorage()
         readLogs()
+        readCustomers()
         Navigation.Show()
         Navigation.setup("M")
         Me.Hide()

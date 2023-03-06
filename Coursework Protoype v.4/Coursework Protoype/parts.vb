@@ -188,7 +188,7 @@ Public Class parts
                 l.SubItems.Add(AllStorage(i).write)
                 l.SubItems.Add(AllStorage(i).capacity)
                 l.SubItems.Add(AllStorage(i).connection)
-                l.SubItems.Add(AllCases(i).price)
+                l.SubItems.Add(AllStorage(i).price)
                 ListView1.Items.Add(l)
             Next
         End If

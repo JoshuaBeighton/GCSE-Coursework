@@ -148,3 +148,6 @@ C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Proto
 C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.EditRAM.resources
 C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.EditStorage.resources
 C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.Logs.resources
+C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.Customers.resources
+C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.AddCustomer.resources
+C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.EditCustomer.resources

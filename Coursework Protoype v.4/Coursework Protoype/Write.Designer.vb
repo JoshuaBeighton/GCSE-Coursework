@@ -43,12 +43,13 @@ Partial Class Write
         Me.date_due = New System.Windows.Forms.DateTimePicker()
         Me.btn_AddOrder = New System.Windows.Forms.Button()
         Me.btn_navi = New System.Windows.Forms.Button()
-        Me.selCPU = New System.Windows.Forms.Button()
-        Me.selRAM = New System.Windows.Forms.Button()
-        Me.selCase = New System.Windows.Forms.Button()
-        Me.selGPU = New System.Windows.Forms.Button()
-        Me.selPSU = New System.Windows.Forms.Button()
-        Me.selMoba = New System.Windows.Forms.Button()
+        Me.btn_cpu = New System.Windows.Forms.Button()
+        Me.btn_RAM = New System.Windows.Forms.Button()
+        Me.btn_Case = New System.Windows.Forms.Button()
+        Me.btn_GPU = New System.Windows.Forms.Button()
+        Me.btn_PSU = New System.Windows.Forms.Button()
+        Me.btn_Moba = New System.Windows.Forms.Button()
+        Me.btn_cust = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -258,77 +259,87 @@ Partial Class Write
         Me.btn_navi.Text = "Go Back To Navigation"
         Me.btn_navi.UseVisualStyleBackColor = True
         '
-        'selCPU
+        'btn_cpu
         '
-        Me.selCPU.Location = New System.Drawing.Point(114, 37)
-        Me.selCPU.Name = "selCPU"
-        Me.selCPU.Size = New System.Drawing.Size(141, 31)
-        Me.selCPU.TabIndex = 0
-        Me.selCPU.Text = "Select"
-        Me.selCPU.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.selCPU.UseVisualStyleBackColor = True
+        Me.btn_cpu.Location = New System.Drawing.Point(114, 37)
+        Me.btn_cpu.Name = "btn_cpu"
+        Me.btn_cpu.Size = New System.Drawing.Size(141, 31)
+        Me.btn_cpu.TabIndex = 0
+        Me.btn_cpu.Text = "Select"
+        Me.btn_cpu.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_cpu.UseVisualStyleBackColor = True
         '
-        'selRAM
+        'btn_RAM
         '
-        Me.selRAM.Location = New System.Drawing.Point(114, 99)
-        Me.selRAM.Name = "selRAM"
-        Me.selRAM.Size = New System.Drawing.Size(141, 31)
-        Me.selRAM.TabIndex = 2
-        Me.selRAM.Text = "Select"
-        Me.selRAM.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.selRAM.UseVisualStyleBackColor = True
+        Me.btn_RAM.Location = New System.Drawing.Point(114, 99)
+        Me.btn_RAM.Name = "btn_RAM"
+        Me.btn_RAM.Size = New System.Drawing.Size(141, 31)
+        Me.btn_RAM.TabIndex = 2
+        Me.btn_RAM.Text = "Select"
+        Me.btn_RAM.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_RAM.UseVisualStyleBackColor = True
         '
-        'selCase
+        'btn_Case
         '
-        Me.selCase.Location = New System.Drawing.Point(114, 162)
-        Me.selCase.Name = "selCase"
-        Me.selCase.Size = New System.Drawing.Size(141, 31)
-        Me.selCase.TabIndex = 4
-        Me.selCase.Text = "Select"
-        Me.selCase.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.selCase.UseVisualStyleBackColor = True
+        Me.btn_Case.Location = New System.Drawing.Point(114, 162)
+        Me.btn_Case.Name = "btn_Case"
+        Me.btn_Case.Size = New System.Drawing.Size(141, 31)
+        Me.btn_Case.TabIndex = 4
+        Me.btn_Case.Text = "Select"
+        Me.btn_Case.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_Case.UseVisualStyleBackColor = True
         '
-        'selGPU
+        'btn_GPU
         '
-        Me.selGPU.Location = New System.Drawing.Point(481, 36)
-        Me.selGPU.Name = "selGPU"
-        Me.selGPU.Size = New System.Drawing.Size(141, 31)
-        Me.selGPU.TabIndex = 1
-        Me.selGPU.Text = "Select"
-        Me.selGPU.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.selGPU.UseVisualStyleBackColor = True
+        Me.btn_GPU.Location = New System.Drawing.Point(481, 36)
+        Me.btn_GPU.Name = "btn_GPU"
+        Me.btn_GPU.Size = New System.Drawing.Size(141, 31)
+        Me.btn_GPU.TabIndex = 1
+        Me.btn_GPU.Text = "Select"
+        Me.btn_GPU.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_GPU.UseVisualStyleBackColor = True
         '
-        'selPSU
+        'btn_PSU
         '
-        Me.selPSU.Location = New System.Drawing.Point(481, 101)
-        Me.selPSU.Name = "selPSU"
-        Me.selPSU.Size = New System.Drawing.Size(141, 31)
-        Me.selPSU.TabIndex = 3
-        Me.selPSU.Text = "Select"
-        Me.selPSU.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.selPSU.UseVisualStyleBackColor = True
+        Me.btn_PSU.Location = New System.Drawing.Point(481, 101)
+        Me.btn_PSU.Name = "btn_PSU"
+        Me.btn_PSU.Size = New System.Drawing.Size(141, 31)
+        Me.btn_PSU.TabIndex = 3
+        Me.btn_PSU.Text = "Select"
+        Me.btn_PSU.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_PSU.UseVisualStyleBackColor = True
         '
-        'selMoba
+        'btn_Moba
         '
-        Me.selMoba.Location = New System.Drawing.Point(481, 162)
-        Me.selMoba.Name = "selMoba"
-        Me.selMoba.Size = New System.Drawing.Size(141, 31)
-        Me.selMoba.TabIndex = 5
-        Me.selMoba.Text = "Select"
-        Me.selMoba.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.selMoba.UseVisualStyleBackColor = True
+        Me.btn_Moba.Location = New System.Drawing.Point(481, 162)
+        Me.btn_Moba.Name = "btn_Moba"
+        Me.btn_Moba.Size = New System.Drawing.Size(141, 31)
+        Me.btn_Moba.TabIndex = 5
+        Me.btn_Moba.Text = "Select"
+        Me.btn_Moba.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_Moba.UseVisualStyleBackColor = True
+        '
+        'btn_cust
+        '
+        Me.btn_cust.Location = New System.Drawing.Point(114, 378)
+        Me.btn_cust.Name = "btn_cust"
+        Me.btn_cust.Size = New System.Drawing.Size(141, 30)
+        Me.btn_cust.TabIndex = 14
+        Me.btn_cust.Text = "Select"
+        Me.btn_cust.UseVisualStyleBackColor = True
         '
         'Write
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(641, 588)
-        Me.Controls.Add(Me.selMoba)
-        Me.Controls.Add(Me.selPSU)
-        Me.Controls.Add(Me.selGPU)
-        Me.Controls.Add(Me.selCase)
-        Me.Controls.Add(Me.selRAM)
-        Me.Controls.Add(Me.selCPU)
+        Me.Controls.Add(Me.btn_cust)
+        Me.Controls.Add(Me.btn_Moba)
+        Me.Controls.Add(Me.btn_PSU)
+        Me.Controls.Add(Me.btn_GPU)
+        Me.Controls.Add(Me.btn_Case)
+        Me.Controls.Add(Me.btn_RAM)
+        Me.Controls.Add(Me.btn_cpu)
         Me.Controls.Add(Me.btn_navi)
         Me.Controls.Add(Me.btn_AddOrder)
         Me.Controls.Add(Me.date_due)
@@ -379,10 +390,11 @@ Partial Class Write
     Friend WithEvents date_due As DateTimePicker
     Friend WithEvents btn_AddOrder As Button
     Friend WithEvents btn_navi As Button
-    Friend WithEvents selCPU As Button
-    Friend WithEvents selRAM As Button
-    Friend WithEvents selCase As Button
-    Friend WithEvents selGPU As Button
-    Friend WithEvents selPSU As Button
-    Friend WithEvents selMoba As Button
+    Friend WithEvents btn_cpu As Button
+    Friend WithEvents btn_RAM As Button
+    Friend WithEvents btn_Case As Button
+    Friend WithEvents btn_GPU As Button
+    Friend WithEvents btn_PSU As Button
+    Friend WithEvents btn_Moba As Button
+    Friend WithEvents btn_cust As Button
 End Class

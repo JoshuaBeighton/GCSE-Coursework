@@ -13,6 +13,8 @@ Public Class Write
     Dim sCase As Integer
     'store the ID of the stock item storing the PSU
     Dim sPSU As Integer
+    'store the id of the customer of the order
+    Dim custID As Integer
     'store the IDs of the stock items storing the storage
     Public sSto As New List(Of Integer)
 
@@ -68,7 +70,7 @@ Public Class Write
             'set the ID to equal the amount of orders plus one
             o.id = AllOrders.Count
             'set the customer to the value of the text box for customers
-            o.customer = txt_cust.Text
+            o.customer = custID
             'set the due date to the datetimepicker value
             o.due = date_due.Value
             'add o to orders
@@ -148,6 +150,8 @@ Public Class Write
             txt_PSU.Clear()
             txt_RAM.Clear()
             lst_sto.Items.Clear()
+            txt_cust.Clear()
+
 
             'write all of the changes to the files
             FileHandler.writeOrder()
@@ -172,7 +176,7 @@ Public Class Write
     End Sub
 
     'on clicking the select CPU button
-    Private Sub selCPU_Click(sender As Object, e As EventArgs) Handles selCPU.Click
+    Private Sub selCPU_Click(sender As Object, e As EventArgs) Handles btn_cpu.Click
         'navigate to the see stock page
         Me.Hide()
         seeStock.Show()
@@ -186,7 +190,7 @@ Public Class Write
     Public type As String
 
     'on clicking the select RAM button
-    Private Sub selRAM_Click(sender As Object, e As EventArgs) Handles selRAM.Click
+    Private Sub selRAM_Click(sender As Object, e As EventArgs) Handles btn_RAM.Click
         'navigate to the see stock page
         Me.Hide()
         seeStock.Show()
@@ -198,7 +202,7 @@ Public Class Write
     End Sub
 
     'on clicking the select Case button
-    Private Sub selCase_Click(sender As Object, e As EventArgs) Handles selCase.Click
+    Private Sub selCase_Click(sender As Object, e As EventArgs) Handles btn_Case.Click
         'navigate to the see stock page
         Me.Hide()
         seeStock.Show()
@@ -210,7 +214,7 @@ Public Class Write
     End Sub
 
     'on clicking the select GPU button
-    Private Sub selGPU_Click(sender As Object, e As EventArgs) Handles selGPU.Click
+    Private Sub selGPU_Click(sender As Object, e As EventArgs) Handles btn_GPU.Click
         'navigate to the see stock page
         Me.Hide()
         seeStock.Show()
@@ -223,7 +227,7 @@ Public Class Write
 
 
     'on clicking the select motherboard button
-    Private Sub selMoba_Click(sender As Object, e As EventArgs) Handles selMoba.Click
+    Private Sub selMoba_Click(sender As Object, e As EventArgs) Handles btn_Moba.Click
         'navigate to the see stock page
         Me.Hide()
         seeStock.Show()
@@ -241,7 +245,7 @@ Public Class Write
             'if we're waiting to get a CPU back
             Case "CPU"
                 'hide the button to select and show the text box that shows which item was selected
-                selCPU.Hide()
+                btn_cpu.Hide()
                 txt_CPU.Show()
                 'store the ID of the selected item
                 sCPU = index
@@ -260,7 +264,7 @@ Public Class Write
             'if we're waiting to get a GPU back
             Case "GPU"
                 'hide the button to select and show the text box that shows which item was selected
-                selGPU.Hide()
+                btn_GPU.Hide()
                 txt_GPU.Show()
                 'store the ID of the selected item
                 sGPU = index
@@ -279,7 +283,7 @@ Public Class Write
             'if we're waiting to get a PSU back
             Case "PSU"
                 'hide the button to select and show the text box that shows which item was selected
-                selPSU.Hide()
+                btn_PSU.Hide()
                 txt_PSU.Show()
                 'store the ID of the selected item
                 sPSU = index
@@ -298,7 +302,7 @@ Public Class Write
             'if we're waiting to get a case back
             Case "Case"
                 'hide the button to select and show the text box that shows which item was selected
-                selCase.Hide()
+                btn_Case.Hide()
                 txt_Case.Show()
                 'store the ID of the selected item
                 sCase = index
@@ -317,7 +321,7 @@ Public Class Write
             'if we're waiting to get a motehrboard back
             Case "Motherboard"
                 'hide the button to select and show the text box that shows which item was selected
-                selMoba.Hide()
+                btn_Moba.Hide()
                 txt_motherboard.Show()
                 'store the ID of the selected item
                 sMoba = index
@@ -336,7 +340,7 @@ Public Class Write
             'if we're waiting to get RAM back
             Case "RAM"
                 'hide the button to select and show the text box that shows which item was selected
-                selRAM.Hide()
+                btn_RAM.Hide()
                 txt_RAM.Show()
                 'store the ID of the selected item
                 sRAM = index
@@ -381,16 +385,18 @@ Public Class Write
         txt_PSU.Hide()
         txt_RAM.Hide()
         'show the buttons that select the items
-        selCase.Show()
-        selCPU.Show()
-        selGPU.Show()
-        selMoba.Show()
-        selPSU.Show()
-        selRAM.Show()
+        btn_Case.Show()
+        btn_cpu.Show()
+        btn_GPU.Show()
+        btn_Moba.Show()
+        btn_PSU.Show()
+        btn_RAM.Show()
+        btn_cust.Show()
+        txt_cust.Hide()
     End Sub
 
     'on clicking the select PSU button
-    Private Sub selPSU_Click(sender As Object, e As EventArgs) Handles selPSU.Click
+    Private Sub selPSU_Click(sender As Object, e As EventArgs) Handles btn_PSU.Click
         'navigate to the see stock page
         Me.Hide()
         seeStock.Show()
@@ -399,5 +405,23 @@ Public Class Write
         seeStock.selectInit("PSU")
         'store that we are waiting for a PSU
         type = "PSU"
+    End Sub
+
+    Private Sub btn_cust_Click(sender As Object, e As EventArgs) Handles btn_cust.Click
+        Customers.Show()
+        Customers.custInit()
+        Customers.selecting = True
+        Me.Hide()
+        btn_cust.Hide()
+        txt_cust.Show()
+    End Sub
+
+    Public Sub onCustReturn(id As Integer)
+        custID = id
+        For i = 0 To allCustomers.Count - 1
+            If allCustomers(i).ID = id Then
+                txt_cust.Text = allCustomers(i).firstName & " " & allCustomers(i).lastName
+            End If
+        Next
     End Sub
 End Class

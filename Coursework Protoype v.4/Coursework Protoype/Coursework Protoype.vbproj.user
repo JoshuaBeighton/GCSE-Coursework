@@ -7,6 +7,9 @@
     <Compile Update="AddCPU.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="AddCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="AddGPU.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -22,10 +25,16 @@
     <Compile Update="AddStorage.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Customers.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="EditCase.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="EditCPU.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EditCustomer.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="EditGPU.vb">
