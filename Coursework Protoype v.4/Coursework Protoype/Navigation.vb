@@ -70,4 +70,9 @@
         Staff.init()
         Me.Hide()
     End Sub
+
+    Private Sub btn_sales_Click(sender As Object, e As EventArgs) Handles btn_sales.Click
+        SalesData.Show()
+        SalesData.init()
+    End Sub
 End Class

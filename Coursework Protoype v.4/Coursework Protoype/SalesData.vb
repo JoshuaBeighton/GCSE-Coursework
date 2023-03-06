@@ -14,4 +14,9 @@
         ListView1.Columns.Add("Amount", 200)
         ListView1.Columns.Add("Date", ListView1.Width - 230)
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        SalesGraph.Show()
+        Me.Hide()
+    End Sub
 End Class

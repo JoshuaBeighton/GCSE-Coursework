@@ -73,6 +73,12 @@
     <Compile Update="PartsNaviagtion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="SalesData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SalesGraph.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="seeOrders.vb">
       <SubType>Form</SubType>
     </Compile>
