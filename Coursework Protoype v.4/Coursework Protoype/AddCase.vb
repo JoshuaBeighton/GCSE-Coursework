@@ -71,8 +71,9 @@
 
     End Sub
 
-
+    'when the user clicks the "Go Back" button
     Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click
+        'navigate to the parts screen
         parts.Show()
         Me.Hide()
     End Sub

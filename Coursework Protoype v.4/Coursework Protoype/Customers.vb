@@ -1,13 +1,21 @@
 ﻿Public Class Customers
+    'store whether this page is being used to select a customer
     Public selecting As Boolean = False
+    'store whether this page was called from the edit order page or add order
     Public editing As Boolean = False
+
+    'on loading
     Private Sub Customers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'add the needed columns to the list view
         ListView1.Columns.Add("ID", 40)
         ListView1.Columns.Add("Name", 350)
         ListView1.Columns.Add("Contact", ListView1.Width - 390)
+        'initialise the data
         custInit()
     End Sub
+    'initialise the data of the customers
     Public Sub custInit()
+
         ListView1.Items.Clear()
         selecting = False
         editing = False

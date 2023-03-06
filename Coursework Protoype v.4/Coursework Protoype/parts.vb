@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports System.Data.SqlTypes
+Imports System.Net.Security
 Imports System.Threading.Tasks.Dataflow
 
 Public Class parts
@@ -31,22 +32,24 @@ Public Class parts
             ListView1.Columns.Add("TPD", 100)
             'loop through the cpus
             For i = 0 To AllCPUs.Count - 1
-                'create a new listviewitem
-                Dim l As New ListViewItem
-                'add all of the data to the listviewitem
-                l.SubItems(0).Text = AllCPUs(i).ID
-                l.SubItems.Add(AllCPUs(i).name)
-                l.SubItems.Add(AllCPUs(i).manufacturer)
-                l.SubItems.Add(AllCPUs(i).socket)
-                l.SubItems.Add(AllCPUs(i).cores)
-                l.SubItems.Add(AllCPUs(i).baseSpeed)
-                l.SubItems.Add(AllCPUs(i).boostSpeed)
-                l.SubItems.Add(AllCPUs(i).TPD)
-                l.SubItems.Add(AllCPUs(i).price)
-                'add the temporary item to the listview
-                ListView1.Items.Add(l)
+                If AllCPUs(i).ID >= 0 Then
+                    'create a new listviewitem
+                    Dim l As New ListViewItem
+                    'add all of the data to the listviewitem
+                    l.SubItems(0).Text = AllCPUs(i).ID
+                    l.SubItems.Add(AllCPUs(i).name)
+                    l.SubItems.Add(AllCPUs(i).manufacturer)
+                    l.SubItems.Add(AllCPUs(i).socket)
+                    l.SubItems.Add(AllCPUs(i).cores)
+                    l.SubItems.Add(AllCPUs(i).baseSpeed)
+                    l.SubItems.Add(AllCPUs(i).boostSpeed)
+                    l.SubItems.Add(AllCPUs(i).TPD)
+                    l.SubItems.Add(AllCPUs(i).price)
+                    'add the temporary item to the listview
+                    ListView1.Items.Add(l)
+                End If
             Next
-        'if the type is a GPU
+            'if the type is a GPU
         ElseIf type = "GPU" Then
             'add the relevant columns
             ListView1.Columns.Add("Series", 100)
@@ -58,22 +61,24 @@ Public Class parts
             ListView1.Columns.Add("TPD", 100)
             'loop through all of the GPUs
             For i = 0 To AllGPUs.Count - 1
-                'declare a temporary list item
-                Dim l As New ListViewItem
-                'set the sub items of the listviewitem to the data
-                l.SubItems(0).Text = AllGPUs(i).ID
-                l.SubItems.Add(AllGPUs(i).Series)
-                l.SubItems.Add(AllGPUs(i).Model)
-                l.SubItems.Add(AllGPUs(i).manufacturer)
-                l.SubItems.Add(AllGPUs(i).chipManufacturer)
-                l.SubItems.Add(AllGPUs(i).baseClock)
-                l.SubItems.Add(AllGPUs(i).VRAM)
-                l.SubItems.Add(AllGPUs(i).TPD)
-                l.SubItems.Add(AllGPUs(i).price)
-                'add the temporary item to the listview
-                ListView1.Items.Add(l)
+                If AllGPUs(i).ID >= 0 Then
+                    'declare a temporary list item
+                    Dim l As New ListViewItem
+                    'set the sub items of the listviewitem to the data
+                    l.SubItems(0).Text = AllGPUs(i).ID
+                    l.SubItems.Add(AllGPUs(i).Series)
+                    l.SubItems.Add(AllGPUs(i).Model)
+                    l.SubItems.Add(AllGPUs(i).manufacturer)
+                    l.SubItems.Add(AllGPUs(i).chipManufacturer)
+                    l.SubItems.Add(AllGPUs(i).baseClock)
+                    l.SubItems.Add(AllGPUs(i).VRAM)
+                    l.SubItems.Add(AllGPUs(i).TPD)
+                    l.SubItems.Add(AllGPUs(i).price)
+                    'add the temporary item to the listview
+                    ListView1.Items.Add(l)
+                End If
             Next
-        'if the type is RAM
+            'if the type is RAM
         ElseIf type = "RAM" Then
             'add the relevant columns
             ListView1.Columns.Add("Latency", 150)
@@ -85,21 +90,23 @@ Public Class parts
 
             'loop through all of the RAM data
             For i = 0 To AllRAMs.Count - 1
-                'declare a temporary list view item
-                Dim l As New ListViewItem
-                'add the data to the listviewitem
-                l.SubItems(0).Text = AllRAMs(i).ID
-                l.SubItems.Add(AllRAMs(i).name)
-                l.SubItems.Add(AllRAMs(i).manufacturer)
-                l.SubItems.Add(AllRAMs(i).latency)
-                l.SubItems.Add(AllRAMs(i).speed)
-                l.SubItems.Add(AllRAMs(i).ddr)
-                l.SubItems.Add(AllRAMs(i).tpd)
-                l.SubItems.Add(AllRAMs(i).dims)
-                l.SubItems.Add(AllRAMs(i).capacity)
-                l.SubItems.Add(AllRAMs(i).price)
-                'add the listviewitem to the listview
-                ListView1.Items.Add(l)
+                If AllRAMs(i).ID >= 0 Then
+                    'declare a temporary list view item
+                    Dim l As New ListViewItem
+                    'add the data to the listviewitem
+                    l.SubItems(0).Text = AllRAMs(i).ID
+                    l.SubItems.Add(AllRAMs(i).name)
+                    l.SubItems.Add(AllRAMs(i).manufacturer)
+                    l.SubItems.Add(AllRAMs(i).latency)
+                    l.SubItems.Add(AllRAMs(i).speed)
+                    l.SubItems.Add(AllRAMs(i).ddr)
+                    l.SubItems.Add(AllRAMs(i).tpd)
+                    l.SubItems.Add(AllRAMs(i).dims)
+                    l.SubItems.Add(AllRAMs(i).capacity)
+                    l.SubItems.Add(AllRAMs(i).price)
+                    'add the listviewitem to the listview
+                    ListView1.Items.Add(l)
+                End If
             Next
             'if the type is a psu
         ElseIf type = "PSU" Then
@@ -110,18 +117,20 @@ Public Class parts
 
             'loop through the PSUs
             For i = 0 To AllPSUs.Count - 1
-                'declare a temporary listviewitem
-                Dim l As New ListViewItem
-                'set the data in the listviewitem equal to the data from the PSUs
-                l.SubItems(0).Text = AllPSUs(i).ID
-                l.SubItems.Add(AllPSUs(i).name)
-                l.SubItems.Add(AllPSUs(i).manufacturer)
-                l.SubItems.Add(AllPSUs(i).efficiency)
-                l.SubItems.Add(AllPSUs(i).modular)
-                l.SubItems.Add(AllPSUs(i).power)
-                l.SubItems.Add(AllPSUs(i).price)
-                'add the listviewitem
-                ListView1.Items.Add(l)
+                If AllPSUs(i).ID >= 0 Then
+                    'declare a temporary listviewitem
+                    Dim l As New ListViewItem
+                    'set the data in the listviewitem equal to the data from the PSUs
+                    l.SubItems(0).Text = AllPSUs(i).ID
+                    l.SubItems.Add(AllPSUs(i).name)
+                    l.SubItems.Add(AllPSUs(i).manufacturer)
+                    l.SubItems.Add(AllPSUs(i).efficiency)
+                    l.SubItems.Add(AllPSUs(i).modular)
+                    l.SubItems.Add(AllPSUs(i).power)
+                    l.SubItems.Add(AllPSUs(i).price)
+                    'add the listviewitem
+                    ListView1.Items.Add(l)
+                End If
             Next
             'if the type is a motherboard
         ElseIf type = "Motherboard" Then
@@ -133,18 +142,20 @@ Public Class parts
 
             'loop through the motherboards
             For i = 0 To AllMoba.Count - 1
-                'declare a temporary listviewitem
-                Dim l As New ListViewItem
-                'add the relevant data to the temporary listviewitem
-                l.SubItems(0).Text = AllMoba(i).id
-                l.SubItems.Add(AllMoba(i).name)
-                l.SubItems.Add(AllMoba(i).manufacturer)
-                l.SubItems.Add(AllMoba(i).ramSlots)
-                l.SubItems.Add(AllMoba(i).socket)
-                l.SubItems.Add(AllMoba(i).SATAs)
-                l.SubItems.Add(AllMoba(i).m2s)
-                l.SubItems.Add(AllMoba(i).price)
-                ListView1.Items.Add(l)
+                If AllMoba(i).id >= 0 Then
+                    'declare a temporary listviewitem
+                    Dim l As New ListViewItem
+                    'add the relevant data to the temporary listviewitem
+                    l.SubItems(0).Text = AllMoba(i).id
+                    l.SubItems.Add(AllMoba(i).name)
+                    l.SubItems.Add(AllMoba(i).manufacturer)
+                    l.SubItems.Add(AllMoba(i).ramSlots)
+                    l.SubItems.Add(AllMoba(i).socket)
+                    l.SubItems.Add(AllMoba(i).SATAs)
+                    l.SubItems.Add(AllMoba(i).m2s)
+                    l.SubItems.Add(AllMoba(i).price)
+                    ListView1.Items.Add(l)
+                End If
             Next
             'if the type is case
         ElseIf type = "Case" Then
@@ -155,19 +166,22 @@ Public Class parts
 
             'loop through the cases
             For i = 0 To AllCases.Count - 1
-                'declare a temporary listviewitem
-                Dim l As New ListViewItem
-                'add the relevant data to the temporary listviewitem
-                l.SubItems(0).Text = AllCases(i).id
-                l.SubItems.Add(AllCases(i).name)
-                l.SubItems.Add(AllCases(i).manufacturer)
-                l.SubItems.Add(AllCases(i).HDDs)
-                l.SubItems.Add(AllCases(i).SSDs)
-                l.SubItems.Add(AllCases(i).price)
-                ListView1.Items.Add(l)
+                If AllCases(i).id >= 0 Then
+                    'declare a temporary listviewitem
+                    Dim l As New ListViewItem
+                    'add the relevant data to the temporary listviewitem
+                    l.SubItems(0).Text = AllCases(i).id
+                    l.SubItems.Add(AllCases(i).name)
+                    l.SubItems.Add(AllCases(i).manufacturer)
+                    l.SubItems.Add(AllCases(i).HDDs)
+                    l.SubItems.Add(AllCases(i).SSDs)
+                    l.SubItems.Add(AllCases(i).price)
+                    ListView1.Items.Add(l)
+                End If
             Next
             'if the type is storage
         ElseIf type = "Storage" Then
+
             'add the relevant columns
             ListView1.Columns.Add("Type", 100)
             ListView1.Columns.Add("Read", 100)
@@ -177,19 +191,21 @@ Public Class parts
 
             'loop through the storage
             For i = 0 To AllStorage.Count - 1
-                'declare a temporary listviewitem
-                Dim l As New ListViewItem
-                'add the relevant data to the temporary listviewitem
-                l.SubItems(0).Text = AllStorage(i).ID
-                l.SubItems.Add(AllStorage(i).name)
-                l.SubItems.Add(AllStorage(i).manufacturer)
-                l.SubItems.Add(AllStorage(i).type)
-                l.SubItems.Add(AllStorage(i).read)
-                l.SubItems.Add(AllStorage(i).write)
-                l.SubItems.Add(AllStorage(i).capacity)
-                l.SubItems.Add(AllStorage(i).connection)
-                l.SubItems.Add(AllStorage(i).price)
-                ListView1.Items.Add(l)
+                If AllStorage(i).ID >= 0 Then
+                    'declare a temporary listviewitem
+                    Dim l As New ListViewItem
+                    'add the relevant data to the temporary listviewitem
+                    l.SubItems(0).Text = AllStorage(i).ID
+                    l.SubItems.Add(AllStorage(i).name)
+                    l.SubItems.Add(AllStorage(i).manufacturer)
+                    l.SubItems.Add(AllStorage(i).type)
+                    l.SubItems.Add(AllStorage(i).read)
+                    l.SubItems.Add(AllStorage(i).write)
+                    l.SubItems.Add(AllStorage(i).capacity)
+                    l.SubItems.Add(AllStorage(i).connection)
+                    l.SubItems.Add(AllStorage(i).price)
+                    ListView1.Items.Add(l)
+                End If
             Next
         End If
         'a variable to store the width that has been used so far
@@ -273,6 +289,7 @@ Public Class parts
                                 Dim item As CPU = AllCPUs(i)
                                 item.ID = -1 - item.ID
                                 AllCPUs(i) = item
+                                writeCPU()
                                 Dim l As log
                                 l.id = findNextIndex("AllLogs")
                                 l.user = Form1.currentUser
@@ -294,6 +311,7 @@ Public Class parts
                                 Dim item As GPU = AllGPUs(i)
                                 item.ID = -1 - item.ID
                                 AllGPUs(i) = item
+                                writeGPU()
                                 Dim l As log
                                 l.id = findNextIndex("AllLogs")
                                 l.user = Form1.currentUser
@@ -315,6 +333,7 @@ Public Class parts
                                 Dim item As PSU = AllPSUs(i)
                                 item.ID = -1 - item.ID
                                 AllPSUs(i) = item
+                                writePSU()
                                 Dim l As log
                                 l.id = findNextIndex("AllLogs")
                                 l.user = Form1.currentUser
@@ -336,6 +355,7 @@ Public Class parts
                                 Dim item As RAM = AllRAMs(i)
                                 item.ID = -1 - item.ID
                                 AllRAMs(i) = item
+                                writeRAM()
                                 Dim l As log
                                 l.id = findNextIndex("AllLogs")
                                 l.user = Form1.currentUser
@@ -357,6 +377,7 @@ Public Class parts
                                 Dim item As cases = AllCases(i)
                                 item.id = -1 - item.id
                                 AllCases(i) = item
+                                writeCases()
                                 Dim l As log
                                 l.id = findNextIndex("AllLogs")
                                 l.user = Form1.currentUser
@@ -378,6 +399,7 @@ Public Class parts
                                 Dim item As motherboard = AllMoba(i)
                                 item.id = -1 - item.id
                                 AllMoba(i) = item
+                                writeMoba()
                                 Dim l As log
                                 l.id = findNextIndex("AllLogs")
                                 l.user = Form1.currentUser
@@ -399,6 +421,7 @@ Public Class parts
                                 Dim item As store = AllStorage(i)
                                 item.ID = -1 - item.ID
                                 AllStorage(i) = item
+                                writeStorage()
                                 Dim l As log
                                 l.id = findNextIndex("AllLogs")
                                 l.user = Form1.currentUser
