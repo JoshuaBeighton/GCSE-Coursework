@@ -46,7 +46,7 @@ Partial Class PartsNaviagtion
         Me.btn_GPU.Location = New System.Drawing.Point(148, 12)
         Me.btn_GPU.Name = "btn_GPU"
         Me.btn_GPU.Size = New System.Drawing.Size(130, 83)
-        Me.btn_GPU.TabIndex = 0
+        Me.btn_GPU.TabIndex = 1
         Me.btn_GPU.Text = "GPUs"
         Me.btn_GPU.UseVisualStyleBackColor = True
         '
@@ -55,7 +55,7 @@ Partial Class PartsNaviagtion
         Me.btn_RAM.Location = New System.Drawing.Point(284, 12)
         Me.btn_RAM.Name = "btn_RAM"
         Me.btn_RAM.Size = New System.Drawing.Size(130, 83)
-        Me.btn_RAM.TabIndex = 0
+        Me.btn_RAM.TabIndex = 2
         Me.btn_RAM.Text = "RAM"
         Me.btn_RAM.UseVisualStyleBackColor = True
         '
@@ -64,7 +64,7 @@ Partial Class PartsNaviagtion
         Me.btn_PSU.Location = New System.Drawing.Point(420, 12)
         Me.btn_PSU.Name = "btn_PSU"
         Me.btn_PSU.Size = New System.Drawing.Size(130, 83)
-        Me.btn_PSU.TabIndex = 0
+        Me.btn_PSU.TabIndex = 3
         Me.btn_PSU.Text = "PSU"
         Me.btn_PSU.UseVisualStyleBackColor = True
         '
@@ -73,7 +73,7 @@ Partial Class PartsNaviagtion
         Me.btn_case.Location = New System.Drawing.Point(12, 101)
         Me.btn_case.Name = "btn_case"
         Me.btn_case.Size = New System.Drawing.Size(130, 83)
-        Me.btn_case.TabIndex = 0
+        Me.btn_case.TabIndex = 4
         Me.btn_case.Text = "Case"
         Me.btn_case.UseVisualStyleBackColor = True
         '
@@ -82,7 +82,7 @@ Partial Class PartsNaviagtion
         Me.btn_moba.Location = New System.Drawing.Point(148, 101)
         Me.btn_moba.Name = "btn_moba"
         Me.btn_moba.Size = New System.Drawing.Size(130, 83)
-        Me.btn_moba.TabIndex = 0
+        Me.btn_moba.TabIndex = 5
         Me.btn_moba.Text = "Motherboard"
         Me.btn_moba.UseVisualStyleBackColor = True
         '
@@ -91,7 +91,7 @@ Partial Class PartsNaviagtion
         Me.btn_sto.Location = New System.Drawing.Point(284, 101)
         Me.btn_sto.Name = "btn_sto"
         Me.btn_sto.Size = New System.Drawing.Size(130, 83)
-        Me.btn_sto.TabIndex = 0
+        Me.btn_sto.TabIndex = 6
         Me.btn_sto.Text = "Storage"
         Me.btn_sto.UseVisualStyleBackColor = True
         '
@@ -100,7 +100,7 @@ Partial Class PartsNaviagtion
         Me.btn_back.Location = New System.Drawing.Point(420, 101)
         Me.btn_back.Name = "btn_back"
         Me.btn_back.Size = New System.Drawing.Size(130, 83)
-        Me.btn_back.TabIndex = 0
+        Me.btn_back.TabIndex = 7
         Me.btn_back.Text = "Back"
         Me.btn_back.UseVisualStyleBackColor = True
         '
@@ -118,7 +118,7 @@ Partial Class PartsNaviagtion
         Me.Controls.Add(Me.btn_GPU)
         Me.Controls.Add(Me.btn_CPU)
         Me.Name = "PartsNaviagtion"
-        Me.Text = "PartsNaviagtion"
+        Me.Text = "Select Part"
         Me.ResumeLayout(False)
 
     End Sub

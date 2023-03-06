@@ -44,7 +44,7 @@ Partial Class WriteStock
         Me.btn_navi.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_navi.Name = "btn_navi"
         Me.btn_navi.Size = New System.Drawing.Size(286, 123)
-        Me.btn_navi.TabIndex = 34
+        Me.btn_navi.TabIndex = 7
         Me.btn_navi.Text = "Go Back To Full List"
         Me.btn_navi.UseVisualStyleBackColor = True
         '
@@ -54,7 +54,7 @@ Partial Class WriteStock
         Me.btn_AddOrder.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_AddOrder.Name = "btn_AddOrder"
         Me.btn_AddOrder.Size = New System.Drawing.Size(313, 123)
-        Me.btn_AddOrder.TabIndex = 32
+        Me.btn_AddOrder.TabIndex = 6
         Me.btn_AddOrder.Text = "Add Stock"
         Me.btn_AddOrder.UseVisualStyleBackColor = True
         '
@@ -114,6 +114,7 @@ Partial Class WriteStock
         Me.txt_part.Name = "txt_part"
         Me.txt_part.Size = New System.Drawing.Size(144, 31)
         Me.txt_part.TabIndex = 1
+        Me.txt_part.TabStop = False
         '
         'Label8
         '
@@ -167,7 +168,7 @@ Partial Class WriteStock
         Me.btn_part.Location = New System.Drawing.Point(481, 18)
         Me.btn_part.Name = "btn_part"
         Me.btn_part.Size = New System.Drawing.Size(144, 30)
-        Me.btn_part.TabIndex = 39
+        Me.btn_part.TabIndex = 1
         Me.btn_part.Text = "Part"
         Me.btn_part.UseVisualStyleBackColor = True
         '
@@ -193,7 +194,7 @@ Partial Class WriteStock
         Me.Controls.Add(Me.Label1)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "WriteStock"
-        Me.Text = "Write Stock"
+        Me.Text = "Add Stock"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

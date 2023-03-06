@@ -11,18 +11,18 @@
         ListView1.Items.Clear()
         Dim l As New List(Of ListViewItem)
         'adding relavant columns
-        ListView1.Columns.Add("ID", 20, HorizontalAlignment.Left)
+        ListView1.Columns.Add("ID", 30, HorizontalAlignment.Left)
         ListView1.Columns.Add("Customer", 150, HorizontalAlignment.Left)
         ListView1.Columns.Add("Due", 100, HorizontalAlignment.Left)
         ListView1.Columns.Add("Price", 50, HorizontalAlignment.Left)
-        ListView1.Columns.Add("CPU", 70, HorizontalAlignment.Left)
-        ListView1.Columns.Add("GPU", 70, HorizontalAlignment.Left)
-        ListView1.Columns.Add("RAM", 70, HorizontalAlignment.Left)
-        ListView1.Columns.Add("PSU", 70, HorizontalAlignment.Left)
-        ListView1.Columns.Add("Case", 70, HorizontalAlignment.Left)
-        ListView1.Columns.Add("Motherboard", 70, HorizontalAlignment.Left)
+        ListView1.Columns.Add("CPU", 150, HorizontalAlignment.Left)
+        ListView1.Columns.Add("GPU", 150, HorizontalAlignment.Left)
+        ListView1.Columns.Add("RAM", 150, HorizontalAlignment.Left)
+        ListView1.Columns.Add("PSU", 150, HorizontalAlignment.Left)
+        ListView1.Columns.Add("Case", 150, HorizontalAlignment.Left)
+        ListView1.Columns.Add("Motherboard", 150, HorizontalAlignment.Left)
         'making final column fit to the end of the listbox
-        ListView1.Columns.Add("Storage", ListView1.Width - 20 - 150 - 100 - 50 - 70 - 70 - 70 - 70 - 70 - 70, HorizontalAlignment.Left)
+        ListView1.Columns.Add("Storage", ListView1.Width, HorizontalAlignment.Left)
 
 
         'variable to store all of the components attached to the current order
@@ -43,7 +43,11 @@
                 tempL = New ListViewItem
                 'assign the elements to their positions in the list box
                 tempL.SubItems(0).Text = (AllOrders(i).id)
-                tempL.SubItems.Add(AllOrders(i).customer)
+                For j = 0 To allCustomers.Count - 1
+                    If AllOrders(i).customer = allCustomers(j).ID Then
+                        tempL.SubItems.Add(allCustomers(j).firstName & " " & allCustomers(j).lastName)
+                    End If
+                Next
                 tempL.SubItems.Add(AllOrders(i).due)
                 tempL.SubItems.Add(AllOrders(i).price)
                 tempL.SubItems.Add(components(0)) 'components start at index 4, CPU is 4
@@ -72,72 +76,6 @@
 
 
 
-                'tempL = New ListViewItem
-                'Dim j As Integer = 0
-                'Dim startIndex As Integer = -1
-                'While (j < AllOrderStock.Count) And (startIndex = -1)
-                '    If AllOrders(i).id = AllOrderStock(j).order Then
-                '        startIndex = j
-                '    Else
-                '        j += 1
-                '    End If
-                'End While
-                'Dim endIndex As Integer = -1
-                'While (j < AllOrderStock.Count) And (startIndex = -1)
-                '    If AllOrders(i).id <> AllOrderStock(j).order Then
-                '        endIndex = j
-                '    ElseIf j = AllOrderStock.Count - 1 Then
-                '        endIndex = j - 1
-                '    Else
-                '        j += 1
-                '    End If
-                'End While
-
-                'Dim lcpu As String
-                'Dim lram As String
-                'Dim lgpu As String
-                'Dim lcase As String
-                'Dim lmotherboard As String
-                'Dim lstorage As New List(Of String)
-                'Dim lpsu As String
-
-
-                'For k = startIndex To endIndex
-                '    Select Case AllStock(AllOrderStock(k).stock).type.ToUpper()
-                '        Case "CPU"
-                '            lcpu = AllStock(AllOrderStock(k).stock).part
-                '        Case "GPU"
-                '            lgpu = AllStock(AllOrderStock(k).stock).part
-
-                '        Case "PSU"
-                '            lpsu = AllStock(AllOrderStock(k).stock).part
-
-                '        Case "RAM"
-                '            lram = AllStock(AllOrderStock(k).stock).part
-
-                '        Case "CASE"
-                '            lcase = AllStock(AllOrderStock(k).stock).part
-
-                '        Case "MOTHERBOARD"
-                '            lmotherboard = AllStock(AllOrderStock(k).stock).part
-
-                '        Case "STORAGE"
-                '            lstorage.Add(AllStock(AllOrderStock(k).stock).part)
-                '    End Select
-
-                'Next
-                'tempL.SubItems.Add(lcpu)
-                'tempL.SubItems.Add(lgpu)
-                'tempL.SubItems.Add(lram)
-                'tempL.SubItems.Add(lpsu)
-                'tempL.SubItems.Add(lcase)
-                'tempL.SubItems.Add(lmotherboard)
-                'tempL.SubItems.Add(String.Join(", ", lstorage.ToArray))
-
-
-
-
-                'l.Add(tempL)
             End If
         Next
         'add the list view items
@@ -208,7 +146,45 @@
                 maxLength = True
             End If
         End While
-        Return (components.ToArray())
+        Dim newComp As New List(Of String)
+        For i = 0 To AllCPUs.Count - 1
+            If AllCPUs(i).ID = components(0) Then
+                newComp.Add(AllCPUs(i).name)
+            End If
+        Next
+        For i = 0 To AllGPUs.Count - 1
+            If AllGPUs(i).ID = components(1) Then
+                newComp.Add(AllGPUs(i).Series & " " & AllGPUs(i).Model)
+            End If
+        Next
+        For i = 0 To AllRAMs.Count - 1
+            If AllRAMs(i).ID = components(2) Then
+                newComp.Add(AllRAMs(i).name & " " & AllRAMs(i).capacity & "GB")
+            End If
+        Next
+        For i = 0 To AllPSUs.Count - 1
+            If AllPSUs(i).ID = components(3) Then
+                newComp.Add(AllPSUs(i).name & " " & AllPSUs(i).power & "W")
+            End If
+        Next
+        For i = 0 To AllCases.Count - 1
+            If AllCases(i).id = components(4) Then
+                newComp.Add(AllCases(i).name)
+            End If
+        Next
+        For i = 0 To AllMoba.Count - 1
+            If AllMoba(i).id = components(5) Then
+                newComp.Add(AllMoba(i).name)
+            End If
+        Next
+        For j = 6 To components.Count - 1
+            For i = 0 To AllStorage.Count - 1
+                If AllStorage(i).ID = components(j) Then
+                    newComp.Add(AllStorage(i).name & " " & AllStorage(i).capacity & "GB")
+                End If
+            Next
+        Next
+        Return (newComp.ToArray())
     End Function
 
     'list to store the items removed during in filtering so they can be re-added later
@@ -608,7 +584,14 @@
             o = AllOrders(oID)
             'set the ID to itself times -1, subtract one so that it will always end up below 0, so its marked to be deleted
             o.id = (o.id * -1) - 1
-
+            Dim l As log
+            l.id = findNextIndex("AllLogs")
+            l.user = Form1.currentUser
+            l.action = "Delete"
+            l.data = o.id & o.customer & o.price
+            l.time = Now
+            AllLogs.Add(l)
+            writeLogs()
             AllOrders(oID) = o
 
             Dim newOS As New List(Of orderStock)
@@ -625,6 +608,7 @@
 
         End While
         writeOrder()
+        writeOrderStock()
     End Sub
 
 

@@ -14,16 +14,23 @@
     Public AllMoba As New List(Of motherboard)
     Public AllStorage As New List(Of store)
     Public AllPSUs As New List(Of PSU)
-
-
+    Public AllLogs As New List(Of log)
+    Public allCustomers As New List(Of customer)
+    Public allSales As New List(Of sale)
 End Module
 
 'structure for storing data about an order
+Public Structure sale
+    Dim id As Integer
+    Dim amount As Decimal
+    Dim time As Date
+End Structure
+
 Public Structure Order
     'id of the order (PK)
     Dim id As Integer
     'store which customer the order belongs to
-    Dim customer As String 'this will be changed to integer in the production model, however i do not have a database to index to in this prototype, so just the name will suffice
+    Dim customer As Integer 'this will be changed to integer in the production model, however i do not have a database to index to in this prototype, so just the name will suffice
     'store the date the order is due
     Dim due As Date
     'store the price of the order
@@ -38,7 +45,7 @@ Public Structure Stock
     'type of part
     Dim type As String
     'part type
-    Dim part As Integer 'there is not a part for the prototype so i will store this as a string of the name
+    Dim part As Integer
     'date stock was ordered
     Dim ordered As Date
     'date stock is due
@@ -113,6 +120,8 @@ Public Structure RAM
     Dim tpd As Integer
     'store how many physical sticks of RAM are included in the kit
     Dim dims As Integer
+    'store the capacity of the RAM
+    Dim capacity As Decimal
     'store the price of the RAM
     Dim price As Decimal
 End Structure
@@ -187,12 +196,14 @@ Public Structure store
     Dim manufacturer As String
     'store what type of storage it is (HDD/SSD)
     Dim type As String
-    'store what speed the storage runs at
-    Dim speed As Integer
+    'store what speed the storage reads at
+    Dim read As Integer
+    'store what speed the storage writes at
+    Dim write As Integer
     'store the capacity of the storage device
     Dim capacity As Decimal
     'store what connection the storage uses
-    Dim connection As Decimal
+    Dim connection As String
     'store the price of the storage device
     Dim price As Decimal
 End Structure
@@ -202,7 +213,7 @@ Public Structure cases
     'store the ID of the Case (PK)
     Dim id As Integer
     'Store the name of the case
-    Dim name As Integer
+    Dim name As String
     'store the manufacturer of the case
     Dim manufacturer As String
     'store how many HDD slots the motherboard has
@@ -211,4 +222,19 @@ Public Structure cases
     Dim SSDs As Integer
     'store the price of the motherboard
     Dim price As Decimal
+End Structure
+
+Public Structure customer
+    Dim ID As Integer
+    Dim firstName As String
+    Dim lastName As String
+    Dim contact As String
+End Structure
+
+Public Structure log
+    Dim id As Integer
+    Dim user As String
+    Dim action As String
+    Dim data As String
+    Dim time As Date
 End Structure

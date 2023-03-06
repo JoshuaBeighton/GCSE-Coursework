@@ -52,7 +52,27 @@
         Me.Hide()
     End Sub
 
-    Private Sub Navigation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    Private Sub btn_logs_Click(sender As Object, e As EventArgs) Handles btn_logs.Click
+        Logs.Show()
+        Me.Hide()
+        Logs.init()
+    End Sub
+
+    Private Sub btn_cust_Click(sender As Object, e As EventArgs) Handles btn_cust.Click
+        Customers.Show()
+        Customers.custInit()
+        Me.Hide()
+    End Sub
+
+    Private Sub btn_staff_Click(sender As Object, e As EventArgs) Handles btn_staff.Click
+        Staff.Show()
+        Staff.init()
+        Me.Hide()
+    End Sub
+
+    Private Sub btn_sales_Click(sender As Object, e As EventArgs) Handles btn_sales.Click
+        SalesData.Show()
+        SalesData.init()
     End Sub
 End Class

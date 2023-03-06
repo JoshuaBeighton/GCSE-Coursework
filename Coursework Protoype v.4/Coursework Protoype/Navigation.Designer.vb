@@ -38,7 +38,7 @@ Partial Class Navigation
         Me.btn_sales.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_sales.Name = "btn_sales"
         Me.btn_sales.Size = New System.Drawing.Size(107, 93)
-        Me.btn_sales.TabIndex = 0
+        Me.btn_sales.TabIndex = 6
         Me.btn_sales.Text = "sales"
         Me.btn_sales.UseVisualStyleBackColor = True
         '
@@ -48,7 +48,7 @@ Partial Class Navigation
         Me.btn_logs.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_logs.Name = "btn_logs"
         Me.btn_logs.Size = New System.Drawing.Size(107, 93)
-        Me.btn_logs.TabIndex = 0
+        Me.btn_logs.TabIndex = 5
         Me.btn_logs.Text = "Logs"
         Me.btn_logs.UseVisualStyleBackColor = True
         '
@@ -68,7 +68,7 @@ Partial Class Navigation
         Me.btn_orders.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_orders.Name = "btn_orders"
         Me.btn_orders.Size = New System.Drawing.Size(107, 93)
-        Me.btn_orders.TabIndex = 0
+        Me.btn_orders.TabIndex = 1
         Me.btn_orders.Text = "Orders"
         Me.btn_orders.UseVisualStyleBackColor = True
         '
@@ -78,7 +78,7 @@ Partial Class Navigation
         Me.btn_stock.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_stock.Name = "btn_stock"
         Me.btn_stock.Size = New System.Drawing.Size(107, 93)
-        Me.btn_stock.TabIndex = 0
+        Me.btn_stock.TabIndex = 2
         Me.btn_stock.Text = "Stock"
         Me.btn_stock.UseVisualStyleBackColor = True
         '
@@ -88,7 +88,7 @@ Partial Class Navigation
         Me.btn_parts.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_parts.Name = "btn_parts"
         Me.btn_parts.Size = New System.Drawing.Size(107, 93)
-        Me.btn_parts.TabIndex = 0
+        Me.btn_parts.TabIndex = 3
         Me.btn_parts.Text = "Parts"
         Me.btn_parts.UseVisualStyleBackColor = True
         '
@@ -98,7 +98,7 @@ Partial Class Navigation
         Me.btn_staff.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_staff.Name = "btn_staff"
         Me.btn_staff.Size = New System.Drawing.Size(107, 93)
-        Me.btn_staff.TabIndex = 0
+        Me.btn_staff.TabIndex = 4
         Me.btn_staff.Text = "Staff"
         Me.btn_staff.UseVisualStyleBackColor = True
         '
@@ -108,7 +108,7 @@ Partial Class Navigation
         Me.btn_logout.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_logout.Name = "btn_logout"
         Me.btn_logout.Size = New System.Drawing.Size(325, 76)
-        Me.btn_logout.TabIndex = 0
+        Me.btn_logout.TabIndex = 7
         Me.btn_logout.Text = "Sign Out"
         Me.btn_logout.UseVisualStyleBackColor = True
         '
@@ -127,7 +127,7 @@ Partial Class Navigation
         Me.Controls.Add(Me.btn_sales)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "Navigation"
-        Me.Text = "Navigation"
+        Me.Text = "Home"
         Me.ResumeLayout(False)
 
     End Sub

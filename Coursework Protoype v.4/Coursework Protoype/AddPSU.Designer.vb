@@ -97,42 +97,42 @@ Partial Class AddPSU
         Me.txt_price.Location = New System.Drawing.Point(193, 201)
         Me.txt_price.Name = "txt_price"
         Me.txt_price.Size = New System.Drawing.Size(150, 31)
-        Me.txt_price.TabIndex = 43
+        Me.txt_price.TabIndex = 5
         '
         'txt_power
         '
         Me.txt_power.Location = New System.Drawing.Point(193, 164)
         Me.txt_power.Name = "txt_power"
         Me.txt_power.Size = New System.Drawing.Size(150, 31)
-        Me.txt_power.TabIndex = 40
+        Me.txt_power.TabIndex = 4
         '
         'txt_effeciency
         '
         Me.txt_effeciency.Location = New System.Drawing.Point(193, 90)
         Me.txt_effeciency.Name = "txt_effeciency"
         Me.txt_effeciency.Size = New System.Drawing.Size(150, 31)
-        Me.txt_effeciency.TabIndex = 38
+        Me.txt_effeciency.TabIndex = 2
         '
         'txt_manu
         '
         Me.txt_manu.Location = New System.Drawing.Point(193, 53)
         Me.txt_manu.Name = "txt_manu"
         Me.txt_manu.Size = New System.Drawing.Size(150, 31)
-        Me.txt_manu.TabIndex = 29
+        Me.txt_manu.TabIndex = 1
         '
         'txt_name
         '
         Me.txt_name.Location = New System.Drawing.Point(193, 16)
         Me.txt_name.Name = "txt_name"
         Me.txt_name.Size = New System.Drawing.Size(150, 31)
-        Me.txt_name.TabIndex = 28
+        Me.txt_name.TabIndex = 0
         '
         'btn_back
         '
         Me.btn_back.Location = New System.Drawing.Point(209, 238)
         Me.btn_back.Name = "btn_back"
         Me.btn_back.Size = New System.Drawing.Size(134, 80)
-        Me.btn_back.TabIndex = 45
+        Me.btn_back.TabIndex = 7
         Me.btn_back.Text = "Go Back"
         Me.btn_back.UseVisualStyleBackColor = True
         '
@@ -141,7 +141,7 @@ Partial Class AddPSU
         Me.btn_add.Location = New System.Drawing.Point(12, 238)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(131, 80)
-        Me.btn_add.TabIndex = 44
+        Me.btn_add.TabIndex = 6
         Me.btn_add.Text = "Add"
         Me.btn_add.UseVisualStyleBackColor = True
         '
@@ -152,7 +152,7 @@ Partial Class AddPSU
         Me.ComboBox1.Location = New System.Drawing.Point(193, 126)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(150, 33)
-        Me.ComboBox1.TabIndex = 46
+        Me.ComboBox1.TabIndex = 3
         '
         'AddPSU
         '

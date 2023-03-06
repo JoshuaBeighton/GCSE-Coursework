@@ -119,63 +119,63 @@ Partial Class AddGPU
         Me.txt_price.Location = New System.Drawing.Point(193, 265)
         Me.txt_price.Name = "txt_price"
         Me.txt_price.Size = New System.Drawing.Size(150, 31)
-        Me.txt_price.TabIndex = 25
+        Me.txt_price.TabIndex = 7
         '
         'txt_VRAM
         '
         Me.txt_VRAM.Location = New System.Drawing.Point(193, 191)
         Me.txt_VRAM.Name = "txt_VRAM"
         Me.txt_VRAM.Size = New System.Drawing.Size(150, 31)
-        Me.txt_VRAM.TabIndex = 23
+        Me.txt_VRAM.TabIndex = 5
         '
         'txt_power
         '
         Me.txt_power.Location = New System.Drawing.Point(193, 228)
         Me.txt_power.Name = "txt_power"
         Me.txt_power.Size = New System.Drawing.Size(150, 31)
-        Me.txt_power.TabIndex = 24
+        Me.txt_power.TabIndex = 6
         '
         'txt_baseclock
         '
         Me.txt_baseclock.Location = New System.Drawing.Point(193, 154)
         Me.txt_baseclock.Name = "txt_baseclock"
         Me.txt_baseclock.Size = New System.Drawing.Size(150, 31)
-        Me.txt_baseclock.TabIndex = 22
+        Me.txt_baseclock.TabIndex = 4
         '
         'txt_chip
         '
         Me.txt_chip.Location = New System.Drawing.Point(193, 117)
         Me.txt_chip.Name = "txt_chip"
         Me.txt_chip.Size = New System.Drawing.Size(150, 31)
-        Me.txt_chip.TabIndex = 21
+        Me.txt_chip.TabIndex = 3
         '
         'txt_manufacturer
         '
         Me.txt_manufacturer.Location = New System.Drawing.Point(193, 80)
         Me.txt_manufacturer.Name = "txt_manufacturer"
         Me.txt_manufacturer.Size = New System.Drawing.Size(150, 31)
-        Me.txt_manufacturer.TabIndex = 20
+        Me.txt_manufacturer.TabIndex = 2
         '
         'txt_model
         '
         Me.txt_model.Location = New System.Drawing.Point(193, 43)
         Me.txt_model.Name = "txt_model"
         Me.txt_model.Size = New System.Drawing.Size(150, 31)
-        Me.txt_model.TabIndex = 11
+        Me.txt_model.TabIndex = 1
         '
         'txt_series
         '
         Me.txt_series.Location = New System.Drawing.Point(193, 6)
         Me.txt_series.Name = "txt_series"
         Me.txt_series.Size = New System.Drawing.Size(150, 31)
-        Me.txt_series.TabIndex = 10
+        Me.txt_series.TabIndex = 0
         '
         'btn_back
         '
         Me.btn_back.Location = New System.Drawing.Point(209, 302)
         Me.btn_back.Name = "btn_back"
         Me.btn_back.Size = New System.Drawing.Size(134, 80)
-        Me.btn_back.TabIndex = 27
+        Me.btn_back.TabIndex = 9
         Me.btn_back.Text = "Go Back"
         Me.btn_back.UseVisualStyleBackColor = True
         '
@@ -184,7 +184,7 @@ Partial Class AddGPU
         Me.btn_add.Location = New System.Drawing.Point(12, 302)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(131, 80)
-        Me.btn_add.TabIndex = 26
+        Me.btn_add.TabIndex = 8
         Me.btn_add.Text = "Add"
         Me.btn_add.UseVisualStyleBackColor = True
         '

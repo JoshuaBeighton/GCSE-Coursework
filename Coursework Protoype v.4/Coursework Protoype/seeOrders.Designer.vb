@@ -46,7 +46,7 @@ Partial Class seeOrders
         Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(187, 83)
-        Me.Button1.TabIndex = 0
+        Me.Button1.TabIndex = 9
         Me.Button1.Text = "Add Order"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -68,7 +68,7 @@ Partial Class seeOrders
         Me.txt_Cust.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txt_Cust.Name = "txt_Cust"
         Me.txt_Cust.Size = New System.Drawing.Size(255, 31)
-        Me.txt_Cust.TabIndex = 2
+        Me.txt_Cust.TabIndex = 0
         '
         'DateTimePicker1
         '
@@ -76,7 +76,7 @@ Partial Class seeOrders
         Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(284, 31)
-        Me.DateTimePicker1.TabIndex = 5
+        Me.DateTimePicker1.TabIndex = 1
         '
         'cmb_date
         '
@@ -86,7 +86,7 @@ Partial Class seeOrders
         Me.cmb_date.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cmb_date.Name = "cmb_date"
         Me.cmb_date.Size = New System.Drawing.Size(171, 33)
-        Me.cmb_date.TabIndex = 6
+        Me.cmb_date.TabIndex = 2
         Me.cmb_date.Text = "Not Filtered"
         '
         'Label1
@@ -116,7 +116,7 @@ Partial Class seeOrders
         Me.cmb_CPU.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cmb_CPU.Name = "cmb_CPU"
         Me.cmb_CPU.Size = New System.Drawing.Size(171, 33)
-        Me.cmb_CPU.TabIndex = 8
+        Me.cmb_CPU.TabIndex = 3
         Me.cmb_CPU.Text = "CPU"
         '
         'cmb_GPU
@@ -126,7 +126,7 @@ Partial Class seeOrders
         Me.cmb_GPU.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cmb_GPU.Name = "cmb_GPU"
         Me.cmb_GPU.Size = New System.Drawing.Size(171, 33)
-        Me.cmb_GPU.TabIndex = 8
+        Me.cmb_GPU.TabIndex = 4
         Me.cmb_GPU.Text = "GPU"
         '
         'cmb_RAM
@@ -136,7 +136,7 @@ Partial Class seeOrders
         Me.cmb_RAM.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cmb_RAM.Name = "cmb_RAM"
         Me.cmb_RAM.Size = New System.Drawing.Size(171, 33)
-        Me.cmb_RAM.TabIndex = 8
+        Me.cmb_RAM.TabIndex = 5
         Me.cmb_RAM.Text = "RAM"
         '
         'cmb_Case
@@ -146,7 +146,7 @@ Partial Class seeOrders
         Me.cmb_Case.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cmb_Case.Name = "cmb_Case"
         Me.cmb_Case.Size = New System.Drawing.Size(171, 33)
-        Me.cmb_Case.TabIndex = 8
+        Me.cmb_Case.TabIndex = 6
         Me.cmb_Case.Text = "Case"
         '
         'btn_filter
@@ -155,7 +155,7 @@ Partial Class seeOrders
         Me.btn_filter.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_filter.Name = "btn_filter"
         Me.btn_filter.Size = New System.Drawing.Size(187, 83)
-        Me.btn_filter.TabIndex = 0
+        Me.btn_filter.TabIndex = 7
         Me.btn_filter.Text = "Filter"
         Me.btn_filter.UseVisualStyleBackColor = True
         '
@@ -165,7 +165,7 @@ Partial Class seeOrders
         Me.btn_Clear.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_Clear.Name = "btn_Clear"
         Me.btn_Clear.Size = New System.Drawing.Size(187, 83)
-        Me.btn_Clear.TabIndex = 0
+        Me.btn_Clear.TabIndex = 8
         Me.btn_Clear.Text = "Clear Filters"
         Me.btn_Clear.UseVisualStyleBackColor = True
         '
@@ -175,7 +175,7 @@ Partial Class seeOrders
         Me.Button2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(187, 83)
-        Me.Button2.TabIndex = 0
+        Me.Button2.TabIndex = 12
         Me.Button2.Text = "Go Back"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -185,7 +185,7 @@ Partial Class seeOrders
         Me.Button3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(187, 83)
-        Me.Button3.TabIndex = 0
+        Me.Button3.TabIndex = 10
         Me.Button3.Text = "Delete Order"
         Me.Button3.UseVisualStyleBackColor = True
         '
@@ -195,7 +195,7 @@ Partial Class seeOrders
         Me.Button4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(187, 83)
-        Me.Button4.TabIndex = 0
+        Me.Button4.TabIndex = 11
         Me.Button4.Text = "Edit Order"
         Me.Button4.UseVisualStyleBackColor = True
         '
@@ -222,7 +222,7 @@ Partial Class seeOrders
         Me.Controls.Add(Me.Button1)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "seeOrders"
-        Me.Text = "seeOrders"
+        Me.Text = "Orders"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

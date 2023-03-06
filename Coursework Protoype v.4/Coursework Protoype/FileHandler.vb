@@ -19,7 +19,93 @@
         'close the file
         FileClose(1)
     End Sub
-    
+
+
+    'read from the orders file
+    Public Sub readCustomers()
+        'open the file called customers.txt for input
+        FileOpen(1, "Customers.txt", OpenMode.Input)
+        'store  temporary customer
+        Dim c As New customer
+        'loop until the end of the file
+        While Not EOF(1)
+            'input the customer details
+            Input(1, c.ID)
+            Input(1, c.firstName)
+            Input(1, c.lastName)
+            Input(1, c.contact)
+            allCustomers.Add(c)
+        End While
+        'close the file
+        FileClose(1)
+    End Sub
+    Public Sub readSales()
+        'open the file called Sales.txt for input
+        FileOpen(1, "Sales.txt", OpenMode.Input)
+        'store  temporary log
+        Dim s As New sale
+        'loop until the end of the file
+        While Not EOF(1)
+            'input the stock details
+            Input(1, s.id)
+            Input(1, s.amount)
+            Input(1, s.time)
+            allSales.Add(s)
+        End While
+        'close the file
+        FileClose(1)
+    End Sub
+
+    Public Sub writeSales()
+        'open the file called Sales.txt for output
+        FileOpen(1, "Sales.txt", OpenMode.Output)
+        'loop through all of the orders
+        For i = 0 To allSales.Count - 1
+            'if it has not been marked for deletion
+            If allSales(i).id >= 0 Then
+                'write that data to the file
+                WriteLine(1, allSales(i).id, allSales(i).amount, allSales(i).time)
+            End If
+        Next
+        'close the file
+        FileClose(1)
+    End Sub
+
+
+    'read from the logs file
+    Public Sub readLogs()
+        'open the file called Logs.txt for input
+        FileOpen(1, "Logs.txt", OpenMode.Input)
+        'store  temporary log
+        Dim l As New log
+        'loop until the end of the file
+        While Not EOF(1)
+            'input the stock details
+            Input(1, l.id)
+            Input(1, l.user)
+            Input(1, l.action)
+            Input(1, l.data)
+            Input(1, l.time)
+            AllLogs.Add(l)
+        End While
+        'close the file
+        FileClose(1)
+    End Sub
+    Public Sub writeLogs()
+        'open the file called Logs.txt for output
+        FileOpen(1, "Logs.txt", OpenMode.Output)
+        'loop through all of the orders
+        For i = 0 To AllLogs.Count - 1
+            'if it has not been marked for deletion
+            If AllLogs(i).id >= 0 Then
+                'write that data to the file
+                WriteLine(1, AllLogs(i).id, AllLogs(i).user, AllLogs(i).action, AllLogs(i).data, AllLogs(i).time)
+            End If
+        Next
+        'close the file
+        FileClose(1)
+    End Sub
+
     'read from the stock file
     Public Sub readStock()
         'open the file called stock.txt for input
@@ -117,6 +203,7 @@
             Input(1, r.ddr)
             Input(1, r.tpd)
             Input(1, r.dims)
+            Input(1, r.capacity)
             Input(1, r.price)
             AllRAMs.Add(r)
         End While
@@ -196,7 +283,8 @@
             Input(1, s.name)
             Input(1, s.manufacturer)
             Input(1, s.type)
-            Input(1, s.speed)
+            Input(1, s.read)
+            Input(1, s.write)
             Input(1, s.capacity)
             Input(1, s.connection)
             Input(1, s.price)
@@ -242,6 +330,24 @@
             If AllOrders(i).id >= 0 Then
                 'write that data to the file
                 WriteLine(1, AllOrders(i).id, AllOrders(i).customer, AllOrders(i).due, AllOrders(i).price)
+            End If
+        Next
+        'close the file
+        FileClose(1)
+    End Sub
+
+
+
+    'write to the file for customers
+    Public Sub writeCustomers()
+        'open the file called customers.txt for output
+        FileOpen(1, "Customers.txt", OpenMode.Output)
+        'loop through all of the orders
+        For i = 0 To allCustomers.Count - 1
+            'if it has not been marked for deletion
+            If allCustomers(i).ID >= 0 Then
+                'write that data to the file
+                WriteLine(1, allCustomers(i).ID, allCustomers(i).firstName, allCustomers(i).lastName, allCustomers(i).contact)
             End If
         Next
         'close the file
@@ -333,7 +439,7 @@
             'if the item hasn't been marked for deletion
             If AllRAMs(i).ID >= 0 Then
                 'write line with the RAM data
-                WriteLine(1, AllRAMs(i).ID, AllRAMs(i).name, AllRAMs(i).manufacturer, AllRAMs(i).latency, AllRAMs(i).speed, AllRAMs(i).ddr, AllRAMs(i).tpd, AllRAMs(i).dims, AllRAMs(i).price)
+                WriteLine(1, AllRAMs(i).ID, AllRAMs(i).name, AllRAMs(i).manufacturer, AllRAMs(i).latency, AllRAMs(i).speed, AllRAMs(i).ddr, AllRAMs(i).tpd, AllRAMs(i).dims, AllRAMs(i).capacity, AllRAMs(i).price)
             End If
         Next
         'close the file
@@ -364,7 +470,7 @@
             'if the item hasn't been marked for deletion
             If AllCases(i).id >= 0 Then
                 'write line with the data
-                WriteLine(1, AllCases(i).name, AllCases(i).manufacturer, AllCases(i).HDDs, AllCases(i).SSDs, AllCases(i).price)
+                WriteLine(1, AllCases(i).id, AllCases(i).name, AllCases(i).manufacturer, AllCases(i).HDDs, AllCases(i).SSDs, AllCases(i).price)
             End If
         Next
         'close the file
@@ -395,7 +501,7 @@
             'if the item hasn't been marked for deletion
             If AllStorage(i).ID >= 0 Then
                 'write line with the data
-                WriteLine(1, AllStorage(i).ID, AllStorage(i).name, AllStorage(i).manufacturer, AllStorage(i).type, AllStorage(i).speed, AllStorage(i).capacity, AllStorage(i).connection, AllStorage(i).price)
+                WriteLine(1, AllStorage(i).ID, AllStorage(i).name, AllStorage(i).manufacturer, AllStorage(i).type, AllStorage(i).read, AllStorage(i).write, AllStorage(i).capacity, AllStorage(i).connection, AllStorage(i).price)
             End If
         Next
         'close the file

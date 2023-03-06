@@ -86,42 +86,42 @@ Partial Class AddCase
         Me.txt_price.Location = New System.Drawing.Point(191, 160)
         Me.txt_price.Name = "txt_price"
         Me.txt_price.Size = New System.Drawing.Size(150, 31)
-        Me.txt_price.TabIndex = 43
+        Me.txt_price.TabIndex = 4
         '
         'txt_SSD
         '
         Me.txt_SSD.Location = New System.Drawing.Point(191, 123)
         Me.txt_SSD.Name = "txt_SSD"
         Me.txt_SSD.Size = New System.Drawing.Size(150, 31)
-        Me.txt_SSD.TabIndex = 39
+        Me.txt_SSD.TabIndex = 3
         '
         'txt_HDD
         '
         Me.txt_HDD.Location = New System.Drawing.Point(191, 86)
         Me.txt_HDD.Name = "txt_HDD"
         Me.txt_HDD.Size = New System.Drawing.Size(150, 31)
-        Me.txt_HDD.TabIndex = 38
+        Me.txt_HDD.TabIndex = 2
         '
         'txt_manu
         '
         Me.txt_manu.Location = New System.Drawing.Point(191, 49)
         Me.txt_manu.Name = "txt_manu"
         Me.txt_manu.Size = New System.Drawing.Size(150, 31)
-        Me.txt_manu.TabIndex = 29
+        Me.txt_manu.TabIndex = 1
         '
         'txt_name
         '
         Me.txt_name.Location = New System.Drawing.Point(191, 12)
         Me.txt_name.Name = "txt_name"
         Me.txt_name.Size = New System.Drawing.Size(150, 31)
-        Me.txt_name.TabIndex = 28
+        Me.txt_name.TabIndex = 0
         '
         'btn_back
         '
         Me.btn_back.Location = New System.Drawing.Point(207, 197)
         Me.btn_back.Name = "btn_back"
         Me.btn_back.Size = New System.Drawing.Size(134, 80)
-        Me.btn_back.TabIndex = 45
+        Me.btn_back.TabIndex = 6
         Me.btn_back.Text = "Go Back"
         Me.btn_back.UseVisualStyleBackColor = True
         '
@@ -130,7 +130,7 @@ Partial Class AddCase
         Me.btn_add.Location = New System.Drawing.Point(10, 197)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(131, 80)
-        Me.btn_add.TabIndex = 44
+        Me.btn_add.TabIndex = 5
         Me.btn_add.Text = "Add"
         Me.btn_add.UseVisualStyleBackColor = True
         '
