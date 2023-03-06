@@ -38,7 +38,7 @@ Public Structure Stock
     'type of part
     Dim type As String
     'part type
-    Dim part As Integer 'there is not a part for the prototype so i will store this as a string of the name
+    Dim part As Integer
     'date stock was ordered
     Dim ordered As Date
     'date stock is due

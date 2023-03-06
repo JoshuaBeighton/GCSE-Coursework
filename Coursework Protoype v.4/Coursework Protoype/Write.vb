@@ -19,50 +19,84 @@ Public Class Write
     Public sSto As New List(Of Integer)
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_AddOrder.Click
-        Dim c As CPU
-        Dim g As GPU
-        Dim r As RAM
-        Dim m As motherboard
-        Dim p As PSU
-        Dim ca As cases
+        Dim c As New CPU
+        Dim g As New GPU
+        Dim r As New RAM
+        Dim m As New motherboard
+        Dim p As New PSU
+        Dim ca As New cases
         Dim s(sSto.Count - 1) As store
-        For i = 0 To AllCPUs.Count - 1
-            If sCPU = AllCPUs(i).ID Then
-                c = AllCPUs(i)
+        For i = 0 To AllStock.Count - 1
+            If sCPU = AllStock(i).ID Then
+                For j = 0 To AllCPUs.Count - 1
+                    If AllCPUs(j).ID = AllStock(i).part Then
+                        c = AllCPUs(j)
+                    End If
+                Next
             End If
         Next
-        For i = 0 To AllGPUs.Count - 1
-            If sGPU = AllGPUs(i).ID Then
-                g = AllGPUs(i)
+        For i = 0 To AllStock.Count - 1
+            If sGPU = AllStock(i).ID Then
+                For j = 0 To AllGPUs.Count - 1
+                    If AllGPUs(j).ID = AllStock(i).part Then
+                        g = AllGPUs(j)
+                    End If
+                Next
             End If
         Next
-        For i = 0 To AllRAMs.Count - 1
-            If sRAM = AllRAMs(i).ID Then
-                r = AllRAMs(i)
+        For i = 0 To AllStock.Count - 1
+            If sRAM = AllStock(i).ID Then
+                For j = 0 To AllRAMs.Count - 1
+                    If AllRAMs(j).ID = AllStock(i).part Then
+                        r = AllRAMs(j)
+                    End If
+                Next
             End If
         Next
-        For i = 0 To AllMoba.Count - 1
-            If sMoba = AllMoba(i).id Then
-                m = AllMoba(i)
+        For i = 0 To AllStock.Count - 1
+            If sMoba = AllStock(i).ID Then
+                For j = 0 To AllMoba.Count - 1
+                    If AllMoba(j).id = AllStock(i).part Then
+                        m = AllMoba(j)
+                    End If
+                Next
             End If
         Next
-        For i = 0 To AllPSUs.Count - 1
-            If sPSU = AllPSUs(i).ID Then
-                p = AllPSUs(i)
+        For i = 0 To AllStock.Count - 1
+            If sCase = AllStock(i).ID Then
+                For j = 0 To AllCases.Count - 1
+                    If AllCases(j).id = AllStock(i).part Then
+                        ca = AllCases(j)
+                    End If
+                Next
             End If
         Next
-        For j = 0 To sSto.Count - 1
-            For i = 0 To AllStorage.Count - 1
-                If sSto(j) = AllStorage(i).ID Then
-                    s(j) = AllStorage(i)
+        For k = 0 To sSto.Count - 1
+            For i = 0 To AllStock.Count - 1
+                If sSto(k) = AllStock(i).ID Then
+                    For j = 0 To AllStorage.Count - 1
+                        If AllStorage(j).ID = AllStock(i).part Then
+                            s(k) = AllStorage(j)
+                        End If
+                    Next
                 End If
             Next
         Next
-        For i = 0 To AllCases.Count - 1
-            If sCase = AllCases(i).id Then
-                ca = AllCases(i)
+        For i = 0 To AllStock.Count - 1
+            If sPSU = AllStock(i).ID Then
+                For j = 0 To AllPSUs.Count - 1
+                    If AllPSUs(j).ID = AllStock(i).part Then
+                        p = AllPSUs(j)
+                    End If
+                Next
             End If
         Next
+        Debug.WriteLine("CPU Socket: " & c.socket)
+        Debug.WriteLine("Motherboard Socket: " & m.socket)
+        Debug.WriteLine("CPU Power: " & c.TPD)
+        Debug.WriteLine("GPU Power: " & g.TPD)
+        Debug.WriteLine("RAM Power: " & r.tpd)
+        Debug.WriteLine("PSU Power: " & p.power)
         If powerCheck(c, g, r, p) And socketCheck(m, c) And connctionsCheck(m, s) And slotsCheck(ca, s) Then
 
             'create new order to store all of the data
@@ -152,7 +186,8 @@ Public Class Write
             lst_sto.Items.Clear()
             txt_cust.Clear()
 
-
+            Me.Hide()
+            seeOrders.Show()
             'write all of the changes to the files
             FileHandler.writeOrder()
             FileHandler.writeOrderStock()
@@ -423,5 +458,71 @@ Public Class Write
                 txt_cust.Text = allCustomers(i).firstName & " " & allCustomers(i).lastName
             End If
         Next
+    End Sub
+
+    Private Sub lbl_CPU_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_CPU.LinkClicked
+        'navigate to the see stock page
+        Me.Hide()
+        seeStock.Show()
+        'initialise see stock to select a CPU
+        seeStock.InitialiseSeeStock()
+        seeStock.selectInit("CPU")
+        'store that we are waiting for a CPU
+        type = "CPU"
+    End Sub
+
+    Private Sub lbl_ram_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_ram.LinkClicked
+        'navigate to the see stock page
+        Me.Hide()
+        seeStock.Show()
+        'initialise see stock to select RAM
+        seeStock.InitialiseSeeStock()
+        seeStock.selectInit("RAM")
+        'store that we are waiting for RAM
+        type = "RAM"
+    End Sub
+
+    Private Sub lbl_case_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_case.LinkClicked
+        'navigate to the see stock page
+        Me.Hide()
+        seeStock.Show()
+        'initialise see stock to select a case
+        seeStock.InitialiseSeeStock()
+        seeStock.selectInit("Case")
+        'store that we are waiting for a case
+        type = "Case"
+    End Sub
+
+    Private Sub lbl_gpu_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_gpu.LinkClicked
+        'navigate to the see stock page
+        Me.Hide()
+        seeStock.Show()
+        'initialise see stock to select a GPU
+        seeStock.InitialiseSeeStock()
+        seeStock.selectInit("GPU")
+        'store that we are waiting for a GPU
+        type = "GPU"
+    End Sub
+
+    Private Sub lbl_psu_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_psu.LinkClicked
+        'navigate to the see stock page
+        Me.Hide()
+        seeStock.Show()
+        'initialise see stock to select a PSU
+        seeStock.InitialiseSeeStock()
+        seeStock.selectInit("PSU")
+        'store that we are waiting for a PSU
+        type = "PSU"
+    End Sub
+
+    Private Sub lbl_motherboard_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_motherboard.LinkClicked
+        'navigate to the see stock page
+        Me.Hide()
+        seeStock.Show()
+        'initialise see stock to select a motherboard
+        seeStock.InitialiseSeeStock()
+        seeStock.selectInit("Motherboard")
+        'store that we are waiting for a motherboard
+        type = "Motherboard"
     End Sub
 End Class

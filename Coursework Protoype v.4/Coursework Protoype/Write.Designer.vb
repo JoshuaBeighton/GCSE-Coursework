@@ -50,6 +50,14 @@ Partial Class Write
         Me.btn_PSU = New System.Windows.Forms.Button()
         Me.btn_Moba = New System.Windows.Forms.Button()
         Me.btn_cust = New System.Windows.Forms.Button()
+        Me.lbl_Cust = New System.Windows.Forms.LinkLabel()
+        Me.lbl_clearSto = New System.Windows.Forms.LinkLabel()
+        Me.lbl_motherboard = New System.Windows.Forms.LinkLabel()
+        Me.lbl_psu = New System.Windows.Forms.LinkLabel()
+        Me.lbl_case = New System.Windows.Forms.LinkLabel()
+        Me.lbl_ram = New System.Windows.Forms.LinkLabel()
+        Me.lbl_CPU = New System.Windows.Forms.LinkLabel()
+        Me.lbl_gpu = New System.Windows.Forms.LinkLabel()
         Me.SuspendLayout()
         '
         'Label1
@@ -328,11 +336,99 @@ Partial Class Write
         Me.btn_cust.Text = "Select"
         Me.btn_cust.UseVisualStyleBackColor = True
         '
+        'lbl_Cust
+        '
+        Me.lbl_Cust.AutoSize = True
+        Me.lbl_Cust.Location = New System.Drawing.Point(213, 411)
+        Me.lbl_Cust.Name = "lbl_Cust"
+        Me.lbl_Cust.Size = New System.Drawing.Size(42, 25)
+        Me.lbl_Cust.TabIndex = 15
+        Me.lbl_Cust.TabStop = True
+        Me.lbl_Cust.Text = "Edit"
+        '
+        'lbl_clearSto
+        '
+        Me.lbl_clearSto.AutoSize = True
+        Me.lbl_clearSto.Location = New System.Drawing.Point(571, 328)
+        Me.lbl_clearSto.Name = "lbl_clearSto"
+        Me.lbl_clearSto.Size = New System.Drawing.Size(51, 25)
+        Me.lbl_clearSto.TabIndex = 16
+        Me.lbl_clearSto.TabStop = True
+        Me.lbl_clearSto.Text = "Clear"
+        '
+        'lbl_motherboard
+        '
+        Me.lbl_motherboard.AutoSize = True
+        Me.lbl_motherboard.Location = New System.Drawing.Point(580, 196)
+        Me.lbl_motherboard.Name = "lbl_motherboard"
+        Me.lbl_motherboard.Size = New System.Drawing.Size(42, 25)
+        Me.lbl_motherboard.TabIndex = 17
+        Me.lbl_motherboard.TabStop = True
+        Me.lbl_motherboard.Text = "Edit"
+        '
+        'lbl_psu
+        '
+        Me.lbl_psu.AutoSize = True
+        Me.lbl_psu.Location = New System.Drawing.Point(580, 130)
+        Me.lbl_psu.Name = "lbl_psu"
+        Me.lbl_psu.Size = New System.Drawing.Size(42, 25)
+        Me.lbl_psu.TabIndex = 18
+        Me.lbl_psu.TabStop = True
+        Me.lbl_psu.Text = "Edit"
+        '
+        'lbl_case
+        '
+        Me.lbl_case.AutoSize = True
+        Me.lbl_case.Location = New System.Drawing.Point(215, 196)
+        Me.lbl_case.Name = "lbl_case"
+        Me.lbl_case.Size = New System.Drawing.Size(42, 25)
+        Me.lbl_case.TabIndex = 19
+        Me.lbl_case.TabStop = True
+        Me.lbl_case.Text = "Edit"
+        '
+        'lbl_ram
+        '
+        Me.lbl_ram.AutoSize = True
+        Me.lbl_ram.Location = New System.Drawing.Point(215, 133)
+        Me.lbl_ram.Name = "lbl_ram"
+        Me.lbl_ram.Size = New System.Drawing.Size(42, 25)
+        Me.lbl_ram.TabIndex = 20
+        Me.lbl_ram.TabStop = True
+        Me.lbl_ram.Text = "Edit"
+        '
+        'lbl_CPU
+        '
+        Me.lbl_CPU.AutoSize = True
+        Me.lbl_CPU.Location = New System.Drawing.Point(213, 70)
+        Me.lbl_CPU.Name = "lbl_CPU"
+        Me.lbl_CPU.Size = New System.Drawing.Size(42, 25)
+        Me.lbl_CPU.TabIndex = 21
+        Me.lbl_CPU.TabStop = True
+        Me.lbl_CPU.Text = "Edit"
+        '
+        'lbl_gpu
+        '
+        Me.lbl_gpu.AutoSize = True
+        Me.lbl_gpu.Location = New System.Drawing.Point(580, 67)
+        Me.lbl_gpu.Name = "lbl_gpu"
+        Me.lbl_gpu.Size = New System.Drawing.Size(42, 25)
+        Me.lbl_gpu.TabIndex = 22
+        Me.lbl_gpu.TabStop = True
+        Me.lbl_gpu.Text = "Edit"
+        '
         'Write
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(641, 588)
+        Me.Controls.Add(Me.lbl_Cust)
+        Me.Controls.Add(Me.lbl_clearSto)
+        Me.Controls.Add(Me.lbl_motherboard)
+        Me.Controls.Add(Me.lbl_psu)
+        Me.Controls.Add(Me.lbl_case)
+        Me.Controls.Add(Me.lbl_ram)
+        Me.Controls.Add(Me.lbl_CPU)
+        Me.Controls.Add(Me.lbl_gpu)
         Me.Controls.Add(Me.btn_cust)
         Me.Controls.Add(Me.btn_Moba)
         Me.Controls.Add(Me.btn_PSU)
@@ -397,4 +493,12 @@ Partial Class Write
     Friend WithEvents btn_PSU As Button
     Friend WithEvents btn_Moba As Button
     Friend WithEvents btn_cust As Button
+    Friend WithEvents lbl_Cust As LinkLabel
+    Friend WithEvents lbl_clearSto As LinkLabel
+    Friend WithEvents lbl_motherboard As LinkLabel
+    Friend WithEvents lbl_psu As LinkLabel
+    Friend WithEvents lbl_case As LinkLabel
+    Friend WithEvents lbl_ram As LinkLabel
+    Friend WithEvents lbl_CPU As LinkLabel
+    Friend WithEvents lbl_gpu As LinkLabel
 End Class

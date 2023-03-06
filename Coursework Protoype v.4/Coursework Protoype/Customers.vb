@@ -1,5 +1,6 @@
 ﻿Public Class Customers
     Public selecting As Boolean = False
+    Public editing As Boolean = False
     Private Sub Customers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ListView1.Columns.Add("ID", 40)
         ListView1.Columns.Add("Name", 350)
@@ -9,6 +10,7 @@
     Public Sub custInit()
         ListView1.Items.Clear()
         selecting = False
+        editing = False
         Dim s As String
         For i = 0 To allCustomers.Count - 1
             If allCustomers(i).ID >= 0 Then
@@ -49,9 +51,20 @@
 
     Private Sub ListView1_ItemActivate(sender As Object, e As EventArgs) Handles ListView1.ItemActivate
         If selecting Then
-            Write.Show()
-            Me.Hide()
-            Write.onCustReturn(ListView1.SelectedItems(0).SubItems(0).Text)
+            If Not editing Then
+                Write.Show()
+                Me.Hide()
+                Write.onCustReturn(ListView1.SelectedItems(0).SubItems(0).Text)
+            Else
+                EditOrder.Show()
+                Me.Hide()
+                EditOrder.onCustReturn(ListView1.SelectedItems(0).SubItems(0).Text)
+            End If
         End If
+    End Sub
+
+    Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click
+        Me.Hide()
+        Navigation.Show()
     End Sub
 End Class

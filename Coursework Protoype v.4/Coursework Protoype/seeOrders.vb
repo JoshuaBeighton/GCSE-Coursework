@@ -43,7 +43,11 @@
                 tempL = New ListViewItem
                 'assign the elements to their positions in the list box
                 tempL.SubItems(0).Text = (AllOrders(i).id)
-                tempL.SubItems.Add(AllOrders(i).customer)
+                For j = 0 To allCustomers.Count - 1
+                    If AllOrders(i).customer = allCustomers(j).ID Then
+                        tempL.SubItems.Add(allCustomers(j).firstName & " " & allCustomers(j).lastName)
+                    End If
+                Next
                 tempL.SubItems.Add(AllOrders(i).due)
                 tempL.SubItems.Add(AllOrders(i).price)
                 tempL.SubItems.Add(components(0)) 'components start at index 4, CPU is 4
@@ -604,7 +608,7 @@
 
         End While
         writeOrder()
-
+        writeOrderStock()
     End Sub
 
 

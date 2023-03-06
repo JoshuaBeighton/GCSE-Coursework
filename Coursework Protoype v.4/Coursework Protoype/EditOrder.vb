@@ -22,13 +22,12 @@
         'set the ID of O equal to the ID of the order that's being edited
         o.id = AllOrders(oID).id
         'set the value of the customer equal to the value in txt cust
-        o.customer = txt_cust.Text
+        o.customer = custID
         'set the due date equal to whats in date_due
         o.due = date_due.Value
         'set the order at position oID to O
         AllOrders(oID) = o
 
-        'this will be changed in final
         Dim os As New orderStock
         os.ID = AllOrderStock.Count
         os.order = o.id
@@ -110,7 +109,11 @@
         'if we have found the order
         If orderID <> -1 Then
             'set the customer text box equal to the customer in the order
-            txt_cust.Text = AllOrders(orderID).customer
+            For i = 0 To allCustomers.Count - 1
+                If AllOrders(orderID).customer = allCustomers(i).ID Then
+                    txt_cust.Text = allCustomers(i).firstName & " " & allCustomers(i).lastName
+                End If
+            Next
             'set the due date box equal to the date stored in the order
             date_due.Value = AllOrders(orderID).due
             Dim startIndex As Integer = -1
@@ -129,22 +132,46 @@
                 Select Case AllStock(i).ID
                     Case AllOrderStock(index).stock
                         sCPU = AllStock(i).ID
-                        txt_CPU.Text = AllStock(i).part
+                        For j = 0 To AllCPUs.Count - 1
+                            If AllCPUs(j).ID = AllStock(i).part Then
+                                txt_CPU.Text = AllCPUs(j).name
+                            End If
+                        Next
                     Case AllOrderStock(index + 1).stock
                         sGPU = AllStock(i).ID
-                        txt_GPU.Text = AllStock(i).part
+                        For j = 0 To AllGPUs.Count - 1
+                            If AllGPUs(j).ID = AllStock(i).part Then
+                                txt_GPU.Text = AllGPUs(j).Series & " " & AllGPUs(j).Model
+                            End If
+                        Next
                     Case AllOrderStock(index + 2).stock
                         sRAM = AllStock(i).ID
-                        txt_RAM.Text = AllStock(i).part
+                        For j = 0 To AllRAMs.Count - 1
+                            If AllRAMs(j).ID = AllStock(i).part Then
+                                txt_RAM.Text = AllRAMs(j).name & " " & AllRAMs(j).capacity
+                            End If
+                        Next
                     Case AllOrderStock(index + 3).stock
                         sPSU = AllStock(i).ID
-                        txt_PSU.Text = AllStock(i).part
+                        For j = 0 To AllPSUs.Count - 1
+                            If AllPSUs(j).ID = AllStock(i).part Then
+                                txt_PSU.Text = AllPSUs(j).name & " " & AllPSUs(j).power
+                            End If
+                        Next
                     Case AllOrderStock(index + 4).stock
                         sCase = AllStock(i).ID
-                        txt_Case.Text = AllStock(i).part
+                        For j = 0 To AllCases.Count - 1
+                            If AllCases(j).id = AllStock(i).part Then
+                                txt_Case.Text = AllCases(j).name
+                            End If
+                        Next
                     Case AllOrderStock(index + 5).stock
                         sMoba = AllStock(i).ID
-                        txt_motherboard.Text = AllStock(i).part
+                        For j = 0 To AllMoba.Count - 1
+                            If AllMoba(j).id = AllStock(i).part Then
+                                txt_motherboard.Text = AllMoba(j).name
+                            End If
+                        Next
                 End Select
 
             Next
@@ -153,11 +180,14 @@
             Dim foundEnd As Boolean = False
             While index <= AllOrderStock.Count - 1 And Not foundEnd
                 If AllOrderStock(index).order = orderID Then
-                    lst_sto.Items.Add(AllStock(AllOrderStock(index).stock).part)
                     For i = 0 To AllStock.Count - 1
                         If AllStock(i).ID = AllOrderStock(index).stock Then
-                            lst_sto.Items.Add(AllStock(i).part)
                             sSto.Add(AllStock(i).ID)
+                            For j = 0 To AllStorage.Count - 1
+                                If AllStorage(j).ID = AllStock(i).part Then
+                                    lst_sto.Items.Add(AllStorage(j).name & " " & AllStorage(j).capacity & " " & AllStorage(j).type)
+                                End If
+                            Next
                         End If
                     Next
                 Else
@@ -363,4 +393,20 @@
         End Select
     End Sub
 
+    Private Sub lbl_Cust_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_Cust.LinkClicked
+        Customers.Show()
+        Me.Hide()
+        Customers.custInit()
+        Customers.selecting = True
+        Customers.editing = True
+    End Sub
+    Dim custID As Integer
+    Public Sub onCustReturn(id As Integer)
+        custID = id
+        For i = 0 To allCustomers.Count - 1
+            If allCustomers(i).ID = id Then
+                txt_cust.Text = allCustomers(i).firstName & " " & allCustomers(i).lastName
+            End If
+        Next
+    End Sub
 End Class

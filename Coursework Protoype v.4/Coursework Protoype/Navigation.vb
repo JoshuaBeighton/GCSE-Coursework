@@ -64,4 +64,10 @@
         Customers.custInit()
         Me.Hide()
     End Sub
+
+    Private Sub btn_staff_Click(sender As Object, e As EventArgs) Handles btn_staff.Click
+        Staff.Show()
+        Staff.init()
+        Me.Hide()
+    End Sub
 End Class
