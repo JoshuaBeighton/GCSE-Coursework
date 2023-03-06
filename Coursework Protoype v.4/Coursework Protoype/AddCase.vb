@@ -32,7 +32,7 @@
                             parts.setup(parts.ptype)
                             'store a temporary log
                             Dim l As log
-                            'set its id to the next available log id
+                            'set its id to the next available log id'sets the data of c to that which the user entered
                             l.id = findNextIndex("AllLogs")
                             'set the data of the log
                             l.user = Form1.currentUser

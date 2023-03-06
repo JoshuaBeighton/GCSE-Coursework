@@ -18,9 +18,9 @@
                                     'if the user has entered the base speed of the CPU
                                     If txt_basespeed.Text <> "" Then
 
-                                        'store the data entered
+                                        'temporary CPU item to store the data entered
                                         Dim c As New CPU
-                                        'set the ID equal to the count of CPUs currently stored
+                                        'set the ID equal to the next available CPU ID
                                         c.ID = findNextIndex("CPU")
                                         'add the data from the textboxes to c
                                         c.name = txt_name.Text

@@ -2,18 +2,20 @@
     Sub init()
         ListView1.Items.Clear()
         For i = 0 To AllUsers.Count - 1
-            Dim l As New ListViewItem
-            l.SubItems(0).Text = AllUsers(i).ID
-            l.SubItems.Add(AllUsers(i).username)
-            Select Case AllUsers(i).permission
-                Case "M"
-                    l.SubItems.Add("Manager")
-                Case "S"
-                    l.SubItems.Add("Staff")
-                Case "A"
-                    l.SubItems.Add("Accountant")
-            End Select
-            ListView1.Items.Add(l)
+            If allusers(i).id >= 0 Then
+                Dim l As New ListViewItem
+                l.SubItems(0).Text = AllUsers(i).ID
+                l.SubItems.Add(AllUsers(i).username)
+                Select Case AllUsers(i).permission
+                    Case "M"
+                        l.SubItems.Add("Manager")
+                    Case "S"
+                        l.SubItems.Add("Staff")
+                    Case "A"
+                        l.SubItems.Add("Accountant")
+                End Select
+                ListView1.Items.Add(l)
+            End If
         Next
     End Sub
 

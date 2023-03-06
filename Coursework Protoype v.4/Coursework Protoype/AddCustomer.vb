@@ -17,18 +17,27 @@ Public Class AddCustomer
                     c.firstName = txt_first.Text
                     c.lastName = txt_last.Text
                     c.contact = txt_number.Text
+                    'add c to the list of customers
                     allCustomers.Add(c)
+                    'navigate back to the customers page and initialise it
                     Me.Hide()
                     Customers.Show()
                     Customers.custInit()
+                    'write to the customers file
                     writeCustomers()
+                    'if the user didn't enter the customers number
                 Else
+                    'ask them to
                     MsgBox("Please enter the customer's number")
                 End If
+                'if the user didn't enter the customer's last name
             Else
+                'ask them to
                 MsgBox("Please enter the customer's last name")
             End If
+            'if the user didn't enter the customer's first name
         Else
+            'ask them to
             MsgBox("Please enter the customer's first name")
         End If
 

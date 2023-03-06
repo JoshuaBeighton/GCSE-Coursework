@@ -1,4 +1,5 @@
 ﻿Public Class AddUsers
+    'when the user presses the add button
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
         'if the user entered the username
         If txt_username.Text <> "" Then

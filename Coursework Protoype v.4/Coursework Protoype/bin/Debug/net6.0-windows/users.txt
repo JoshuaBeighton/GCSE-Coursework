@@ -1,4 +1,3 @@
-0,"Josh","1234",M
-1,"Mum","test1",S
-2,"Dad","test1",A
-3,"Archie","12345",M
+0,"Staff","1234",S
+1,"manager","1234",M
+2,"Accountant","1234",A

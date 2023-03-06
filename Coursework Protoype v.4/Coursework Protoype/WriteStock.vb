@@ -1,23 +1,31 @@
 ﻿Imports System.Runtime.Intrinsics.X86
 
 Public Class WriteStock
-
+    'initialise when we are writing a stock part that will immediately be transfered to an order
     Sub selectInit(type As String)
+        'set the selecting variable to true
         selecting = True
+        'set the type combobox to the right type and disable it
         cmb_type.SelectedItem = type
         cmb_type.Enabled = False
         btn_part.Show()
         txt_part.Hide()
     End Sub
+    'initialise the page
     Sub init()
+        'show the button to select the part and hide the textbox
         btn_part.Show()
         txt_part.Hide()
 
     End Sub
+    'store whether this is a stock part that will immediately be transfered to an order
     Dim selecting As Boolean = False
     Private Sub btn_AddOrder_Click(sender As Object, e As EventArgs) Handles btn_AddOrder.Click
+        'if the user has selected a type
         If cmb_type.SelectedIndex >= 0 Then
+            'if the user has entered a part
             If txt_part.Text.Length > 0 Then
+                'if the user has entered the price
                 If txt_price.Text.Length > 0 Then
                     'create a new stock item
                     Dim s As New Stock
@@ -45,7 +53,9 @@ Public Class WriteStock
                                 chk_arrived.Checked = False
                                 cmb_type.SelectedIndex = -1
                                 cmb_type.Text = ""
+                                'store the log item
                                 Dim l As log
+                                
                                 l.id = findNextIndex("AllLogs")
                                 l.user = Form1.currentUser
                                 l.action = "Delete"

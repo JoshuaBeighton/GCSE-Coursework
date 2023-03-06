@@ -155,3 +155,51 @@ C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Proto
 C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.AddUsers.resources
 C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.EditUsers.resources
 C:\Users\joshu\source\repos\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.SalesData.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.vbproj.AssemblyReference.cache
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.AddCase.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.AddCPU.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.AddCustomer.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.AddGPU.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.AddMoba.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.AddPSU.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.AddRAM.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.AddStorage.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.AddUsers.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.Customers.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.EditCase.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.EditCPU.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.EditCustomer.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.EditGPU.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.EditMotherboard.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.EditOrder.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.EditPSU.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.EditRAM.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.EditStock.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.EditStorage.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.EditUsers.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.Form1.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.Logs.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.Navigation.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.parts.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.PartsNaviagtion.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.SalesData.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.seeOrders.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.seeStock.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.Staff.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.Write.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework_Protoype.WriteStock.resources
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.vbproj.GenerateResource.cache
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.AssemblyInfoInputs.cache
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.AssemblyInfo.vb
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.vbproj.CoreCompileInputs.cache
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.dll
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\refint\Coursework Protoype.dll
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.pdb
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\bin\Debug\net6.0-windows\Coursework Protoype.exe
+C:\Users\jlbtu\source\repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\bin\Debug\net6.0-windows\Coursework Protoype.deps.json
+C:\Users\jlbtu\source\repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\bin\Debug\net6.0-windows\Coursework Protoype.runtimeconfig.json
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\bin\Debug\net6.0-windows\Coursework Protoype.dll
+C:\Users\jlbtu\Source\Repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\bin\Debug\net6.0-windows\Coursework Protoype.pdb
+C:\Users\jlbtu\source\repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\Coursework Protoype.genruntimeconfig.cache
+C:\Users\jlbtu\source\repos\jlbturbo\Coursework1\Coursework Protoype v.4\Coursework Protoype\obj\Debug\net6.0-windows\ref\Coursework Protoype.dll
