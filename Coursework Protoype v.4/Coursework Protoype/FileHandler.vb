@@ -39,37 +39,6 @@
         'close the file
         FileClose(1)
     End Sub
-    Public Sub readSales()
-        'open the file called Sales.txt for input
-        FileOpen(1, "Sales.txt", OpenMode.Input)
-        'store  temporary log
-        Dim s As New sale
-        'loop until the end of the file
-        While Not EOF(1)
-            'input the stock details
-            Input(1, s.id)
-            Input(1, s.amount)
-            Input(1, s.time)
-            allSales.Add(s)
-        End While
-        'close the file
-        FileClose(1)
-    End Sub
-
-    Public Sub writeSales()
-        'open the file called Sales.txt for output
-        FileOpen(1, "Sales.txt", OpenMode.Output)
-        'loop through all of the orders
-        For i = 0 To allSales.Count - 1
-            'if it has not been marked for deletion
-            If allSales(i).id >= 0 Then
-                'write that data to the file
-                WriteLine(1, allSales(i).id, allSales(i).amount, allSales(i).time)
-            End If
-        Next
-        'close the file
-        FileClose(1)
-    End Sub
 
 
     'read from the logs file
@@ -80,7 +49,7 @@
         Dim l As New log
         'loop until the end of the file
         While Not EOF(1)
-            'input the stock details
+            'input the log details
             Input(1, l.id)
             Input(1, l.user)
             Input(1, l.action)
@@ -94,7 +63,7 @@
     Public Sub writeLogs()
         'open the file called Logs.txt for output
         FileOpen(1, "Logs.txt", OpenMode.Output)
-        'loop through all of the orders
+        'loop through all of the logs
         For i = 0 To AllLogs.Count - 1
             'if it has not been marked for deletion
             If AllLogs(i).id >= 0 Then
@@ -151,11 +120,11 @@
     Public Sub readUser()
         'open the file called user.txt for input
         FileOpen(1, "users.txt", OpenMode.Input)
-        'store  temporary order
+        'store  temporary user
         Dim u As New user
         'loop until the end of the file
         While Not EOF(1)
-            'input the orderstock details
+            'input the user details
             Input(1, u.ID)
             Input(1, u.username)
             Input(1, u.password)
@@ -172,7 +141,7 @@
         Dim g As New GPU
         'loop until the end of the file
         While Not EOF(1)
-            'input the orderstock details
+            'input the GPU details
             Input(1, g.ID)
             Input(1, g.Series)
             Input(1, g.Model)
@@ -188,13 +157,13 @@
         FileClose(1)
     End Sub
     Sub readRAM()
-        'open the file called GPU.txt for input
+        'open the file called RAM.txt for input
         FileOpen(1, "RAM.txt", OpenMode.Input)
-        'store  temporary GPU
+        'store  temporary RAM
         Dim r As New RAM
         'loop until the end of the file
         While Not EOF(1)
-            'input the orderstock details
+            'input the RAM details
             Input(1, r.ID)
             Input(1, r.name)
             Input(1, r.manufacturer)
@@ -211,13 +180,13 @@
         FileClose(1)
     End Sub
     Sub readPSU()
-        'open the file called GPU.txt for input
+        'open the file called PSU.txt for input
         FileOpen(1, "PSU.txt", OpenMode.Input)
-        'store  temporary GPU
+        'store  temporary PSU
         Dim p As New PSU
         'loop until the end of the file
         While Not EOF(1)
-            'input the orderstock details
+            'input the PSU details
             Input(1, p.ID)
             Input(1, p.name)
             Input(1, p.manufacturer)
@@ -232,13 +201,13 @@
     End Sub
 
     Sub readCase()
-        'open the file called GPU.txt for input
+        'open the file called case.txt for input
         FileOpen(1, "Case.txt", OpenMode.Input)
-        'store  temporary GPU
+        'store  temporary case
         Dim c As New cases
         'loop until the end of the file
         While Not EOF(1)
-            'input the orderstock details
+            'input the case details
             Input(1, c.id)
             Input(1, c.name)
             Input(1, c.manufacturer)
@@ -251,13 +220,13 @@
         FileClose(1)
     End Sub
     Sub readMoba()
-        'open the file called GPU.txt for input
+        'open the file called motherboard.txt for input
         FileOpen(1, "Motherboard.txt", OpenMode.Input)
-        'store  temporary GPU
+        'store  temporary motherboard
         Dim m As New motherboard
         'loop until the end of the file
         While Not EOF(1)
-            'input the orderstock details
+            'input the motherboard details
             Input(1, m.id)
             Input(1, m.name)
             Input(1, m.manufacturer)
@@ -274,11 +243,11 @@
     Sub readStorage()
         'open the file called Storage.txt for input
         FileOpen(1, "Storage.txt", OpenMode.Input)
-        'store  temporary GPU
+        'store  temporary storage
         Dim s As New store
         'loop until the end of the file
         While Not EOF(1)
-            'input the orderstock details
+            'input the storage details
             Input(1, s.ID)
             Input(1, s.name)
             Input(1, s.manufacturer)
@@ -303,7 +272,7 @@
         'loop until the end of the file
 
         While Not EOF(1)
-            
+            'input the CPU details
             Input(1, c.ID)
             Input(1, c.name)
             Input(1, c.manufacturer)
@@ -342,7 +311,7 @@
     Public Sub writeCustomers()
         'open the file called customers.txt for output
         FileOpen(1, "Customers.txt", OpenMode.Output)
-        'loop through all of the orders
+        'loop through all of the customers
         For i = 0 To allCustomers.Count - 1
             'if it has not been marked for deletion
             If allCustomers(i).ID >= 0 Then

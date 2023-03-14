@@ -19,15 +19,25 @@ Public Class Write
     Public sSto As New List(Of Integer)
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_AddOrder.Click
+        'if the user has entered a case
         If txt_Case.Text <> "" Then
+            'if the user has entered a cpu
             If txt_CPU.Text <> "" Then
+                'if the user has entered a customer
                 If txt_cust.Text <> "" Then
+                    'if the user has entered a GPU
                     If txt_GPU.Text <> "" Then
+                        'if the user has entered a motherboard
                         If txt_motherboard.Text <> "" Then
+                            'if the user has entered a price
                             If txt_price.Text <> "" Then
+                                'if the user has entered a PSU
                                 If txt_PSU.Text <> "" Then
+                                    'if the user has entered a RAM
                                     If txt_RAM.Text <> "" Then
+                                        'if the user has entered a storage device
                                         If lst_sto.Items.Count <> 0 Then
+                                            'store temporary devices
                                             Dim c As New CPU
                                             Dim g As New GPU
                                             Dim r As New RAM
@@ -35,66 +45,87 @@ Public Class Write
                                             Dim p As New PSU
                                             Dim ca As New cases
                                             Dim s(sSto.Count - 1) As store
+                                            'loop through the stock file to find the correct stock id
                                             For i = 0 To AllStock.Count - 1
                                                 If sCPU = AllStock(i).ID Then
+                                                    'loop through the part file to find the part ID
                                                     For j = 0 To AllCPUs.Count - 1
                                                         If AllCPUs(j).ID = AllStock(i).part Then
+                                                            'store the part ID
                                                             c = AllCPUs(j)
                                                         End If
                                                     Next
                                                 End If
                                             Next
+                                            'loop through the stock file to find the correct stock id
                                             For i = 0 To AllStock.Count - 1
                                                 If sGPU = AllStock(i).ID Then
+                                                    'loop through the part file to find the part ID
                                                     For j = 0 To AllGPUs.Count - 1
                                                         If AllGPUs(j).ID = AllStock(i).part Then
+                                                            'store the part ID
                                                             g = AllGPUs(j)
                                                         End If
                                                     Next
                                                 End If
                                             Next
+                                            'loop through the stock file to find the correct stock id
                                             For i = 0 To AllStock.Count - 1
                                                 If sRAM = AllStock(i).ID Then
+                                                    'loop through the part file to find the part ID
                                                     For j = 0 To AllRAMs.Count - 1
                                                         If AllRAMs(j).ID = AllStock(i).part Then
+                                                            'store the part ID
                                                             r = AllRAMs(j)
                                                         End If
                                                     Next
                                                 End If
                                             Next
+                                            'loop through the stock file to find the correct stock id
                                             For i = 0 To AllStock.Count - 1
                                                 If sMoba = AllStock(i).ID Then
+                                                    'loop through the part file to find the part ID
                                                     For j = 0 To AllMoba.Count - 1
                                                         If AllMoba(j).id = AllStock(i).part Then
+                                                            'store the part ID
                                                             m = AllMoba(j)
                                                         End If
                                                     Next
                                                 End If
                                             Next
+                                            'loop through the stock file to find the correct stock id
                                             For i = 0 To AllStock.Count - 1
                                                 If sCase = AllStock(i).ID Then
+                                                    'loop through the part file to find the part ID
                                                     For j = 0 To AllCases.Count - 1
                                                         If AllCases(j).id = AllStock(i).part Then
+                                                            'store the part ID
                                                             ca = AllCases(j)
                                                         End If
                                                     Next
                                                 End If
                                             Next
+                                            'loop through the stock file to find the correct stock id
                                             For k = 0 To sSto.Count - 1
                                                 For i = 0 To AllStock.Count - 1
                                                     If sSto(k) = AllStock(i).ID Then
+                                                        'loop through the part file to find the part ID
                                                         For j = 0 To AllStorage.Count - 1
                                                             If AllStorage(j).ID = AllStock(i).part Then
+                                                                'store the part ID
                                                                 s(k) = AllStorage(j)
                                                             End If
                                                         Next
                                                     End If
                                                 Next
                                             Next
+                                            'loop through the stock file to find the correct stock id
                                             For i = 0 To AllStock.Count - 1
                                                 If sPSU = AllStock(i).ID Then
+                                                    'loop through the part file to find the part ID
                                                     For j = 0 To AllPSUs.Count - 1
                                                         If AllPSUs(j).ID = AllStock(i).part Then
+                                                            'store the part ID
                                                             p = AllPSUs(j)
                                                         End If
                                                     Next
@@ -230,6 +261,7 @@ Public Class Write
 
     'when the button to add a storage device is pressed
     Private Sub btn_AddStorage_Click(sender As Object, e As EventArgs) Handles btn_AddStorage.Click
+        'navigate to the add storage page
         Me.Hide()
         seeStock.Show()
         seeStock.InitialiseSeeStock()
@@ -481,8 +513,9 @@ Public Class Write
         'store that we are waiting for a PSU
         type = "PSU"
     End Sub
-
+    'when the user presses the add customer button
     Private Sub btn_cust_Click(sender As Object, e As EventArgs) Handles btn_cust.Click
+        'navigation to the customer menu
         Customers.Show()
         Customers.custInit()
         Customers.selecting = True
@@ -491,11 +524,15 @@ Public Class Write
         txt_cust.Show()
         lbl_Cust.Show()
     End Sub
-
+    'on returning from the customers page
     Public Sub onCustReturn(id As Integer)
+        'store the id of the customer
         custID = id
+        'loop through the customers
         For i = 0 To allCustomers.Count - 1
+            'if the id matches what it should
             If allCustomers(i).ID = id Then
+                'set the text box to the customers name
                 txt_cust.Text = allCustomers(i).firstName & " " & allCustomers(i).lastName
             End If
         Next
@@ -572,9 +609,11 @@ Public Class Write
         type = "Motherboard"
         txt_price.Text = Convert.ToDecimal(txt_price.Text) - (AllStock(sMoba).cost * 1.1)
     End Sub
-
+    'when the form initially loads
     Private Sub Write_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'send the decoaritve picture box to the back
         PictureBox1.SendToBack()
+        'set the price = 0
         txt_price.Text = "0"
     End Sub
 

@@ -60,3 +60,7 @@
 0,"testM","Edit","0i5-12600kintel200",#2023-03-06 22:04:43#
 0,"Dad","Login","3DadS",#2023-03-06 22:05:29#
 0,"manager","Login","1managerM",#2023-03-06 22:05:58#
+0,"Staff","Login","0StaffS",#2023-03-07 22:06:40#
+0,"Manager","Login","1ManagerM",#2023-03-07 22:06:45#
+0,"Accountant","Login","2AccountantA",#2023-03-07 22:06:51#
+0,"Manager","Login","1ManagerM",#2023-03-07 22:09:12#

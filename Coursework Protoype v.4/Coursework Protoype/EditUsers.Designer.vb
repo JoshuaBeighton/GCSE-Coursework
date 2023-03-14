@@ -45,7 +45,7 @@ Partial Class EditUsers
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Manager", "Staff", "Accountant"})
+        Me.ComboBox1.Items.AddRange(New Object() {"Manager", "Staff"})
         Me.ComboBox1.Location = New System.Drawing.Point(172, 123)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(150, 33)

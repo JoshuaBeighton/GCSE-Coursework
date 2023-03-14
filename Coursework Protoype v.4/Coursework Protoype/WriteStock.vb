@@ -55,7 +55,7 @@ Public Class WriteStock
                                 cmb_type.Text = ""
                                 'store the log item
                                 Dim l As log
-                                
+
                                 l.id = findNextIndex("AllLogs")
                                 l.user = Form1.currentUser
                                 l.action = "Delete"
@@ -85,12 +85,15 @@ Public Class WriteStock
                     End If
                     FileHandler.writeStockFile()
                 Else
+                    'if the user didn't enter a type ask them to
                     MsgBox("Please Enter a Price")
                 End If
             Else
+                'if the user didnt enter a part ask them to
                 MsgBox("Please Enter a Part")
             End If
         Else
+            'if the user didn't enter a type ask them to
             MsgBox("Please Select A Type")
         End If
     End Sub
@@ -100,8 +103,11 @@ Public Class WriteStock
         Me.Close()
         seeStock.Show()
     End Sub
+    'when the user presses the part select button
     Private Sub btn_part_Click(sender As Object, e As EventArgs) Handles btn_part.Click
+        'if the user has selected an item
         If cmb_type.SelectedIndex <> -1 Then
+            'navigate to the parts page and set it up
             parts.Show()
             Me.Hide()
             parts.setup(cmb_type.SelectedItem)
@@ -110,9 +116,13 @@ Public Class WriteStock
         End If
 
     End Sub
+    'store the index of the part
     Dim partIndex As Integer
+    'when returning from the parts page
     Public Sub onreturn(index As Integer)
+        'store the index of the part
         partIndex = index
+        'loop through the correct file and set the price and part text boxes according to the part data
         Select Case cmb_type.SelectedItem
             Case "CPU"
                 For i = 0 To AllCPUs.Count - 1

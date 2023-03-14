@@ -7,24 +7,14 @@
         btn_logs.Show()
         btn_orders.Show()
         btn_parts.Show()
-        btn_sales.Show()
         btn_stock.Show()
         btn_staff.Show()
-        'if the user is an accountant
-        If type = "A" Then
-            'hide all irrelavant buttons
-            btn_stock.Hide()
-            btn_parts.Hide()
-            btn_orders.Hide()
-            btn_logs.Hide()
-            btn_cust.Hide()
-            btn_staff.Hide()
+
         'if user is staff member
-        ElseIf type = "S" Then
+        If type = "S" Then
             'hide irrelavant buttons
             btn_logs.Hide()
             btn_staff.Hide()
-            btn_sales.Hide()
         End If
     End Sub
 
@@ -52,27 +42,22 @@
         Me.Hide()
     End Sub
 
-
+    'when the user presses to go on the logs form, navigate there
     Private Sub btn_logs_Click(sender As Object, e As EventArgs) Handles btn_logs.Click
         Logs.Show()
         Me.Hide()
         Logs.init()
     End Sub
-
+    'when the user presses to see the customers, navigate there
     Private Sub btn_cust_Click(sender As Object, e As EventArgs) Handles btn_cust.Click
         Customers.Show()
         Customers.custInit()
         Me.Hide()
     End Sub
-
+    'when the user clicks the button to see the staff, navigate there
     Private Sub btn_staff_Click(sender As Object, e As EventArgs) Handles btn_staff.Click
         Staff.Show()
         Staff.init()
         Me.Hide()
-    End Sub
-
-    Private Sub btn_sales_Click(sender As Object, e As EventArgs) Handles btn_sales.Click
-        SalesData.Show()
-        SalesData.init()
     End Sub
 End Class

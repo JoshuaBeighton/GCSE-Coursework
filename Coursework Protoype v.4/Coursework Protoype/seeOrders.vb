@@ -56,7 +56,6 @@
                 tempL.SubItems.Add(components(3)) 'PSU at 7
                 tempL.SubItems.Add(components(4)) 'case at 8
                 tempL.SubItems.Add(components(5)) 'motherbaord at 9
-                'l(i).SubItems.Add(components(6))
 
 
                 'add all of the storage devices. As this is open-ended, it will loop until it gets to the end of the list 
@@ -241,10 +240,6 @@
         RAMPopulate()
         casePopulate()
     End Sub
-    'filters
-
-
-
 
     'filter for cpu
     Sub filterCPU()
@@ -584,29 +579,45 @@
             o = AllOrders(oID)
             'set the ID to itself times -1, subtract one so that it will always end up below 0, so its marked to be deleted
             o.id = (o.id * -1) - 1
+            'store a temporary log item
             Dim l As log
+            'set its id to the next available index
             l.id = findNextIndex("AllLogs")
+            'set its data accurately
             l.user = Form1.currentUser
             l.action = "Delete"
             l.data = o.id & o.customer & o.price
             l.time = Now
+            'add it to the list
             AllLogs.Add(l)
+            'write the file
             writeLogs()
-            AllOrders(oID) = o
-
+            'loop through the orders
+            For i = 0 To AllOrders.Count - 1
+                'if we find the right order
+                If AllOrders(i).id = oID Then
+                    'set it equal to the new order with the negative id
+                    AllOrders(i) = o
+                End If
+            Next
+            'store all the orderstock items that aren't related to the order that just got deleted
             Dim newOS As New List(Of orderStock)
+            'loop through the orderstock file
             For i = 0 To AllOrderStock.Count - 1
+                'if we find an ordetrstock item that isn't part of the order
                 If AllOrderStock(i).order <> ListView1.SelectedItems(0).SubItems(0).Text Then
+                    'add it to the new list
                     newOS.Add(AllOrderStock(i))
                 End If
             Next
+            'clear the orderstock list
             AllOrderStock.Clear()
+            'add the new list of orderstock items that doesn't contain the orderstock items related to the order we just deleted
             AllOrderStock.AddRange(newOS)
-
+            'remove the selected item from the list box
             ListView1.Items.Remove(ListView1.SelectedItems(0))
-
-
         End While
+        'write to the order and stock file
         writeOrder()
         writeOrderStock()
     End Sub
@@ -640,8 +651,5 @@
 
     End Sub
 
-    Private Sub seeOrders_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class
 
