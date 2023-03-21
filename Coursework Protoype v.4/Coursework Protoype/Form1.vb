@@ -1,7 +1,8 @@
 ﻿Public Class Form1
     'set up the data
-    Public currentUser As String = "testM"
+    Public currentUser As String
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'read all of the data from the text files
         readOrders()
         readOrderStock()
         readStock()
@@ -15,9 +16,6 @@
         readStorage()
         readLogs()
         readCustomers()
-        Navigation.Show()
-        Navigation.setup("M")
-        Me.Hide()
     End Sub
 
     'handle login
@@ -32,15 +30,22 @@
                 Navigation.Show()
                 Navigation.setup(AllUsers(i).permission)
                 Me.Hide()
+                'set the current user to the username of the user who just logged in
                 currentUser = AllUsers(i).username
+                'store that we have found the user
                 found = True
+                'declare a new temporary log item
                 Dim l As log
+                'set it's ID to the next available ID
                 l.id = findNextIndex("AllLogs")
+                'set it's data appropriately
                 l.user = currentUser
                 l.action = "Login"
                 l.data = AllUsers(i).ID & AllUsers(i).username & AllUsers(i).permission
                 l.time = Now
+                'add the temporary log to the lost of logs
                 AllLogs.Add(l)
+                'write to the log file
                 writeLogs()
             End If
         Next
@@ -59,10 +64,5 @@
         txt_username.Select()
     End Sub
 
-    Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
-        Me.Hide()
-        Navigation.Show()
-        Navigation.setup("M")
-    End Sub
 
 End Class

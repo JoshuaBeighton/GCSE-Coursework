@@ -28,10 +28,7 @@
                                 Case "Manager"
                                     'set the permission level of the user to manager
                                     u.permission = "M"
-                                'if they entered Accountant
-                                Case "Accountant"
-                                    'set the permission level of the user to accountant
-                                    u.permission = "A"
+                                    'if they entered Accountant
                             End Select
                             'add the temporary user to the list of users
                             AllUsers.Add(u)
@@ -52,7 +49,7 @@
                         'ask them to do so
                         MsgBox("Please enter the permission level of the new user")
                     End If
-                    'if the user hasn't entered the password
+                    'if the user hasn't re-entered the password
                 Else
                     'ask them to do so
                     MsgBox("Please enter the password a second time")

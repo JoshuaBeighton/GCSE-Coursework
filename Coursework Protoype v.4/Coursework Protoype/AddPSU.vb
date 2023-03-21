@@ -15,7 +15,7 @@
                             If ComboBox1.SelectedIndex <> -1 Then
                                 'store a temporary PSU
                                 Dim p As New PSU
-                                'set it's ID to the next available psu
+                                'set it's ID to the next available psu ID
                                 p.ID = findNextIndex("PSU")
                                 'set the data of the temporary psu to the data entered by the user
                                 p.name = txt_name.Text

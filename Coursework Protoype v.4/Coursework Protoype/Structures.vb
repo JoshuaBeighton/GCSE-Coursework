@@ -7,24 +7,27 @@
     Public AllOrderStock As New List(Of orderStock)
     'store all of the user data
     Public AllUsers As New List(Of user)
+    'store all of the cpu data
     Public AllCPUs As New List(Of CPU)
+    'store all of the GPU data
     Public AllGPUs As New List(Of GPU)
+    'store all of the ram data
     Public AllRAMs As New List(Of RAM)
+    'store all of the case data
     Public AllCases As New List(Of cases)
+    'store all of the motherboard data
     Public AllMoba As New List(Of motherboard)
+    'store all of the storage data
     Public AllStorage As New List(Of store)
+    'store all of the PSU data
     Public AllPSUs As New List(Of PSU)
+    'store all of the log data
     Public AllLogs As New List(Of log)
+    'store all of the customer data
     Public allCustomers As New List(Of customer)
-    Public allSales As New List(Of sale)
 End Module
 
-'structure for storing data about an order
-Public Structure sale
-    Dim id As Integer
-    Dim amount As Decimal
-    Dim time As Date
-End Structure
+
 
 Public Structure Order
     'id of the order (PK)
@@ -216,25 +219,34 @@ Public Structure cases
     Dim name As String
     'store the manufacturer of the case
     Dim manufacturer As String
-    'store how many HDD slots the motherboard has
+    'store how many HDD slots the case has
     Dim HDDs As Integer
-    'store how many SSD slots the motherboard has
+    'store how many SSD slots the case has
     Dim SSDs As Integer
-    'store the price of the motherboard
+    'store the price of the case
     Dim price As Decimal
 End Structure
-
+'store data about the customer
 Public Structure customer
+    'store the customers ID (PK)
     Dim ID As Integer
+    'store the customer's first name
     Dim firstName As String
+    'store the customer's last name
     Dim lastName As String
+    'store the customer's phone number
     Dim contact As String
 End Structure
-
+'store log information 
 Public Structure log
+    'store the ID of the log (PK)
     Dim id As Integer
+    'store the user who did the action
     Dim user As String
+    'store what action it was
     Dim action As String
+    'store the data associated with that action
     Dim data As String
+    'store the time
     Dim time As Date
 End Structure

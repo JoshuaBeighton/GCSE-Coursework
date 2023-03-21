@@ -4,6 +4,7 @@ Public Class seeStock
     'open the form to write stock items
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         WriteStock.Show()
+        'if we are trying to select an item, let the write stock form know so it goes straight back to the write page
         If selecting Then
             WriteStock.selectInit(Write.type)
         Else
@@ -12,11 +13,13 @@ Public Class seeStock
         Me.Close()
     End Sub
 
-    'go back to the menu
+    'go back
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        'if we are trying to select an item, return to the write page
         If selecting Then
             Write.Show()
         Else
+            'otherwise go back to the navigation page
             Navigation.Show()
         End If
 
@@ -48,51 +51,80 @@ Public Class seeStock
                 'add all of the necessary subitems
                 tempL.SubItems(0).Text = (AllStock(i).ID)
                 tempL.SubItems.Add(AllStock(i).type)
+                'depending on the type of stock item
                 Select Case AllStock(i).type
+                    'if its a CPU
                     Case "CPU"
+                        'loop through all of the CPUs
                         For j = 0 To AllCPUs.Count - 1
+                            'if we find the correct part
                             If AllCPUs(j).ID = AllStock(i).part Then
+                                'add the correct part name to the temporary listviewitem
                                 tempL.SubItems.Add(AllCPUs(j).name)
                             End If
                         Next
+                    'if its a GPU
                     Case "GPU"
+                        'loop through all of the GPUs
                         For j = 0 To AllGPUs.Count - 1
+                            'if we find the correct part
                             If AllGPUs(j).ID = AllStock(i).part Then
+                                'add the correct part name to the temporary listviewitem
                                 tempL.SubItems.Add(AllGPUs(j).Series & " " & AllGPUs(j).Model)
                             End If
                         Next
+                    'if its a PSU
                     Case "PSU"
+                        'loop through all of the PSUs
                         For j = 0 To AllPSUs.Count - 1
+                            'if we find the correct part
                             If AllPSUs(j).ID = AllStock(i).part Then
+                                'add the correct part name to the temporary listviewitem
                                 tempL.SubItems.Add(AllPSUs(j).name & " " & AllPSUs(j).power & "W")
                             End If
                         Next
+                    'if its a Motherboard
                     Case "Motherboard"
+                        'loop through all of the motherboards
                         For j = 0 To AllMoba.Count - 1
+                            'if we find the correct part
                             If AllMoba(j).id = AllStock(i).part Then
+                                'add the correct part name to the temporary listviewitem
                                 tempL.SubItems.Add(AllMoba(j).name)
                             End If
                         Next
+                    'if its storage
                     Case "Storage"
+                        'loop through all of the storage
                         For j = 0 To AllStorage.Count - 1
+                            'if we find the correct part
                             If AllStorage(j).ID = AllStock(i).part Then
+                                'add the correct part name to the temporary listviewitem
                                 tempL.SubItems.Add(AllStorage(j).name & " " & AllStorage(j).capacity & "GB " & AllStorage(j).type)
                             End If
                         Next
+                    'if its RAM
                     Case "RAM"
+                        'loop through all of the RAM
                         For j = 0 To AllRAMs.Count - 1
+                            'if we find the correct part
                             If AllRAMs(j).ID = AllStock(i).part Then
+                                'add the correct part name to the temporary listviewitem
                                 tempL.SubItems.Add(AllRAMs(j).name & " " & AllRAMs(j).capacity & "GB " & AllRAMs(j).speed & "MHz")
                             End If
                         Next
+                    'if its a case
                     Case "Case"
+                        'loop through all of the cases
                         For j = 0 To AllCases.Count - 1
+                            'if we find the correct part
                             If AllCases(j).id = AllStock(i).part Then
+                                'add the correct part name to the temporary listviewitem
                                 tempL.SubItems.Add(AllCases(j).name)
                             End If
                         Next
                 End Select
-
+                'add the stock data to the listviewitem
                 tempL.SubItems.Add(AllStock(i).ordered)
                 tempL.SubItems.Add(AllStock(i).Due)
                 tempL.SubItems.Add(AllStock(i).arrived)
@@ -164,43 +196,6 @@ Public Class seeStock
 
     'store all of the items removed in
     Dim removed As New List(Of ListViewItem)
-
-
-
-
-    'filters
-    'Private Sub filter_click(sender As Object, e As EventArgs)
-    'If cmb_part.SelectedIndex <> -1 Then
-    'filterPart()
-    'cmb_part.Enabled = False
-    'End If
-    'If Convert.ToInt32(cmb_arrived.SelectedIndex) <> -1 Then
-    'filterArrived()
-    'cmb_arrived.Enabled = False
-    'End If
-    'If Convert.ToInt32(cmb_ordered.SelectedIndex) <> -1 Then
-    'filterOrdered(cmb_ordered.SelectedItem)
-    'cmb_ordered.Enabled = False
-    'End If
-    'If Convert.ToInt32(cmb_type.SelectedIndex) <> -1 Then
-    'filterType()
-    'cmb_type.Enabled = False
-    'End If
-    'If Convert.ToInt32(cmb_due.SelectedIndex) <> -1 Then
-    'filterDue(cmb_due.SelectedItem)
-    'cmb_due.Enabled = False
-    'End If
-
-    '        cmb_arrived.Items.Clear()
-    '        cmb_due.Items.Clear()
-    '        cmb_ordered.Items.Clear()
-    '        cmb_part.Items.Clear()
-    '        cmb_type.Items.Clear()
-
-    'typePopulate()
-    'partPopulate()
-    '
-    'End Sub
 
     'filter based on what part the user has selected
     Sub filterPart(part As String)

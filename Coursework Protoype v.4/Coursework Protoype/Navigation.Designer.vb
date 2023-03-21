@@ -22,7 +22,6 @@ Partial Class Navigation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btn_sales = New System.Windows.Forms.Button()
         Me.btn_logs = New System.Windows.Forms.Button()
         Me.btn_cust = New System.Windows.Forms.Button()
         Me.btn_orders = New System.Windows.Forms.Button()
@@ -31,16 +30,6 @@ Partial Class Navigation
         Me.btn_staff = New System.Windows.Forms.Button()
         Me.btn_logout = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'btn_sales
-        '
-        Me.btn_sales.Location = New System.Drawing.Point(1019, 20)
-        Me.btn_sales.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.btn_sales.Name = "btn_sales"
-        Me.btn_sales.Size = New System.Drawing.Size(107, 93)
-        Me.btn_sales.TabIndex = 6
-        Me.btn_sales.Text = "sales"
-        Me.btn_sales.UseVisualStyleBackColor = True
         '
         'btn_logs
         '
@@ -124,15 +113,12 @@ Partial Class Navigation
         Me.Controls.Add(Me.btn_cust)
         Me.Controls.Add(Me.btn_logout)
         Me.Controls.Add(Me.btn_logs)
-        Me.Controls.Add(Me.btn_sales)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "Navigation"
         Me.Text = "Home"
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents btn_sales As Button
     Friend WithEvents btn_logs As Button
     Friend WithEvents btn_cust As Button
     Friend WithEvents btn_orders As Button
