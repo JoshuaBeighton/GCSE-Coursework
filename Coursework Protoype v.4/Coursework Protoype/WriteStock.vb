@@ -46,7 +46,7 @@ Public Class WriteStock
                                 s.type = cmb_type.SelectedItem
                                 s.part = partIndex
                                 AllStock.Add(s)
-
+                                 
                                 'clear the UI elements
                                 txt_part.Clear()
                                 txt_price.Clear()
